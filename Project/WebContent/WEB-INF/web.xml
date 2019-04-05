@@ -6,7 +6,7 @@
     <servlet-class>controller.ControllerAction</servlet-class>
     <init-param>
         <param-name>propertyConfig</param-name>
-        <param-value>C:/webtest/4.jsp/sou/testting12/WebContent/WEB-INF/commandPro.properties</param-value>
+        <param-value>C:/webtest/4.jsp/sou/Project/WebContent/WEB-INF/commandPro.properties</param-value>
     </init-param>
   </servlet>
 
