@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -726,11 +727,11 @@
 
                         <div class="col-md-7">
                             <div class="product-details">
-                                <h2 class="product-title">Lorem ipsum dolor sit amet, consectit</h2>
+                                <h2 class="product-title">${article.c_product}</h2>
 
                                 <div class="product-price-container">
-                                    <span class="old-price">$99.00</span>
-                                    <span class="product-price">$49.00</span>
+                                    <span class="old-price">${article.c_price}</span>
+                                    <span class="product-price">${article.c_price}</span>
                                 </div><!-- End .product-price-container -->
 
                                 <div class="review-container">
@@ -747,15 +748,15 @@
 
                                 <div class="product-desc-box">
                                     <ul>
-                                        <li><strong>Brand:</strong> Sonyz Production Z</li>
-                                        <li><strong>Availablity:</strong> In Stock</li>
-                                        <li><strong>Product Code:</strong> MXC68077E99</li>
+                                        <li><strong>종류:</strong> ${article.c_name}</li>
+                                        <li><strong>용량:</strong> ${article.c_size }</li>
+                                        <li><strong>보관방식:</strong> ${article.c_storage }</li>
                                         <li><strong>Shipping:</strong> Free</li>
                                     </ul>
                                 </div><!-- End .product-desc-box -->
 
                                 <div class="product-single-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ab doloribus commodi deserunt rerum. Quisquam dolores sed debitis assume natus iusto eveniet.</p>
+                                    <p>${article.c_intro}</p>
                                     <p>Dolor recusandae enim deserunt tenetur saepe consectetur blanditiis praesentium quis sunt temporibus ipsam laborum, unde at essesis modi deserunt rerum dolore.</p>
                                 </div><!-- End .product-single-content -->
 

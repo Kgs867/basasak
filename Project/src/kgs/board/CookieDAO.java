@@ -235,4 +235,56 @@ public class CookieDAO {
 
 		return articleList;
 	}
+	
+	public CookieDTO getArticle(String c_serial) {
+		CookieDTO article = null;
+		String type = null,name = null;
+		try {
+			con = pool.getConnection();
+			sql= "select c_type from cookie where c_serial=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, c_serial);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				type=rs.getString(1);
+				System.out.println(type);
+			}
+			
+			
+			sql="select c_name from cookiecategory where c_type=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, type);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				name=rs.getString(1);
+				System.out.println(name);
+			}
+			
+			
+			sql = "select * from cookie where c_serial=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, c_serial);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				article=new CookieDTO();
+				article.setC_serial(rs.getString("c_serial"));
+				article.setC_price(rs.getInt("c_price"));
+				article.setC_intro(rs.getString("c_intro"));
+				article.setC_size(rs.getInt("c_size"));
+				article.setC_storage(rs.getString("c_storage"));
+				article.setC_img1(rs.getString("c_img1"));
+				article.setC_img2(rs.getString("c_img2"));
+				article.setC_product(rs.getString("c_product"));
+				article.setC_name(name);
+				System.out.println(article.getC_serial());
+			}
+			
+
+		} catch (Exception e) {
+			System.out.println("getArticle()메서드 에러유발" + e);
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return article;
+	}
 }
