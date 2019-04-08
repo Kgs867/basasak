@@ -37,7 +37,7 @@
                 <div class="user-form-container bg-white">
                     <h2>로그인</h2>
 
-                    <form method="post" action="/Project/loginPro.do">
+                    <form method="post" action="/testting12/loginPro.do">
                         <div class="form-group">
                             <label>계정명</label>
                             <input type="text" class="form-control" name="input_id" placeholder="계정명" required>

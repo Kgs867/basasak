@@ -17,7 +17,7 @@
 	rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/plugins.min.css">
-<link rel="stylesheet" href="assets/css/style.css">.
+<link rel="stylesheet" href="assets/css/style.css">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -407,7 +407,7 @@
 								<div class="product">
 									<div class="product-top">
 										<figure>
-											<a href="product.html" title="Product Name"> <img
+											<a href="/Project/content.do?c_serial=${article.c_serial}&pageNum=${currentPage}" title="Product Name"> <img
 												src="assets/images/products/product10.jpg"
 												alt="Product image" class="product-image">
 											</a>
