@@ -39,24 +39,9 @@
 		alert("로그인성공");
 	}
 </script>
-<%
-session.setAttribute("id",request.getAttribute("id"));
-String id=(String)session.getAttribute("id");
-%>
 </head>
 <body>
-	<div id="page-loader">
-		<div class="sk-double-bounce">
-			<div class="sk-child sk-double-bounce1"></div>
-			<!-- End .sk-child -->
-			<div class="sk-child sk-double-bounce2"></div>
-			<!-- End .sk-child -->
-		</div>
-		<!-- End .sk-double-bounce -->
-	</div>
-	<!-- End #page-loader -->
 
-	<div id="wrapper">
 		<header class="header header3 white sticky-header">
 			<div class="header-top">
 				<div class="container-fluid">
@@ -77,7 +62,8 @@ String id=(String)session.getAttribute("id");
 						    <a href="register.jsp">회원가입</a>
 						</c:if>
 						<c:if test="${!empty id}">
-							<a href="login.jsp"><%=id %></a>
+						<c:set var="loginid" value="${id}" scope="session"/>
+							<a href="login.jsp"><c:out value="${loginid}"></c:out>  </a>
 						    <a href="register.jsp">마이페이지</a>
 						    <a href="logout.do">로그아웃</a>
 						</c:if>
@@ -282,66 +268,8 @@ String id=(String)session.getAttribute("id");
 			</form>
 		</div>
 		<!-- End .header-search-form -->
+
             
-            <div class="main">
-                <div class="page-header largest parallax custom text-center" style="background-image:url(assets/images/page-header-bg.jpg)" data-0="background-position:50% 50%;" data-top-bottom="background-position:50% 100%">
-                    <div class="container-fluid">
-                        <h1>Elements <small>(Header 8)</small></h1>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li class="active">Header Version 8</li>
-                        </ol>
-                    </div><!-- End .container -->
-                </div><!-- End .page-header -->
-
-                <div class="container-fluid">
-
-                    <div class="mb200"></div><!-- margin -->
-                    <div class="mb200"></div><!-- margin -->
-                </div><!-- End .container-fluid -->
-
-                <div class="mb100"></div><!-- margin -->
-            </div><!-- End .main -->
-
-            <footer class="footer">
-               <div class="footer-bottom">
-                    <div class="container-fluid">
-                        <div class="footer-left">
-                            <div class="social-icons">
-                                <label>Find Us:</label>
-                                <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="social-icon" title="Github"><i class="fa fa-github"></i></a>
-                                <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="social-icon" title="Tumblr"><i class="fa fa-tumblr"></i></a>
-                                <a href="#" class="social-icon" title="Flickr"><i class="fa fa-flickr"></i></a>
-                                <a href="#" class="social-icon" title="Snapchat"><i class="fa fa-snapchat"></i></a>
-                                <a href="#" class="social-icon" title="Vine"><i class="fa fa-vine"></i></a>
-                            </div><!-- End .social-icons -->
-                        </div><!-- End .footer-left -->
-
-                        <div class="footer-right">
-                            <ul class="footer-menu">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">FaQS</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                            <p class="copyright"><strong>Bold</strong> multipurpose template - All rights reserved - 2016 &copy; Made by <a href="http://eonythemes.com" target="_blank" title="eonythemes">eonythemes</a>.</p>
-                        </div><!-- End .footer-right -->
-                    </div><!-- End .container-fluid -->
-                </div><!-- End .footer-bottom -->
-            </footer><!-- End .footer -->
-        </div><!-- End #wrapper -->
-        
-        <a id="scroll-top" href="#top" title="Scroll top"><i class="fa fa-angle-up"></i></a>
-
-        <!-- End -->
-        <script src="assets/js/plugins.min.js"></script>
-        <script src="assets/js/main.js"></script>
 
     </body>
 </html>
