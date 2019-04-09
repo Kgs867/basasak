@@ -153,12 +153,12 @@
 								<ul class="pagination">
 									<c:if test="${pgList.startPage > pgList.blockSize}">
 										<a
-											href="/JspBoard2/list.do?pageNum=${pgList.startPage-pgList.blockSize}&search=${search}&searchtext=${searchtext}">[이전]</a>
+											href="/Project/cookielist.do?pageNum=${pgList.startPage-pgList.blockSize}&search=${search}&searchtext=${searchtext}">[이전]</a>
 									</c:if>
 									<c:forEach var="i" begin="${pgList.startPage}"
 										end="${pgList.endPage}">
 										<a
-											href="/JspBoard2/list.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><c:if
+											href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><c:if
 												test="${pgList.currentPage==i}">
 												<font color="red"><b>[${i}]</b></font>
 											</c:if> <c:if test="${pgList.currentPage!=i}">[${i}]</c:if></a>
@@ -172,7 +172,7 @@
 									</a></li>
 									<c:if test="${pgList.endPage<pgList.pageCount}">
 										<a
-											href="/JspBoard2/list.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
+											href="/Project/cookielist.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
 									</c:if>
 								</ul>
 							</nav>
