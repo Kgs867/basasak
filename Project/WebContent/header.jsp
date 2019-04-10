@@ -36,7 +36,6 @@
 <script src="index.js"></script>
 </head>
 <body>
-
 		<header class="header header3 white sticky-header">
 			<div class="header-top">
 				<div class="container-fluid">
@@ -57,8 +56,8 @@
 						    <a href="register.jsp">회원가입</a>
 						</c:if>
 						<c:if test="${!empty id}">
-						<c:set var="loginid" value="${id}" scope="session"/>
-							<a href="login.jsp"><c:out value="${loginid}"></c:out>  </a>
+						
+							<a href="login.jsp"><c:out value="${id}"></c:out>  </a>
 						    <a href="register.jsp">마이페이지</a>
 						    <a href="logout.do">로그아웃</a>
 						</c:if>

@@ -23,8 +23,8 @@ public class LoginAction implements CommandAction {
 		
 		login=dbpro.MemberLogin(article);
 		if (login) {
-			request.setAttribute("login", login);
-			request.setAttribute("id", request.getParameter("input_id"));
+			request.getSession().setAttribute("login", login);
+			request.getSession().setAttribute("id", request.getParameter("input_id"));
 			
 		}else if(login){
 			login=false;

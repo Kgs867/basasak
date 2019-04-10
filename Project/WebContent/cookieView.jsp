@@ -173,8 +173,8 @@
                                     <input type="hidden" name="c_product" valus=${article.c_product}>
                                     <input type="hidden" name="c_price" valus=${article.c_price}>
                                     <input type="hidden" name="c_serial" valus=${article.c_serial}>
-                                    <input type="hidden" name="c_product" valus=${article.c_product}>
-                                    <a href="#" class="btn btn-custom">Add to Cart</a>
+                                    <input type="hidden" name="loginid" valus=${article.c_product}>
+                                    <a href="/Project/addcartPro.do" class="btn btn-custom">${loginid}</a>
                                     <a href="#" class="btn btn-white hidden-xs">Add to Wishlist</a>
                                 </div><!-- End .product-action -->
                                 </form>
