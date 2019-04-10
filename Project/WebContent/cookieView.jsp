@@ -165,16 +165,16 @@
                                         </div><!-- End .filter-color-container -->
                                     </div><!-- End .col-xs-6 -->
                                 </div><!-- End .row -->
-								<form>
+								<form action="/Project/addcartPro.do" method="post">
                                 <div class="product-action">
                                     <div class="product-quantity">
                                         <input type="number" name="count" class="form-control" min="1" max="999" placeholder="1">
                                     </div><!-- end .product-quantity -->
-                                    <input type="hidden" name="c_product" valus=${article.c_product}>
-                                    <input type="hidden" name="c_price" valus=${article.c_price}>
-                                    <input type="hidden" name="c_serial" valus=${article.c_serial}>
-                                    <input type="hidden" name="loginid" valus=${article.c_product}>
-                                    <a href="/Project/addcartPro.do" class="btn btn-custom">${loginid}</a>
+                                    <input type="hidden" name="c_product" value=${article.c_product }>
+                                    <input type="hidden" name="c_price" value=${article.c_price }>
+                                    <input type="hidden" name="c_serial" value=${article.c_serial }>
+                                    <input type="hidden" name="loginid" value=${id }>
+                                    <button type="submit" class="btn btn-custom">Add Cart</button>
                                     <a href="#" class="btn btn-white hidden-xs">Add to Wishlist</a>
                                 </div><!-- End .product-action -->
                                 </form>

@@ -100,7 +100,7 @@
 							<a href="#" data-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false"> <span> <i
 									class="fa fa-shopping-basket"></i> <span
-									class="dcart-total-count">2</span>
+									class="dcart-total-count">${sb_count}</span>
 							</span>
 							</a>
 

@@ -287,4 +287,59 @@ public class CookieDAO {
 		}
 		return article;
 	}
+	public void addCart(CartDTO article) {
+		String countsb = null;
+		
+		try {
+			con = pool.getConnection();
+			sql="select max(substr(sb_serial,-3)) from shopb";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				System.out.println(rs.getString(1));
+				countsb=rs.getString(1);
+				if (countsb!=null) {
+					countsb=article.getM_id()+String.format("%03d", rs.getInt(1)+1);
+				}else {
+					countsb=article.getM_id()+String.format("%03d", 1);
+				}
+			}
+			
+			sql="insert into shopb(sb_serial,sb_count,sb_price,sb_point,m_id,c_serial)values(?,?,?,?,?,?)";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, countsb);
+			pstmt.setInt(2, article.getSb_count());
+			pstmt.setInt(3, (article.getSb_price()*article.getSb_count()));
+			if (article.getSb_point()==0) {
+				System.out.println("point 0");
+				pstmt.setInt(4, 0);
+			}else {	pstmt.setInt(4, article.getSb_point());}
+			pstmt.setString(5, article.getM_id());
+			pstmt.setString(6, article.getC_serial());
+			int add=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("addCart() 에러" + e);
+		} finally {
+
+		}
+	}
+	
+	public int cartCount(String id) {
+		int count=0;
+		try {
+			con = pool.getConnection();
+			sql="select count(*) from shopb where m_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				count=rs.getInt(1);
+			}
+		} catch (Exception e) {
+			System.out.println("cartCount 에러"+e);
+		}
+		return count;
+	}
 }
