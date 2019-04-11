@@ -15,7 +15,10 @@
         <link rel="stylesheet" href="assets/css/settings.css">
         <link rel="stylesheet" href="assets/css/layers.css">
         <link rel="stylesheet" href="assets/css/navigation.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css?ver=1">
+        
+        <!-- basasak css 추가 -->
+        <link rel="stylesheet" href="assets/css/basasak.css?ver=1">
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -37,54 +40,30 @@
             <header class="header header3 white sticky-header">
                 <div class="header-top">
                     <div class="container-fluid">
-                        
-                      
-
-                        <ul class="top-menu visible-lg pull-left">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-
-                        <div class="top-links pull-right">
-                            <a href="login.jsp">로그인</a>
-                            <a href="register.jsp">회원가입</a>
-                        </div><!-- End .top-links -->
-                    </div><!-- End .container-fluid -->
-                </div><!-- End .header-top -->
-
-                <div class="header-inner">
-                    <div class="container-fluid">
-                        <div class="header-left">
-                            <div class="social-icons hidden-xs pull-left">
-                                <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                     
+                        <div class="social-icons hidden-xs pull-left">
+                             <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
                                 <a href="#" class="social-icon" title="Github"><i class="fa fa-github"></i></a>
                                 <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                                 <a href="#" class="social-icon" title="Instagram"><i class="fa fa-instagram"></i></a>
                                 <a href="#" class="social-icon" title="Youtube"><i class="fa fa-youtube"></i></a>
-                            </div><!-- End .social-icons -->
-                        </div><!-- End .header-left -->
+                            
+                        </div>
 
-                        <div class="header-center">
-                            <a href="index.html" class="site-logo" title="Bold - Multipurpose Template">
-                                <img src="assets/images/logo2.png" data-rjs="3" alt="Bold Logo">
-                                <span class="sr-only">Bold</span>
-                            </a>
-                        </div><!-- End .header-center -->
-
-                        <div class="header-right">
-                            <div class="dropdown header-dropdown cart-dropdown pull-right">
-                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="top-links pull-right">
+                            <a href="#">Home</a>
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            <div class="header-right header-cart-wrap">
+                            <div class="dropdown header-dropdown cart-dropdown pull-right header-cart-wrap2">
+                            <a href="#" class="header-cart-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                
                                     <span>
                                         <i class="fa fa-shopping-basket"></i>
                                         <span class="dcart-total-count">2</span>
                                     </span>
-                                </a>
-
-                                <div class="dropdown-menu">
+                            </a>
+                            <div class="dropdown-menu">
                                     <p>2 item(s) in your cart - <span>$279.00</span></p>
                                     <div class="dcart-products">
                                         <div class="product">
@@ -137,9 +116,32 @@
                                         </div><!-- End .dcart-action -->
                                     </div><!-- End .dcart-action-container -->
                                 </div><!-- End .dropdown-menu -->
-                            </div><!-- End .cartdropdown -->
+                                </div><!-- End .cartdropdown -->
                         </div><!-- End .header-right -->
+                         
+                               
+                            
+                        </div><!-- End .top-links -->
                     </div><!-- End .container-fluid -->
+                </div><!-- End .header-top -->
+
+                <div class="header-inner">
+                  <a href="index.html" class="site-logo" title="Bold - Multipurpose Template">
+                                <img src="assets/images/mainLogo1.png" data-rjs="3" alt="Bold Logo">
+                                <span class="sr-only">Bold</span>
+                            </a>
+                 <!--    <div class="container-fluid">
+                       
+
+                        <div class="header">
+                            <a href="index.html" class="site-logo" title="Bold - Multipurpose Template">
+                                <img src="assets/images/mainLogo.png" data-rjs="3" alt="Bold Logo">
+                                <span class="sr-only">Bold</span>
+                            </a>
+                        </div>End .header-center
+
+                        
+                    </div> --><!-- End .container-fluid -->
                 </div><!-- End .header-inner -->
 
                 <div class="header-bottom custom">
@@ -222,7 +224,7 @@
                             <li data-index="rs-1" data-transition="slideoverup" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1200"  data-thumb="assets/images/homepages/index/slide1-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Bold">
 
                                 <!-- MAIN IMAGE -->
-                                <img src="assets/images/homepages/index/MainTest.png"  alt="Slider bg 1"  data-bgposition="center center" data-duration="11000" data-ease="Linear.easeNone" class="rev-slidebg" data-no-retina>
+                                <img src="assets/images/homepages/index/mainslide２.png"  alt="Slider bg 1"  data-bgposition="center center" data-duration="11000" data-ease="Linear.easeNone" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 - overlay -->
@@ -289,7 +291,8 @@
                                     data-splitin="none" 
                                     data-splitout="none" 
                                     data-responsive_offset="on" 
-                                    style="z-index: 6; white-space: nowrap;">Creative &amp; Fresh Template
+                                    style="z-index: 6; white-space: nowrap;">
+                                          <b style="font-size:20px">역대 이런 사이트는 없었다</b> <p>맛있는 소리 바사삭!</p>
                                 </div>
 
                                 <!-- LAYER NR. 4 -->
@@ -310,7 +313,7 @@
                                     data-splitout="none" 
                                     data-responsive_offset="on" 
                                     style="z-index: 6; white-space: nowrap;"
-                                    href="#">See Features
+                                    href="#">자세히보기
                                 </a>
 
                                  <!-- LAYER NR. 5 -->
@@ -338,7 +341,7 @@
                             <li data-index="rs-2" data-transition="slideoverdown" data-slotamount="7" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1200" data-thumb="assets/images/homepages/index/slide2-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Purchase">
 
                                 <!-- MAIN IMAGE -->
-                                <img src="assets/images/homepages/index/slide2.jpg"  alt="Slider bg 2"  data-bgposition="center center" data-duration="11000" data-ease="Linear.easeNone" class="rev-slidebg" data-no-retina>
+                                <img src="assets/images/homepages/index/slide1.png"  alt="Slider bg 2"  data-bgposition="center center" data-duration="11000" data-ease="Linear.easeNone" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 - overlay -->
@@ -459,21 +462,22 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service">
-                                <div class="service-icon custom wow rotateIn">
-                                    <i class="fa fa-diamond"></i>
-                                </div><!-- End .service-icon -->
-                                <h3 class="service-title"><a href="#">Web Design</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
+                            
+                                <!-- <div class="service-icon custom wow rotateIn"> -->
+                                    <img src="assets/images/icon1.png" style="width:25%;"/>
+                                <!-- </div>End .service-icon -->
+                                <h3 class="service-title"><a href="#">신규가입혜택</a></h3>
+                                <p>신규로 가입하는 회원분들만 받을 수 있는 특별한 혜택!</p>
                             </div><!-- End .service -->
                         </div><!-- End .col-md-3 -->
 
                         <div class="col-md-3 col-sm-6">
                             <div class="service">
-                                <div class="service-icon custom wow rotateIn" data-wow-delay="0.15s">
-                                    <i class="fa fa-edit"></i>
-                                </div><!-- End .service-icon -->
-                                <h3 class="service-title"><a href="#">Advertisement</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
+                                <!-- <div class="service-icon custom wow rotateIn" data-wow-delay="0.15s"> -->
+                                    <img src="assets/images/icon3.png" style="width:25%;"/>
+                                <!--</div> End .service-icon -->
+                                <h3 class="service-title"><a href="#">적립금혜택</a></h3>
+                                <p>구매할수록 쌓이는 적립금으로 과자를 무료로 구매!</p>
                             </div><!-- End .service -->
                         </div><!-- End .col-md-3 -->
 
@@ -481,21 +485,21 @@
 
                         <div class="col-md-3 col-sm-6">
                             <div class="service">
-                                <div class="service-icon custom wow rotateIn" data-wow-delay="0.3s">
-                                    <i class="fa fa-eye"></i>
-                                </div><!-- End .service-icon -->
-                                <h3 class="service-title"><a href="#">Social Media</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
+                                <!-- <div class="service-icon custom wow rotateIn" data-wow-delay="0.3s"> -->
+                                   <img src="assets/images/icon4.png" style="width:25%;"/>
+                                <!--</div> End .service-icon -->
+                                <h3 class="service-title"><a href="#">배송비무료</a></h3>
+                                <p>30,000원 이상 구매시 배송비 무료</p>
                             </div><!-- End .service -->
                         </div><!-- End .col-md-3 -->
 
                         <div class="col-md-3 col-sm-6">
                             <div class="service">
-                                <div class="service-icon custom wow rotateIn" data-wow-delay="0.45s">
-                                    <i class="fa fa-cogs"></i>
-                                </div><!-- End .service-icon -->
-                                <h3 class="service-title"><a href="#">Support</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipi sunt nisi id magni dignissimos rem.</p>
+                                <!-- <div class="service-icon custom wow rotateIn" data-wow-delay="0.45s"> -->
+                                    <img src="assets/images/icon2.png" style="width:25%;"/>
+                                <!--</div> End .service-icon -->
+                                <h3 class="service-title"><a href="#">리뷰이벤트</a></h3>
+                                <p>상품 후기를 남겨주신 분께는 추가 적립금 지급~</p>
                             </div><!-- End .service -->
                         </div><!-- End .col-md-3 -->
                     </div><!-- End .row -->
@@ -507,12 +511,12 @@
                 <div class="mb60 mb50-sm"></div><!-- margin -->
 
                 <div class="container-fluid text-center">
-                    <h2 class="title custom text-center">이번주 HOT 상품!</h2>
+                    <h2 class="title custom text-center">이번주 베스트 상품</h2>
                     <ul id="portfolio-filter">
-                        <li class="active"><a href="#" data-filter="*">전체</a></li>
-                        <li><a href="#" data-filter=".snack">스낵</a></li>
-                        <li><a href="#" data-filter=".marketing">인기상품</a></li>
-                        <li><a href="#" data-filter=".video">이벤트중인상품</a></li>
+                        <li class="active"><a href="#" data-filter="*">비스켓</a></li>
+                        <li><a href="#" data-filter=".web-design">스낵</a></li>
+                        <li><a href="#" data-filter=".marketing">초코</a></li>
+                        <li><a href="#" data-filter=".video">젤리</a></li>
                         <!-- <li><a href="#" data-filter=".wordpress">Wordpress</a></li>
                         <li><a href="#" data-filter=".logo-design">Logo Design</a></li> -->
                     </ul>
@@ -521,129 +525,129 @@
                 <div class="container-fluid">
                     <div class="portfolio-row">
                         <div id="portfolio-item-container" class="popup-gallery max-col-4" data-layoutmode="fitRows">
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item web-design wordpress">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/구운인절미.jpg" alt="Portfolio Name">
+                                    <img src="assets/images/cookie1.png" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/구운인절미.jpg" data-thumb="assets/images/portfolio/grid/구운인절미.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/item1.jpg" data-thumb="assets/images/portfolio/grid/item1.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">구운인절미</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">촉촉하고 부드러운 리얼케이크</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
-                                        <a href="#">Develop</a>
+                                        <a href="#">오예스</a>
+                                        
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item web-design marketing">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/더블칩.jpg" alt="Portfolio Name">
+                                    <img src="assets/images/cookie2.png" alt="Portfolio Name">
                                      <figcaption>
-                                        <a href="http://www.youtube.com/watch?v=jt8YicG-F6c" data-thumb="assets/images/portfolio/grid/더블칩.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="http://www.youtube.com/watch?v=jt8YicG-F6c" data-thumb="assets/images/portfolio/grid/item2.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">더블칩</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">저온숙성으로 더욱더 부드럽게 즐기세요</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
+                                        <a href="#">후렌치파이</a>
+                                        
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+
+                            <div class="portfolio-item wordpress">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/item3.jpg" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/item3.jpg" data-thumb="assets/images/portfolio/grid/item3.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">Lorem ipsum dolor sit amet, consec tetur adipis</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">Design</a>,
                                         <a href="#">Develop</a>
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item web-design wordpress">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/맛동산.png" alt="Portfolio Name">
+                                    <img src="assets/images/portfolio/grid/item4.jpg" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/맛동산.png" data-thumb="assets/images/portfolio/grid/맛동산.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/item4.jpg" data-thumb="assets/images/portfolio/grid/item4.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">맛동산</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">Lorem ipsum dolor sit amet, consec tetur adipis</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
+                                        <a href="#">Design</a>,
                                         <a href="#">Develop</a>
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item logo-design video marketing">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/아그칩.png" alt="Portfolio Name">
+                                    <img src="assets/images/portfolio/grid/item5.jpg" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/아그칩.png" data-thumb="assets/images/portfolio/grid/아그칩.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/item5.jpg" data-thumb="assets/images/portfolio/grid/item5.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">아그칩</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">Lorem ipsum dolor sit amet, consec tetur adipis</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
+                                        <a href="#">Design</a>,
                                         <a href="#">Develop</a>
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item logo-design wordpress">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/야채타임.jpg" alt="Portfolio Name">
+                                    <img src="assets/images/portfolio/grid/item6.jpg" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/야채타임.jpg" data-thumb="assets/images/portfolio/grid/야채타임.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/item6.jpg" data-thumb="assets/images/portfolio/grid/item6.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">야채타임</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">Lorem ipsum dolor sit amet, consec tetur adipis</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
+                                        <a href="#">Design</a>,
                                         <a href="#">Develop</a>
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item video marketing">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/에이스.jpg" alt="Portfolio Name">
+                                    <img src="assets/images/portfolio/grid/item7.jpg" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/에이스.jpg" data-thumb="assets/images/portfolio/grid/에이스.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/item7.jpg" data-thumb="assets/images/portfolio/grid/item7.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">에이스</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">Lorem ipsum dolor sit amet, consec tetur adipis</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
+                                        <a href="#">Design</a>,
                                         <a href="#">Develop</a>
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item snack">
+                            <div class="portfolio-item wordpress">
                                 <figure>
-                                    <img src="assets/images/portfolio/grid/허니버터칩.png" alt="Portfolio Name">
+                                    <img src="assets/images/portfolio/grid/item8.jpg" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/허니버터칩.png" data-thumb="assets/images/portfolio/grid/허니버터칩.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/item8.jpg" data-thumb="assets/images/portfolio/grid/item8.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">허니버터칩</a></h3>
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">Lorem ipsum dolor sit amet, consec tetur adipis</a></h3>
                                     <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
-                                        <a href="#">Develop</a>
-                                    </div><!-- End .portfolio-tags -->
-                                </div><!-- End .portfolio-meta -->
-                            </div><!-- End .portfolio-item -->
-
-                            <div class="portfolio-item snack">
-                                <figure>
-                                    <img src="assets/images/portfolio/grid/타코야끼볼.jpg" alt="Portfolio Name">
-                                    <figcaption>
-                                        <a href="assets/images/portfolio/grid/타코야끼볼.jpg" data-thumb="assets/images/portfolio/grid/타코야끼볼.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
-                                    </figcaption>
-                                </figure>
-                                <div class="portfolio-meta">
-                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">타코야끼볼</a></h3>
-                                    <div class="portfolio-tags">
-                                        <a href="#">snack</a>,
+                                        <a href="#">Design</a>,
                                         <a href="#">Develop</a>
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
@@ -775,7 +779,7 @@
                                 <article class="entry entry-grid">
                                     <div class="entry-media">
                                         <figure>
-                                            <a href="single.html"><img src="assets/images/blog/yang.jpg" alt="Post image"></a>
+                                            <a href="single.html"><img src="assets/images/blog/post1.jpg" alt="Post image"></a>
                                         </figure>
                                     </div><!-- End .entry-media -->
 
@@ -790,9 +794,9 @@
                                         </div><!-- End .entry-meta -->
                                         
                                         <div class="entry-content-wrapper">
-                                            <h2 class="entry-title"><a href="single.html">이것은 연양갱인가? 아이스크림인가? 해태‘연양갱바’출시</a></h2>
+                                            <h2 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consec tetur elit.</a></h2>
                                             <div class="entry-content">
-                                                <p>아이스크림 냉동고에 연양갱이 들어있어도 놀라지 마시라. 해태제과(대표이사 신정훈)가 연양갱을 아이스크림으로 변신시킨 ‘연양갱바’를 출시했다. 연양갱을 차갑게 먹는 듯 달달한 팥맛에 쫀득함까지 그대로다.</p>
+                                                <p>Molestiae neque doloremque, voluptatum nostrum praesentium esse fugiat. Deserunt praese ntiumin architecto expedit.</p>
                                                 <a href="#" class="readmore">Read more<i class="fa fa-angle-right"></i></a>
                                             </div><!-- End .entry-content -->
                                         </div><!-- End .entry-content-wrapper -->
@@ -831,7 +835,7 @@
                                         </div><!-- End .entry-meta -->
                                         
                                         <div class="entry-content-wrapper">
-                                            <h2 class="entry-title"><a href="single.html"></a></h2>
+                                            <h2 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consec tetur elit.</a></h2>
                                             <div class="entry-content">
                                                 <p>Molestiae neque doloremque, voluptatum nostrum praesentium esse fugiat. Deserunt praese ntiumin architecto expedit.</p>
                                                 <a href="#" class="readmore">Read more<i class="fa fa-angle-right"></i></a>
@@ -1121,6 +1125,23 @@
 
             })();
         </script>
+        
+        <script type="text/javascript">
+		$(document).ready(function() {
+			$(".gnb").hover(function() {
+				$(".snb").stop().slideDown(400);
+			}, function() {
+				$(".snb").stop().slideUp(600);
+			});
+
+			$(".snb").hover(function() {
+				$(".snb").stop().slideDown(400);
+			}, function() {
+				$(".snb").stop().slideUp(600);
+			});
+		});
+	</script>
+        
 
     </body>
 </html>

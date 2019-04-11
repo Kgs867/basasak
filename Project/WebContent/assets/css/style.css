@@ -94,7 +94,7 @@ body {
 #wrapper {
   width: 100%;
   position: relative;
-  background-color: #e8ebec;
+  background-color: #fff;
 }
 
 @media (min-width: 1200px) {
@@ -727,7 +727,7 @@ h6,
 }
 
 a {
-  color: #673AB7;
+  color: #fde72f;
   transition: color 0.4s;
 }
 
@@ -992,7 +992,7 @@ p {
 /* Elements Titles */
 .title {
   position: relative;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1rem;
 }
 
 .title:after {
@@ -1017,7 +1017,7 @@ p {
 }
 
 .title.custom:after {
-  background-color: #673AB7;
+  background-color: #fde72f;
 }
 
 .title.custom2:after {
@@ -1999,10 +1999,10 @@ p {
 }
 
 /* Button Colors */
-.btn.btn-custom {
-  color: #fff;
-  background-color: #673AB7;
-  border-color: #673AB7;
+.btn.btn-custom {/* 카트 버튼컬러  */
+  color: #632708;
+  background-color: #fde72f;
+  border-color: #fde72f;
 }
 
 .btn.btn-custom:hover, .btn.btn-custom:focus {
@@ -2023,10 +2023,10 @@ p {
   border-color: #673AB7;
 }
 
-.btn.btn-custom2 {
-  color: #fff;
-  background-color: #E91E63;
-  border-color: #E91E63;
+.btn.btn-custom2 {/* 카테고리 버튼 컬러 */
+  color: #fde72f;
+  background-color: #632708;
+  border-color: #632708;
 }
 
 .btn.btn-custom2:hover, .btn.btn-custom2:focus {
@@ -3818,7 +3818,7 @@ label.error {
 }
 
 .callout.custom {
-  background-color: #673AB7;
+  background-color: #ffd658;
   color: #9f80d7;
 }
 
@@ -4554,7 +4554,7 @@ label.error {
 .header-top .header-dropdown > a {
   display: inline-block;
   padding: 0.5rem 0.7rem;
-  background-color: #c9d0d3;
+  background-color: #fff;
   border: none;
 }
 
@@ -4591,8 +4591,8 @@ label.error {
 }
 
 .header-top .header-dropdown.open > a, .header-top .header-dropdown:hover > a, .header-top .header-dropdown:focus > a {
-  background-color: #673AB7;
-  border-color: #673AB7;
+  /* background-color: #673AB7; 카트 호버컬러 */
+  border-color: #ffd658;
   color: #fff;
 }
 
@@ -4648,9 +4648,10 @@ label.error {
 }
 
 .header-top .top-links a {
-  color: #673AB7;
+  color: #632708;
   display: inline-block;
   font-size: 0.85rem;
+  size-weight:bold;/* 카테고리 호버 폰트 굵기 */
 }
 
 .header-top .top-links a:hover, .header-top .top-links a:focus {
@@ -4701,15 +4702,16 @@ label.error {
 }
 
 .header-top .social-icons .social-icon:hover, .header-top .social-icons .social-icon:focus {
-  background-color: #673AB7;
+  background-color: #fde72f;/* 아이콘 백그라운드 컬러 */
   color: #fff;
-  border-color: #673AB7;
+  border-color: #fde72f;
   box-shadow: none;
 }
 
 @media (min-width: 768px) {
   .header-top .social-icons + .top-links {
     margin-left: 20px;
+    margin-bottom: -5px;
   }
 }
 
@@ -4945,9 +4947,9 @@ label.error {
 .dropdown.cart-dropdown > a {
   position: relative;
   display: inline-block;
-  font-size: 2.25rem;
+  font-size: 1.3rem;
   line-height: 1;
-  color: #673AB7;
+  color: #632708;
   padding-top: 2.85rem;
   padding-bottom: 2.85rem;
   padding-left: 2rem;
@@ -4955,8 +4957,8 @@ label.error {
 
 @media (min-width: 992px) {
   .dropdown.cart-dropdown > a {
-    padding-top: 0rem; /*2.7*/
-    padding-bottom: 0rem; /*2.9*/
+    padding-top: 2.7rem;
+    padding-bottom: 2.9rem;
   }
 }
 
@@ -4968,7 +4970,7 @@ label.error {
 .dropdown.cart-dropdown > a .dcart-total-count {
   display: inline-block;
   transition: all 0.65s cubic-bezier(0.92, 0.17, 0.29, 0.93) 0s;
-  min-width: 1.1rem;
+  min-width: 0.6rem;
   position: absolute;
   left: 50%;
   bottom: 0.75rem;
@@ -4976,11 +4978,10 @@ label.error {
   transform: translateX(-50%);
   border-radius: 50%;
   background-color: #fff;
-  color: #673AB7;
+  color: #632708;
   text-align: center;
   font-weight: 600;
   font-size: 0.75rem;
-  line-height: 1.1rem;
 }
 
 .dropdown.cart-dropdown.open > a, .dropdown.cart-dropdown:hover > a, .dropdown.cart-dropdown:focus > a {
@@ -5005,7 +5006,7 @@ label.error {
   right: 0;
   padding: 1rem 1.1rem 1.1rem;
   width: auto;
-  border-top: 0.2rem solid #673AB7;
+  border-top: 0.2rem solid #fde72f;
 }
 
 @media (min-width: 768px) {
@@ -5013,6 +5014,7 @@ label.error {
     left: auto;
     right: 0;
     width: 340px;
+    top:27px;
   }
 }
 
@@ -5511,7 +5513,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
   border: none;
   border-radius: 0;
   background-color: #fff;
-  border-top: 0.2rem solid #673AB7;
+  border-top: 0.25rem solid #fff6a8;/* 카테고리 드롭컬러 */
 }
 
 @media (min-width: 992px) {
@@ -5521,20 +5523,22 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .navbar-nav .dropdown-menu > li > a {
-  color: #3e3e3e;
+  color: #7c7c7c;/* 카테고리 폰트 컬러 */
   padding: 0.5rem 1rem;
   font-weight: 600;
   white-space: normal;
 }
 
 .navbar-nav .dropdown-menu > li > a:hover, .navbar-nav .dropdown-menu > li > a:focus {
-  color: #fff;
-  background-color: #673AB7;
+  color: #632708;
+  background-color: #fde72f;
+  
 }
 
 .navbar-nav .dropdown-menu > li.open > a, .navbar-nav .dropdown-menu > li.open > a:hover, .navbar-nav .dropdown-menu > li.open > a:focus {
-  color: #fff;
-  background-color: #673AB7;
+  color: #632708;
+  background-color: #fde72f;
+  font-weight:bold;
 }
 
 .navbar-nav .dropdown-menu.megamenu {
@@ -5596,8 +5600,8 @@ Animations - add these clases to the parent element - Navbar Or dropdown
   .header-bottom .navbar-nav.navbar-nav-table {
     display: table;
     width: 100%;
-    border-left: 1px solid #b9c2c5;
-    border-right: 1px solid #b9c2c5;
+/*     border-left: 1px solid #b9c2c5;
+    border-right: 1px solid #b9c2c5; 카테고리 표*/
   }
   .header-bottom .navbar-nav.navbar-nav-table > li {
     float: none !important;
@@ -5620,9 +5624,9 @@ Animations - add these clases to the parent element - Navbar Or dropdown
   }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .header-bottom .navbar-nav.navbar-nav-table > li + li {
-    border-left: 1px solid #b9c2c5;
+    border-left: 1px solid #b9c2c5; 카테고리 표*/
   }
 }
 
@@ -5807,7 +5811,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 
 .header.header2 .navbar-nav > li.open > a, .header.header2 .navbar-nav > li.open > a:hover, .header.header2 .navbar-nav > li.open > a:focus, .header.header2 .navbar-nav > li.active > a, .header.header2 .navbar-nav > li.active > a:hover, .header.header2 .navbar-nav > li.active > a:focus {
   color: #fff;
-  background: #673AB7;
+  background: #fde72f;
 }
 
 @media (min-width: 768px) {
@@ -5885,7 +5889,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 @media (min-width: 768px) {
   .header.header2.transparent.light .navbar-nav > li.open > a, .header.header2.transparent.light .navbar-nav > li.open > a:hover, .header.header2.transparent.light .navbar-nav > li.open > a:focus, .header.header2.transparent.light .navbar-nav > li.active > a, .header.header2.transparent.light .navbar-nav > li.active > a:hover, .header.header2.transparent.light .navbar-nav > li.active > a:focus {
     background: #fff;
-    color: #673AB7;
+    color: #fde72f;
   }
 }
 
@@ -5933,7 +5937,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 
 .header.header3 .header-inner .social-icons .social-icon:hover, .header.header3 .header-inner .social-icons .social-icon:focus {
   color: #fff;
-  background-color: #673AB7;
+  background-color: #fde72f;
 }
 
 .header.header3 .header-inner .social-icons.pull-left .social-icon:first-child {
@@ -5949,7 +5953,6 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 .header.header3 .header-right {
   display: table-cell;
   vertical-align: middle;
-  width: 33.3%;
 }
 
 .header.header3 .header-left:after,
@@ -6412,14 +6415,14 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 
 /* Header Top - Custom*/
 .header-top.custom {
-  background-color: #673AB7;
+  background-color: #fde72f;
   border-bottom: none;
 }
 
 .header-top.custom .header-dropdown > a {
   color: #f1f1f1;
-  background-color: #512e90;
-  border-color: #5c34a4;
+  background-color: #fde72f;
+  border-color: #fde72f;
 }
 
 .header-top.custom .header-dropdown:nth-of-type(2n) > a {
@@ -6428,8 +6431,8 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 
 .header-top.custom .header-dropdown.open > a, .header-top.custom .header-dropdown:hover > a, .header-top.custom .header-dropdown:focus > a {
   color: #fff;
-  background-color: #5c34a4;
-  border-color: #6338af;
+  background-color: #fde72f;
+  border-color: #fde72f;
 }
 
 .header-top.custom .top-menu li a {
@@ -6437,7 +6440,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .header-top.custom .top-menu li a:before {
-  background-color: #8e69cf;
+  background-color: #fde72f;
 }
 
 .header-top.custom .top-menu li + li:before {
@@ -6445,7 +6448,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .header-top.custom .top-menu li.active a, .header-top.custom .top-menu li:hover a, .header-top.custom .top-menu li:focus a {
-  color: #9f80d7;
+  color: #cda994;
 }
 
 .header-top.custom .top-text {
@@ -6457,7 +6460,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .header-top.custom .top-links a:hover, .header-top.custom .top-links a:focus {
-  color: #9f80d7;
+  color: #cda994;
 }
 
 .header-top.custom .top-links a + a:before {
@@ -6466,12 +6469,12 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 
 .header-top.custom .social-icons .social-icon {
   color: #fff;
-  border-color: #764ac6;
+  border-color: #fde72f;
 }
 
 .header-top.custom .social-icons .social-icon:hover, .header-top.custom .social-icons .social-icon:focus {
-  background-color: #5c34a4;
-  border-color: #5c34a4;
+  background-color: #fde72f;
+  border-color: #fde72f;
 }
 
 /* Header Top Dark */
@@ -6482,7 +6485,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 
 .header-top.dark .header-dropdown > a {
   color: #f1f1f1;
-  background-color: #673AB7;
+  background-color: #fde72f;
 }
 
 .header-top.dark .header-dropdown:nth-of-type(2n) > a {
@@ -6492,7 +6495,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 .header-top.dark .header-dropdown.open > a, .header-top.dark .header-dropdown:hover > a, .header-top.dark .header-dropdown:focus > a {
   color: #fff;
   background-color: #5c34a4;
-  border-color: #6338af;
+  border-color: #fde72f;
 }
 
 .header-top.dark .top-menu li a {
@@ -6500,7 +6503,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .header-top.dark .top-menu li.active a, .header-top.dark .top-menu li:hover a, .header-top.dark .top-menu li:focus a {
-  color: #673AB7;
+  color: #fde72f;
 }
 
 .header-top.dark .top-text {
@@ -6512,7 +6515,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .header-top.dark .top-links a:hover, .header-top.dark .top-links a:focus {
-  color: #673AB7;
+  color: #fde72f;
 }
 
 .header-top.dark .top-links a + a:before {
@@ -6525,12 +6528,12 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 .header-top.dark .social-icons .social-icon:hover, .header-top.dark .social-icons .social-icon:focus {
-  border-color: #673AB7;
+  border-color: #fde72f;
 }
 
 /* Header Bottom - Custom */
 .header-bottom.custom {
-  background-color: #673AB7;
+  background-color: #fde72f;
 }
 
 .header-bottom.custom .navbar-toggle {
@@ -6548,17 +6551,17 @@ Animations - add these clases to the parent element - Navbar Or dropdown
     color: #fff;
   }
   .header-bottom.custom .navbar-nav > li.open > a, .header-bottom.custom .navbar-nav > li.open > a:hover, .header-bottom.custom .navbar-nav > li.open > a:focus, .header-bottom.custom .navbar-nav > li.active > a, .header-bottom.custom .navbar-nav > li.active > a:hover, .header-bottom.custom .navbar-nav > li.active > a:focus {
-    color: #ab90dc;
+    color: #ffa700;/* 홈 폰트 색상 */
   }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .header-bottom.custom .navbar-nav.navbar-nav-table {
     border-left-color: #512e90;
     border-right-color: #512e90;
-  }
-  .header-bottom.custom .navbar-nav.navbar-nav-table > li + li {
-    border-left-color: #512e90;
+  } 카테고리 표*/
+ /*  .header-bottom.custom .navbar-nav.navbar-nav-table > li + li {
+    border-left-color: #512e90; 카테고리 표 */
   }
 }
 
@@ -9330,7 +9333,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 --------------------------------------*/
 #portfolio-filter {
   display: inline-block;
-  background-color: #fff;
+  background-color: #fde72f;
   border-radius: 8px;
   margin: 0 0 3rem;
   font-size: 0;
@@ -9380,11 +9383,11 @@ Animations - add these clases to the parent element - Navbar Or dropdown
 }
 
 #portfolio-filter li.active {
-  background-color: #673AB7;
+  background-color: #fff;
 }
 
 #portfolio-filter li.active a {
-  color: #fff;
+  color: #3c3c3c;
 }
 
 #portfolio-item-container {
@@ -9447,7 +9450,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #673AB7;
+  background-color: #fde72f;
   opacity: 0;
   visibility: hidden;
   transition: all 0.65s cubic-bezier(0.92, 0.17, 0.29, 0.93) 0s;
@@ -12292,7 +12295,7 @@ Animations - add these clases to the parent element - Navbar Or dropdown
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
-  background-color: #673AB7;
+  background-color: #7d340e;
   transition: all 0.65s cubic-bezier(0.92, 0.17, 0.29, 0.93) 0s;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
