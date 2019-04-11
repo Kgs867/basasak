@@ -97,7 +97,7 @@
 
 					<div class="header-right">
 						<div class="dropdown header-dropdown cart-dropdown pull-right">
-							<a href="#" data-toggle="dropdown" aria-haspopup="true"
+							<a href="/Project/cartView.do" data-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false"> <span> <i
 									class="fa fa-shopping-basket"></i> <span
 									class="dcart-total-count">${sb_count}</span>
@@ -172,7 +172,7 @@
 									<!-- End .dcart-action-info -->
 
 									<div class="dcart-action">
-										<a href="#" class="btn btn-custom2 btn-sm">View Cart</a> <a
+										<a href="/Project/cartView.do" class="btn btn-custom2 btn-sm">View Cart</a> <a
 											href="#" class="btn btn-custom btn-sm">Checkout</a>
 									</div>
 									<!-- End .dcart-action -->

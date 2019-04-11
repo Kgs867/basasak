@@ -342,4 +342,31 @@ public class CookieDAO {
 		}
 		return count;
 	}
+	
+	public List cartView(String id) {
+			List articleList=null;
+			CartDTO article;
+		try {
+			con = pool.getConnection();
+			sql="select sb_serial,sb_count,sb_price,c_price,c_product from shopb,cookie where shopb.c_serial=cookie.c_serial and m_id=? order by sb_serial asc";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				articleList=new ArrayList();
+				do {
+					article=new CartDTO();
+					article.setSb_count(rs.getInt("sb_count"));
+					article.setSb_price(rs.getInt("sb_price"));
+					article.setC_price(rs.getInt("c_price"));
+					article.setC_product(rs.getString("c_product"));
+					articleList.add(article);
+				} while (rs.next());
+			}
+		} catch (Exception e) {
+			System.out.println("CartView ¿¡·¯"+e);
+		}finally {
+			return articleList;
+		}	
+	}
 }

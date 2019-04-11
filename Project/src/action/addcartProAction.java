@@ -28,7 +28,10 @@ public class addcartProAction implements CommandAction {
 		//BoardDAO°´Ã¼ -> insertArticle(article)=>9°³-->10°³-->12°³(readcount(0),num)		
 		
 		CookieDAO dbpro=new CookieDAO();
+		
 		dbpro.addCart(article);
+		request.getSession().setAttribute("sb_count", dbpro.cartCount(request.getParameter("loginid")));
+		
 		
 		return "/cookielist.do";
 	}

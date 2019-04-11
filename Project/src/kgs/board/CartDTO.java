@@ -1,8 +1,20 @@
 package kgs.board;
 
 public class CartDTO {
-	String sb_serial,m_id,c_serial;	
-	int sb_count,sb_price,sb_point;
+	String sb_serial,m_id,c_serial,c_product;	
+	int sb_count,sb_price,sb_point,c_price;
+	public String getC_product() {
+		return c_product;
+	}
+	public void setC_product(String c_product) {
+		this.c_product = c_product;
+	}
+	public int getC_price() {
+		return c_price;
+	}
+	public void setC_price(int c_price) {
+		this.c_price = c_price;
+	}
 	public String getSb_serial() {
 		return sb_serial;
 	}
