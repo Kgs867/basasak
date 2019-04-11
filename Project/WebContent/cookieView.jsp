@@ -16,7 +16,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        
+        <!-- basasak css 추가 -->
+<link rel="stylesheet" href="assets/css/basasak.css">
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="assets/images/icons/faviconx57.png">
