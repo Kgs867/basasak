@@ -1,8 +1,11 @@
 package action;
 
-import javax.servlet.http.*;
-import kgs.board.*;
 import java.util.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kgs.board.CookieDAO;
 
 
 public class ListAction implements CommandAction {
