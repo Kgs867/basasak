@@ -31,8 +31,8 @@
 
 <!-- Modernizr -->
 <script src="assets/js/modernizr.js"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <script src="index.js"></script>
 </head>
 <body>
