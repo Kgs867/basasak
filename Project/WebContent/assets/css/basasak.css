@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+/* header cart icon 헤더 카트 아이콘 */
+.header-cart-wrap {
+	display: inline-block !important;
+}
+
+.header-cart-wrap2 {
+	display: inline-block;
+}
+
+.header-cart-btn {
+	padding: 0px !important;
+}
+.header.header3 .header-left,
+.header.header3 .header-center,
+.header.header3 .header-right {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 7px;
+  padding-bottom: 7px;
+}
+
+@media (min-width: 768px) {
+  .header-bottom.custom .navbar-nav > li > a {
+    color: #632708;
+  }
+.header.header3 .header-left,
+.header.header3 .header-center,
+.header.header3 .header-right {
+  display: inline;
+  vertical-align: middle;
+}
+@media (min-width: 992px)
+.dropdown.cart-dropdown > a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
