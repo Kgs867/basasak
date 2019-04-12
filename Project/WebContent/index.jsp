@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <!-- basasak css 추가 -->
-<link rel="stylesheet" type="text/css" href="assets/css/basasak.css">
+<link rel="stylesheet" type=text/css href="assets/css/basasak.css">
 
 
 <!-- Favicon -->
@@ -85,7 +85,9 @@
                                    
                                    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
                                                                                                    추   가 
-                                                         ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★-->
+                                                              ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+                                   -->
+                                   
                                 <!-- LAYER NR. 2 -->
                          <!--        <div class="tp-caption tp-resizeme rs-parallaxlevel-0" 
                                     id="slide-1-layer-2" 
@@ -353,16 +355,17 @@
 
 
 
-               <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-                                                                                            추가 
-                              ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★  -->
+               <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+                                                                       추가 
+                                ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+               -->
 
                 <div class="container-fluid text-center">
                     <h2 class="title custom text-center">베스트 상품</h2>
                     <ul id="portfolio-filter" style="border-radius:0px;">
-                        <li class="active"><a href="#" data-filter="*">해태</a></li>
-                        <li class="bingrae"><a href="#" data-filter=".web-design">빙그레</a></li>
-                        <li class="active"><a href="#" data-filter="*">오리온</a></li>
+                        <li class="active"><a href="#" data-filter=".haetae">해태</a></li>
+                        <li class="active"><a href="#" data-filter=".bingrae">빙그레</a></li>
+                        <li class="active"><a href="#" data-filter=".orion">오리온</a></li>
                         <li class="active"><a href="#" data-filter="*">롯데</a></li>
                         <li class="active"><a href="#" data-filter="*">농심</a></li>
                         <li class="active"><a href="#" data-filter="*">노브랜드</a></li>
@@ -380,7 +383,7 @@
                 <div class="container-fluid">
                     <div class="portfolio-row">
                         <div id="portfolio-item-container" class="popup-gallery max-col-4" data-layoutmode="fitRows">
-                            <div class="portfolio-item web-design wordpress">
+                            <div class="portfolio-item haetae wordpress">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/오예스.png" alt="Portfolio Name">
                                     <figcaption>
@@ -396,7 +399,7 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item web-design marketing">
+                            <div class="portfolio-item haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/후렌치파이.png" alt="Portfolio Name">
                                      <figcaption>
@@ -413,11 +416,11 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item wordpress">
+                            <div class="portfolio-item haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/허니버터칩.png" alt="Portfolio Name">
                                     <figcaption>
-                                        <a href="assets/images/portfolio/grid/item3.jpg" data-thumb="assets/images/portfolio/grid/item3.jpg" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                        <a href="assets/images/portfolio/grid/허니버터칩.png" data-thumb="assets/images/portfolio/grid/허니버터칩.png" class="zoom-btn"><i class="fa fa-search"></i></a>
                                     </figcaption>
                                 </figure>
                                 <div class="portfolio-meta">
@@ -429,7 +432,7 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item web-design wordpress">
+                            <div class="portfolio-item haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/빠새.png" alt="Portfolio Name">
                                     <figcaption>
@@ -445,7 +448,7 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item logo-design video marketing">
+                            <div class="portfolio-item haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/맛동산흑당쇼콜라맛.png" alt="Portfolio Name">
                                     <figcaption>
@@ -461,7 +464,7 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item logo-design wordpress">
+                            <div class="portfolio-item  haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/자가비.png" alt="Portfolio Name">
                                     <figcaption>
@@ -477,7 +480,7 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item video marketing">
+                            <div class="portfolio-item haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/홈런볼.png" alt="Portfolio Name">
                                     <figcaption>
@@ -493,7 +496,7 @@
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
 
-                            <div class="portfolio-item wordpress">
+                            <div class="portfolio-item haetae">
                                 <figure>
                                     <img src="assets/images/portfolio/grid/칼로리바란스.png" alt="Portfolio Name">
                                     <figcaption>
@@ -508,6 +511,111 @@
                                     </div><!-- End .portfolio-tags -->
                                 </div><!-- End .portfolio-meta -->
                             </div><!-- End .portfolio-item -->
+                            
+                                  <div class="portfolio-item bingrae">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/꽃게랑.png" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/꽃게랑.png" data-thumb="assets/images/portfolio/grid/꽃게랑.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">가열소금에 구워 더 바삭하고 담백한 꽃게랑</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">꽃게랑</a>
+                                       
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+                            
+                             <div class="portfolio-item bingrae">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/야채타임.png" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/야채타임.png" data-thumb="assets/images/portfolio/grid/야채타임.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">상큼한 야채원료와 천연색소를 사용해서 만든 스낵</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">야채타임</a>
+                                       
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+                            
+                            <div class="portfolio-item bingrae">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/베이컨칩.png" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/베이컨칩.png" data-thumb="assets/images/portfolio/grid/베이컨칩.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">베이컨의 독특한 스모크향이 살아있는 스낵</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">스모키 베이컨 칩</a>
+                                       
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+                            
+                             <div class="portfolio-item bingrae">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/뽀로로와친구들.png" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/뽀로로와친구들.png" data-thumb="assets/images/portfolio/grid/뽀로로와친구들.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">아이들을 위한 믿을 수 있는 영양간식</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">뽀로로와친구들</a>
+                                       
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+                                    
+                           <div class="portfolio-item orion">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/초코파이.png" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/초코파이.png" data-thumb="assets/images/portfolio/grid/초코파이.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">새로운 시작, 오리온 초코파이情</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">오리온 초코파이情</a>
+                                       
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+                            
+                            <div class="portfolio-item orion">
+                                <figure>
+                                    <img src="assets/images/portfolio/grid/바나나초코파이.png" alt="Portfolio Name">
+                                    <figcaption>
+                                        <a href="assets/images/portfolio/grid/바나나초코파이.png" data-thumb="assets/images/portfolio/grid/바나나초코파이.png" class="zoom-btn"><i class="fa fa-search"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <div class="portfolio-meta">
+                                    <h3 class="portfolio-title"><a href="#" title="Portfolio name">초코파이와 바나나의 부드러운 만남</a></h3>
+                                    <div class="portfolio-tags">
+                                        <a href="#">초코파이情 바나나</a>
+                                       
+                                    </div><!-- End .portfolio-tags -->
+                                </div><!-- End .portfolio-meta -->
+                            </div><!-- End .portfolio-item -->
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </div><!-- End .portfolio-item-container -->
                     </div><!-- End .row -->
                 </div><!-- End .container-fluid -->
