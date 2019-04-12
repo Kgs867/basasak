@@ -4,16 +4,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- <c:if test="${empty id}">
-							<a href="login.jsp">로그인</a>
-						    <a href="register.jsp">회원가입</a>
-						</c:if>
-						<c:if test="${!empty id}">
-						
-							<a href="login.jsp"><c:out value="${id}"></c:out>  </a>
-						    <a href="register.jsp">마이페이지</a>
-						    <a href="logout.do">로그아웃</a>
-						</c:if> -->
 <head>
 <meta charset="utf-8">
 <title>Bold - Multipurpose Template</title>
@@ -82,7 +72,7 @@
 							<a href="#" class="header-cart-btn" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <span> <i
 									class="fa fa-shopping-basket"></i> <span
-									class="dcart-total-count">2</span>
+									class="dcart-total-count">${sb_count}</span>
 							</span>
 							</a>
 							<div class="dropdown-menu">

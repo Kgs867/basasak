@@ -87,7 +87,9 @@
                                     </td>
                                     <td class="price-col">${article.c_price }</td>
                                     <td class="quantity-col">
-                                        <input type="number" class="form-control cnt" min="1" max="999" placeholder="${article.sb_count}" value=${article.sb_count} onclick="price()">
+                                        <input type="number" name="cartcnt" class="form-control cnt" min="1" max="999" placeholder="${article.sb_count}" value=${article.sb_count} >
+                                        <input type="hidden" id="sb_serial" name="sb_serial" value="${article.sb_serial}">
+                                        <input type="hidden" name="c_price" value="${article.c_price }">
                                     </td>
                                     <td class="subtotal-col">${article.sb_price}</td>
                                     <td class="delete-col">
