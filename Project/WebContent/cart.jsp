@@ -27,7 +27,8 @@
         <!-- Modernizr -->
         <script src="assets/js/modernizr.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="cart.js?ver=1"></script>
+
+        
     </head>
     <body>
         <div id="page-loader">
@@ -64,8 +65,8 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                            	<c:forEach var="article" items="${articleList }">
+                            <tbody id="viewarea">
+                            	<%--  <c:forEach var="article" items="${articleList }">
                                 <tr>
                                     <td class="info-col">
                                         <div class="product">
@@ -96,7 +97,7 @@
                                         <a href="cartDelete.do?sb_serial=${article.sb_serial}&loginid=${id}" class="delete-btn" title="Delete product"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
-                                </c:forEach>
+                                </c:forEach>  --%>
                             </tbody>
                         </table>
                     </div><!-- End .table-responsive -->
@@ -271,5 +272,6 @@
         <!-- End -->
         <script src="assets/js/plugins.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="cart.js?ver=1"></script>
     </body>
 </html>

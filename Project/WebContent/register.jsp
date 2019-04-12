@@ -35,7 +35,7 @@
                 <div class="sk-child sk-double-bounce2"></div><!-- End .sk-child -->
             </div><!-- End .sk-double-bounce -->
         </div><!-- End #page-loader -->
-        <form method="post" action="/testting12/registerPro.do" >
+        <form method="post" action="/Project/registerPro.do" >
         <div id="wrapper">
             <div class="container-fluid">
                 <div class="user-form-container register-form bg-white">
