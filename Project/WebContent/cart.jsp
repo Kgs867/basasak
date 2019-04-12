@@ -93,7 +93,7 @@
                                     </td>
                                     <td class="subtotal-col">${article.sb_price}</td>
                                     <td class="delete-col">
-                                        <a href="#" class="delete-btn" title="Delete product"><i class="fa fa-times"></i></a>
+                                        <a href="cartDelete.do?sb_serial=${article.sb_serial}&loginid=${id}" class="delete-btn" title="Delete product"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
                                 </c:forEach>

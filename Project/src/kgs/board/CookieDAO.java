@@ -387,4 +387,18 @@ public class CookieDAO {
 		}finally {
 		}
 	}
+	
+	public void cartDelete(CartDTO article) {
+		try {
+			con = pool.getConnection();
+			sql="delete from shopb where sb_serial=?";
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setString(1, article.getSb_serial());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("cartDelete ¿¡·¯"+e);
+		}
+		
+	}
 }
