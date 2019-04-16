@@ -16,13 +16,16 @@ public class RegisterAction implements CommandAction {
 		
 		
 		  MemberDTO article=new MemberDTO();
-		  article.setId(request.getParameter("input_id"));
-		  System.out.println("registerAction"+request.getParameter("input_id"));
-		  System.out.println(request.getAttribute("input_id"));
+		  article.setId(request.getParameter("input_Id"));
+		  System.out.println("registerAction"+request.getParameter("input_Id"));
+		  System.out.println(request.getAttribute("input_Id"));
 		  article.setPassword(request.getParameter("input_Password"));
+		  article.setAddress(request.getParameter("input_Name"));
+		  article.setAddress(request.getParameter("input_Birth"));
 		  article.setEmail(request.getParameter("input_Email"));
-		  article.setPhone(request.getParameter("input_Mobile"));
-		  article.setAddress(request.getParameter("input_address"));
+		  article.setPhone(request.getParameter("input_Phone"));
+		  article.setAddress(request.getParameter("input_Address"));
+		  article.setAddress(request.getParameter("input_Gender"));
 		  
 		  MemberDAO dbpro=new MemberDAO(); dbpro.MemberRegister(article);
 		  response.setContentType("text/html; charset=UTF-8");

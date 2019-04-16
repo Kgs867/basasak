@@ -44,8 +44,8 @@
                         <div class="row">
                             <div class="col-sm-6 ">
                                 <div class="form-group">
-                                    <label>계정명</label>
-                                    <input type="text" id="input_id" name="input_id" class="form-control" placeholder="계정명" required>
+                                    <label>계정 아이디</label>
+                                    <input type="text" id="input_Id" name="input_Id" class="form-control" placeholder="계정 아이디" required>
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
                         </div><!-- End .row -->
@@ -60,6 +60,35 @@
                                 <div class="form-group">
                                     <label>비밀번호 재확인</label>
                                     <input type="text" id="input_PasswordCheck" name="input_PasswordCheck"class="form-control" placeholder="비밀번호 재확인" required>
+                                </div><!-- End .from-group -->
+                            </div><!-- End .col-sm-6 -->
+                        </div><!-- End .row -->
+
+						<div class="row">
+                            <div class="col-sm-6 ">
+                                <div class="form-group">
+                                    <label>이름</label>
+                                    <input type="text" id="input_Name"name="input_Name" class="form-control" placeholder="이름" required>
+                                </div><!-- End .from-group -->
+                            </div><!-- End .col-sm-6 -->
+                        </div><!-- End .row -->
+                        
+                        <div class="row">
+                            <div class="col-sm-6 ">
+                                <div class="form-group">
+                                    <label>생년월일</label>
+                                    <input type="text" id="input_Birth"name="input_Birth" class="form-control" placeholder="생년월일" required>
+                                </div><!-- End .from-group -->
+                            </div><!-- End .col-sm-6 -->
+                        </div><!-- End .row -->
+
+						<div class="row">
+                            <div class="col-sm-6 ">
+                                <div class="form-group">
+                                <label>성별</label> <br>
+                                    <input type="radio" value="male" name="input_Gender" class="Gender"> 남
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" value="female" name="input_Gender" class="Gender"> 여
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
                         </div><!-- End .row -->
@@ -83,7 +112,7 @@
                             <div class="col-sm-6 ">
                                 <div class="form-group">
                                     <label>핸드폰번호</label>
-                                    <input type="text" id="input_Mobile"name="input_Mobile" class="form-control" placeholder="핸드폰 번호" required>
+                                    <input type="text" id="input_Phone"name="input_Phone" class="form-control" placeholder="핸드폰 번호" required>
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
                         </div><!-- End .row -->
@@ -92,7 +121,7 @@
                             <div class="col-sm-6 ">
                                 <div class="form-group">
                                     <label>주소</label>
-                                    <input type="text" id="input_address" name="input_address" class="form-control" placeholder="도로명주소">
+                                    <input type="text" id="input_Address" name="input_Address" class="form-control" placeholder="도로명주소">
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
                             <div class="col-sm-6 ">
@@ -112,7 +141,7 @@
                                     <input type="checkbox" value="true">
                                     <span class="custom-checkbox-icon"></span>
                                 </span>
-                               <span>나는 모든 <a href="#">이용약관</a>을 읽었습니다</span>
+                               <span><a href="#">이용약관</a>에 동의합니다</span>
                               </label>
                             </div><!-- End .checkbox -->
                         </div><!-- End .form-group -->
