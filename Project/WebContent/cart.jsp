@@ -141,7 +141,7 @@ function execDaumPostcode() {
                 </div><!-- End .container-fluid -->
 
                 <div class="mb10"></div><!-- margin -->
-
+				<form action="odder.do">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-7">
@@ -161,7 +161,7 @@ function execDaumPostcode() {
                                                     <div class="row">
                                                         <div class="form-group col-sm-6">
                                                             <label>우편번호</label>
-                                                            <input type="text" class="form-control" placeholder="Post Code" id="zip" required>
+                                                            <input type="text" class="form-control" name="zip" placeholder="Post Code" id="zip" required>
                                                         </div><!-- End .col-sm-6 -->
                                                         <div class="form-group col-sm-6">
                                                             <label>비상시 연락처</label>
@@ -171,11 +171,11 @@ function execDaumPostcode() {
                                                     <div class="row">
                                                        <div class="form-group col-sm-8">
                                                             <label>주소</label>
-                                                            <input type="text" class="form-control" placeholder="Post Code" id="addr1" required>
+                                                            <input type="text" class="form-control" name="addr1" placeholder="Post Code" id="addr1" required>
                                                         </div><!-- End .col-sm-6 -->
                                                         <div class="form-group col-sm-4">
                                                             <label>자세한주소</label>
-                                                            <input type="text" class="form-control" placeholder="Post Code" id="addr2" required>
+                                                            <input type="text" class="form-control" name="addr2" placeholder="Post Code" id="addr2" required>
                                                         </div><!-- End .col-sm-6 -->
                                                     </div><!-- end .row -->
                                                     <div class="mb5"></div><!-- margin -->
@@ -251,15 +251,15 @@ function execDaumPostcode() {
                                 </tr>
                                 <tr class="total-row">
                                     <td>Total:</td>
-                                    <td id=totalprice>$2100.00</td>
+                                    <td name="totalprice" id="totalprice">$2100.00</td>
                                 </tr>
                             </table>
                             <a href="category.html" class="btn btn-black">Continue Shopping</a>
-                            <a href="checkout.html" class="btn btn-custom">CHECKOUT</a>
+                            <a href="odder.do" class="btn btn-custom">구매</a>
                         </div><!-- End .col-md-4 -->
                     </div><!-- End .row -->
                 </div><!-- End .container-fluid -->
-
+				</form>
                 <div class="mb70 mb60-sm"></div><!-- margin -->
             </div><!-- End .main -->
 
