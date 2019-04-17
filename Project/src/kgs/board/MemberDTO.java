@@ -1,4 +1,4 @@
-package kgs.board;
+ package kgs.board;
 
 public class MemberDTO {
 	private String id; 

@@ -45,6 +45,11 @@ public class MemberDAO {
 			pstmt.setInt(3, 0);
 			int insert2=pstmt.executeUpdate();
 			System.out.println("login 추가"+insert2);
+			sql="insert into mypage values(?)";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, mem.getId());
+			int insert3=pstmt.executeUpdate();
+			System.out.println("mypage 추가"+insert3);
 			con.commit();
 		} catch (Exception e) {
 			System.out.println("MemeberRegister()실행 에러 유발->"+e);
@@ -52,6 +57,26 @@ public class MemberDAO {
 			pool.freeConnection(con,pstmt,rs);
 		}
 	}
+	// 회원가입 중복 id를 체크 메서드
+	public boolean checkId(String id) {
+		boolean check=false;
+		try {
+			con=pool.getConnection();
+			System.out.println("checkId con=>"+con);
+			sql="select id from member where  id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1,id);
+			rs=pstmt.executeQuery();
+			check=rs.next();
+		}catch(Exception e) {
+			System.out.println("checkId()실행 에러유발->"+e);
+		}finally{
+			pool.freeConnection(con,pstmt,rs);
+		}
+		return check;
+	}
+	
+	
 	public boolean MemberLogin(LoginDTO mem) {
 		boolean login=false;
 		try {
