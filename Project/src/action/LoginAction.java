@@ -34,10 +34,6 @@ public class LoginAction implements CommandAction {
 		System.out.println(login);
 		System.out.println(request.getParameter("input_id"));
 		
-		 
-		
-
-		
 		return "/index.jsp";
 	}
 
