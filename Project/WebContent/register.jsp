@@ -35,18 +35,17 @@
                 <div class="sk-child sk-double-bounce2"></div><!-- End .sk-child -->
             </div><!-- End .sk-double-bounce -->
         </div><!-- End #page-loader -->
-        <form method="post" action="/testting12/registerPro.do" >
+        <form method="post" action="registerPro.do" >
         <div id="wrapper">
             <div class="container-fluid">
                 <div class="user-form-container register-form bg-white">
                     <h2 class="mb30">회원가입</h2>
-                    <form action="#">
                         <div class="row">
                             <div class="col-sm-6 ">
                                 <div class="form-group">
                                     <label>계정 아이디</label>
                                     <input type="text" id="input_Id" name="input_Id" class="form-control" placeholder="계정 아이디" required>
-                                    <input type="button" value="ID중복확인"  onClick="idCheck(this.form.id.value)">
+                                    <input type="button" value="ID중복확인" id="idcheck"  onClick="idCheck(this.form.id.value)">
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
                             
@@ -88,9 +87,9 @@
                             <div class="col-sm-6 ">
                                 <div class="form-group">
                                 <label>성별</label> <br>
-                                    <input type="radio" value="male" name="input_Gender" class="Gender"> 남
+                                    <input type="radio" value="0" name="input_Gender" class="Gender"> 남
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" value="female" name="input_Gender" class="Gender"> 여
+                                    <input type="radio" value="1" name="input_Gender" class="Gender"> 여
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
                         </div><!-- End .row -->
@@ -162,6 +161,7 @@
 
                         <div class="form-group mb5">
                             <input type="submit" id="register"class="btn btn-custom min-width" value="회원가입">
+                            
                         </div><!-- End .from-group -->
                     </form>
                 </div><!-- End .register-form-container -->

@@ -26,7 +26,7 @@ public class MemberDAO {
 			con=pool.getConnection();
 			con.setAutoCommit(false);
 			System.out.println("(MemberRegister)con =>"+con);
-			sql="insert into member values(?,?,?,?,?,?,?,?)";
+			sql="insert into member values(?,?,?,?,?,?,?,?,now())";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getPassword());
@@ -36,6 +36,7 @@ public class MemberDAO {
 			pstmt.setString(6, mem.getPhone());
 			pstmt.setString(7, mem.getAddress());
 			pstmt.setString(8, mem.getGender());
+			
 			int insert=pstmt.executeUpdate();
 			System.out.println("MemberRegister() 실행결과=>"+insert);
 			sql="insert into memberlogin values(?,?,?)";

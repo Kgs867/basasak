@@ -2,10 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="kgs.board.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<body bgcolor="#FFFFCC">
-<br>
 <%
       //searchWord.js->IdCheck.jsp?mem_id='kkk'&timestamp=?
       //xhrObject가 받을 xml형태로 받을 수 있도록 text/xml형태로 전환(태그+문자열)
@@ -28,8 +24,7 @@
   out.println(outString);
   System.out.println(outString);//콘솔에 출력(디버깅용)
 %>
-</body>
-</html>
+
 
 
 
