@@ -27,7 +27,45 @@
         <!-- Modernizr -->
         <script src="assets/js/modernizr.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="cart.js?ver=1"></script>
+		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+function execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+            var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                extraRoadAddr += data.bname;
+            }
+            // 건물명이 있고, 공동주택일 경우 추가한다.
+            if(data.buildingName !== '' && data.apartment === 'Y'){
+               extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+            }
+            // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+            if(extraRoadAddr !== ''){
+                extraRoadAddr = ' (' + extraRoadAddr + ')';
+            }
+            // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+            if(fullRoadAddr !== ''){
+                fullRoadAddr += extraRoadAddr;
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('zip').value = data.zonecode; //5자리 새우편번호 사용
+            document.getElementById('addr1').value = fullRoadAddr;
+            document.getElementById('addr2').focus();
+        }
+    }).open();
+}
+</script>
+
     </head>
     <body>
         <div id="page-loader">
@@ -64,8 +102,8 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                            	<c:forEach var="article" items="${articleList }">
+                            <tbody id="viewarea">
+                            	<%--  <c:forEach var="article" items="${articleList }">
                                 <tr>
                                     <td class="info-col">
                                         <div class="product">
@@ -87,21 +125,23 @@
                                     </td>
                                     <td class="price-col">${article.c_price }</td>
                                     <td class="quantity-col">
-                                        <input type="number" class="form-control cnt" min="1" max="999" placeholder="${article.sb_count}" value=${article.sb_count} onclick="price()">
+                                        <input type="number" name="cartcnt" class="form-control cnt" min="1" max="999" placeholder="${article.sb_count}" value=${article.sb_count} >
+                                        <input type="hidden" id="sb_serial" name="sb_serial" value="${article.sb_serial}">
+                                        <input type="hidden" name="c_price" value="${article.c_price }">
                                     </td>
                                     <td class="subtotal-col">${article.sb_price}</td>
                                     <td class="delete-col">
-                                        <a href="#" class="delete-btn" title="Delete product"><i class="fa fa-times"></i></a>
+                                        <a href="cartDelete.do?sb_serial=${article.sb_serial}&loginid=${id}" class="delete-btn" title="Delete product"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
-                                </c:forEach>
+                                </c:forEach>  --%>
                             </tbody>
                         </table>
                     </div><!-- End .table-responsive -->
                 </div><!-- End .container-fluid -->
 
                 <div class="mb10"></div><!-- margin -->
-
+				<form action="odder.do">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-7">
@@ -120,33 +160,26 @@
                                                 <form action="#">
                                                     <div class="row">
                                                         <div class="form-group col-sm-6">
-                                                            <label>Your Country *</label>
-                                                            <select class="form-control">
-                                                                <option value="#">United States</option>
-                                                                <option value="#">England</option>
-                                                                <option value="#">Germany</option>
-                                                            </select>
+                                                            <label>우편번호</label>
+                                                            <input type="text" class="form-control" name="zip" placeholder="Post Code" id="zip" required>
                                                         </div><!-- End .col-sm-6 -->
                                                         <div class="form-group col-sm-6">
-                                                            <label>Region/State *</label>
-                                                            <select class="form-control">
-                                                                <option value="#">State Name</option>
-                                                                <option value="#">State Name</option>
-                                                                <option value="#">State Name</option>
-                                                            </select>
-                                                        </div><!-- End .col-sm-6 -->
-                                                    </div><!-- end .row -->
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-6">
-                                                            <label>Post Code</label>
-                                                            <input type="text" class="form-control" placeholder="Post Code" required>
-                                                        </div><!-- End .col-sm-6 -->
-                                                        <div class="form-group col-sm-6">
-                                                            <label>Emergency Phone</label>
+                                                            <label>비상시 연락처</label>
                                                             <input type="text" class="form-control" placeholder="Phone" required>
                                                         </div><!-- End .col-sm-6 -->
                                                     </div><!-- end .row -->
+                                                    <div class="row">
+                                                       <div class="form-group col-sm-8">
+                                                            <label>주소</label>
+                                                            <input type="text" class="form-control" name="addr1" placeholder="Post Code" id="addr1" required>
+                                                        </div><!-- End .col-sm-6 -->
+                                                        <div class="form-group col-sm-4">
+                                                            <label>자세한주소</label>
+                                                            <input type="text" class="form-control" name="addr2" placeholder="Post Code" id="addr2" required>
+                                                        </div><!-- End .col-sm-6 -->
+                                                    </div><!-- end .row -->
                                                     <div class="mb5"></div><!-- margin -->
+                                                    <button type="button" class="btn btn-black" onclick="execDaumPostcode()">주소찾기</button>
                                                     <button type="submit" class="btn btn-black">Apply Address</button>
                                                 </form>
                                             </div><!-- End .panel-body -->
@@ -218,15 +251,15 @@
                                 </tr>
                                 <tr class="total-row">
                                     <td>Total:</td>
-                                    <td id=totalprice>$2100.00</td>
+                                    <td name="totalprice" id="totalprice">$2100.00</td>
                                 </tr>
                             </table>
                             <a href="category.html" class="btn btn-black">Continue Shopping</a>
-                            <a href="checkout.html" class="btn btn-custom">CHECKOUT</a>
+                            <button type="submit" class="btn btn-custom">구매</button>
                         </div><!-- End .col-md-4 -->
                     </div><!-- End .row -->
                 </div><!-- End .container-fluid -->
-
+				</form>
                 <div class="mb70 mb60-sm"></div><!-- margin -->
             </div><!-- End .main -->
 
@@ -269,5 +302,6 @@
         <!-- End -->
         <script src="assets/js/plugins.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="cart.js?ver=1"></script>
     </body>
 </html>

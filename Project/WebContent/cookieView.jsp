@@ -169,7 +169,7 @@
 								<form action="/Project/addcartPro.do" method="post">
                                 <div class="product-action">
                                     <div class="product-quantity">
-                                        <input type="number" name="count" class="form-control" min="1" max="999" placeholder="1">
+                                        <input type="number" name="count" class="form-control" min="1" max="999" placeholder="1" value="1">
                                     </div><!-- end .product-quantity -->
                                     <input type="hidden" name="c_product" value=${article.c_product }>
                                     <input type="hidden" name="c_price" value=${article.c_price }>

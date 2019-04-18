@@ -356,6 +356,7 @@ public class CookieDAO {
 				articleList=new ArrayList();
 				do {
 					article=new CartDTO();
+					article.setSb_serial(rs.getString("sb_serial"));
 					article.setSb_count(rs.getInt("sb_count"));
 					article.setSb_price(rs.getInt("sb_price"));
 					article.setC_price(rs.getInt("c_price"));
@@ -368,5 +369,36 @@ public class CookieDAO {
 		}finally {
 			return articleList;
 		}	
+	}
+	
+	public void cartUpdate(CartDTO article) {
+		try {
+			con = pool.getConnection();
+			sql="update shopb set sb_count=?,sb_price=? where sb_serial=?";
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setInt(1, article.sb_count);
+			pstmt.setInt(2, article.c_price*article.sb_count);
+			pstmt.setString(3, article.sb_serial);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("cartUpdate 에러"+e);
+		}finally {
+		}
+	}
+	
+	public void cartDelete(CartDTO article) {
+		try {
+			con = pool.getConnection();
+			sql="delete from shopb where sb_serial=?";
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setString(1, article.getSb_serial());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("cartDelete 에러"+e);
+		}
+		
 	}
 }
