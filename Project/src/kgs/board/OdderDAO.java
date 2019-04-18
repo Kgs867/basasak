@@ -72,9 +72,14 @@ public class OdderDAO {
 				pstmt.setString(8,id);
 				System.out.println("여기까진 완료 --8");
 				pstmt.setString(9, rs.getString("c_serial"));
-				pstmt.executeUpdate();		
+				pstmt.executeUpdate();
+				
+				
 			}
-			
+			sql="delete from shopb where m_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("addOdder() 에러" + e);
 		} finally {

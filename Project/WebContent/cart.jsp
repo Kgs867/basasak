@@ -255,7 +255,7 @@ function execDaumPostcode() {
                                 </tr>
                             </table>
                             <a href="category.html" class="btn btn-black">Continue Shopping</a>
-                            <a href="odder.do" class="btn btn-custom">구매</a>
+                            <button type="submit" class="btn btn-custom">구매</button>
                         </div><!-- End .col-md-4 -->
                     </div><!-- End .row -->
                 </div><!-- End .container-fluid -->
