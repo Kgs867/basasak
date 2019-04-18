@@ -11,18 +11,6 @@ $(function() {
             $("#Input_Email").focus();
             return false;
         }
-        
-        if($("#input_EmailCheck").val() ==''){
-            alert('이메일을 다시 한번 더 입력하세요');
-            $("#inputPasswordCheck").focus();
-            return false;
-        }
-        
-        if($("#input_Email").val()!== $("#input_EmailCheck").val()){
-            alert('이메일을 둘다 동일하게 입력하세요');
-            return false;
-        }
-
         if($("#input_Password").val() ==''){
             alert('비밀번호를 입력하세요');
             $("#inputPassword").focus();

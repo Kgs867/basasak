@@ -101,12 +101,6 @@
                                     <input type="email" id="input_Email" name="input_Email" class="form-control" placeholder="Email" required>
                                 </div><!-- End .from-group -->
                             </div><!-- End .col-sm-6 -->
-                            <div class="col-sm-6 ">
-                                <div class="form-group">
-                                    <label>Email 재확인</label>
-                                    <input type="email" id="input_EmailCheck" name="input_EmailCheck"class="form-control" placeholder="Email 재확인" required>
-                                </div><!-- End .from-group -->
-                            </div><!-- End .col-sm-6 -->
                         </div><!-- End .row -->
                         
                         <div class="row">
