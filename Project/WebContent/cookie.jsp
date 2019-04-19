@@ -108,7 +108,7 @@
 									<div class="product-top">
 										<figure>
 											<a href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}" title="Product Name"> <img
-												src="assets/images/products/product10.jpg"
+												src="${article.c_img1 }"
 												alt="Product image" class="product-image">
 											</a>
 										</figure>
