@@ -5,6 +5,8 @@ $(function() {
             $("#inputName").focus();
             return false;
 		}
+		
+		
 		var email = $('#Input_Email').val();
         if(email == ''){
             alert('이메일을 입력하세요');

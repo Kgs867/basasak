@@ -62,8 +62,7 @@
 						<a href="register.jsp">회원가입</a>
 					</c:if>
 					<c:if test="${!empty id}">
-						<a href="login.jsp"><c:out value="${id}"></c:out> </a>
-						<a href="register.jsp">마이페이지</a>
+						<a href="mypage.jsp"><c:out value="${id}"></c:out> </a>
 						<a href="logout.jsp">로그아웃</a>
 					</c:if>
 					<div class="header-right header-cart-wrap">
