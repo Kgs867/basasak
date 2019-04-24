@@ -21,7 +21,7 @@
 
 			//DB에 데이터 넣기
 
-			String sql = "select sb_serial,sb_count,sb_price,c_price,c_product from shopb,cookie where shopb.c_serial=cookie.c_serial and m_id=? order by sb_serial asc";
+			String sql = "select sb_serial,sb_count,sb_price,c_price,c_product,c_img1 from shopb,cookie where shopb.c_serial=cookie.c_serial and m_id=? order by sb_serial asc";
 			pstmt = con.prepareStatement(sql);
 			String id = (String) request.getSession().getAttribute("id");
 			pstmt.setString(1, id);
@@ -34,9 +34,10 @@
 					int sb_price = rs.getInt("sb_price");
 					int c_price = rs.getInt("c_price");
 					String c_product = rs.getString("c_product");
-					String data = "<tr><td class='info-col'><div class='product'><figure><a href='product.html'title='Product Name'><img src='assets/images/products/product1.jpg'alt='Product image'class='product-image'><img src='assets/images/products/product1-hover.jpg'alt='Product image'class='image-hover'></a></figure><div class='product-info'><h3 class='product-title'><a href='product.html'>"
+					String c_img1=rs.getString("c_img1");
+					String data = "<tr><td class='info-col'><div class='product'><figure><a href='product.html'title='Product Name'><img src='"+c_img1+"'alt='Product image'class='product-image'><img src='assets/images/products/product1-hover.jpg'alt='Product image'class='image-hover'></a></figure><div class='product-info'><h3 class='product-title'><a href='product.html'>"
 							+ c_product
-							+ "</a></h3><ul><li><span>Size:</span>SM</li><li><span>Color:</span>Black</li><li><span>Dimension:</span>16 x 20 x 30</li></ul></div></div><!--End.product--></td><td class='price-col'>"
+							+ "</a></h3></div></div><!--End.product--></td><td class='price-col'>"//</h3><ul><li><span>Size:</span>SM</li><li><span>Color:</span>Black</li><li><span>Dimension:</span>16 x 20 x 30</li></ul>
 							+ c_price
 							+ "</td><td class='quantity-col'><input type='number'name='cartcnt'class='form-control cnt'min='1'max='999'placeholder=''value=" + sb_count
 							+ "><input type='hidden'id='sb_serial'name='sb_serial'value='" + sb_serial
