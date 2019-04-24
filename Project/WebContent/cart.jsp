@@ -95,10 +95,10 @@ function execDaumPostcode() {
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th class="text-center">Price</th>
-                                    <th class="text-center">Quantity</th>
-                                    <th class="text-center">Subtotal</th>
+                                    <th>상품명</th>
+                                    <th class="text-center">가격</th>
+                                    <th class="text-center">갯수</th>
+                                    <th class="text-center">총가격</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -151,7 +151,7 @@ function execDaumPostcode() {
                                         <div class="panel-heading" role="tab" id="headingOne">
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    SHIPPING &amp; TAXES
+                                                    배송지 주소
                                                 </a>
                                             </h4>
                                         </div><!-- End .panel-heading -->
@@ -180,19 +180,19 @@ function execDaumPostcode() {
                                                     </div><!-- end .row -->
                                                     <div class="mb5"></div><!-- margin -->
                                                     <button type="button" class="btn btn-black" onclick="execDaumPostcode()">주소찾기</button>
-                                                    <button type="submit" class="btn btn-black">Apply Address</button>
+                                                    <button type="submit" class="btn btn-black">주소저장</button>
                                                 </form>
                                             </div><!-- End .panel-body -->
                                         </div><!-- End .panel-collapse -->
                                     </div><!-- End .panel -->
-                                    <div class="panel panel-custom">
+                                    <!-- <div class="panel panel-custom">
                                         <div class="panel-heading" role="tab" id="headingTwo">
                                             <h4 class="panel-title">
                                                 <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 USE A DISCOUNT COUPON
                                                 </a>
                                             </h4>
-                                        </div><!-- End .panel-heading -->
+                                        </div>End .panel-heading
                                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                             <div class="panel-body">
                                                 <form action="#">
@@ -202,12 +202,12 @@ function execDaumPostcode() {
                                                             <input type="text" class="form-control" placeholder="Coupon Code">
                                                         </div>
                                                     </div>
-                                                    <div class="mb5"></div><!-- margin -->
+                                                    <div class="mb5"></div>margin
                                                     <button type="submit" class="btn btn-black">Apply Coupon</button>
                                                 </form>
-                                            </div><!-- End .panel-body -->
-                                        </div><!-- End .panel-collapse -->
-                                    </div><!-- End .panel -->
+                                            </div>End .panel-body
+                                        </div>End .panel-collapse
+                                    </div>End .panel
                                     <div class="panel panel-custom">
                                         <div class="panel-heading" role="tab" id="headingThree">
                                             <h4 class="panel-title">
@@ -215,7 +215,7 @@ function execDaumPostcode() {
                                                     SEND A GIFT COUPON
                                                 </a>
                                             </h4>
-                                        </div><!-- End .panel-heading -->
+                                        </div>End .panel-heading
                                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                             <div class="panel-body">
                                                 <form action="#">
@@ -225,19 +225,19 @@ function execDaumPostcode() {
                                                             <input type="text" class="form-control" placeholder="A username">
                                                         </div>
                                                     </div>
-                                                    <div class="mb5"></div><!-- margin -->
+                                                    <div class="mb5"></div>margin
                                                     <button type="submit" class="btn btn-black">Send Gift</button>
                                                 </form>
-                                            </div><!-- End .panel-body -->
-                                        </div><!-- End .panel-collapse -->
-                                    </div><!-- End .panel -->
+                                            </div>End .panel-body
+                                        </div>End .panel-collapse
+                                    </div>End .panel -->
                                 </div><!-- End .panel-group -->
                             </div><!-- End .shipping-container -->
                         </div><!-- End .col-md-7 -->
 
                         <div class="col-md-5">
                             <table class="table table-bordered total-table">
-                                <tr>
+                                <!-- <tr>
                                     <td>Subtotal:</td>
                                     <td>$1999.00</td>
                                 </tr>
@@ -248,13 +248,13 @@ function execDaumPostcode() {
                                 <tr>
                                     <td>Tax:</td>
                                     <td>$11.00</td>
-                                </tr>
+                                </tr> -->
                                 <tr class="total-row">
-                                    <td>Total:</td>
+                                    <td>총 결재액:</td>
                                     <td name="totalprice" id="totalprice">$2100.00</td>
                                 </tr>
                             </table>
-                            <a href="category.html" class="btn btn-black">Continue Shopping</a>
+                            <a href="category.html" class="btn btn-black">쇼핑계속하기</a>
                             <button type="submit" class="btn btn-custom">구매</button>
                         </div><!-- End .col-md-4 -->
                     </div><!-- End .row -->

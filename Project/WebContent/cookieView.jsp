@@ -55,7 +55,7 @@
                             <div class="product-gallery-container">
                                 <div class="product-zoom-wrapper">
                                     <div class="product-zoom-container">
-                                        <img id="product-zoom" src="assets/images/products/single/product1.jpg" data-zoom-image="assets/images/products/single/big/product1.jpg" alt="Product image big">
+                                        <img id="product-zoom" src="${article.c_img1 }" data-zoom-image="assets/images/products/single/big/product1.jpg" alt="Product image big">
                                     </div><!-- End .product-zoom-container -->
                                 </div><!-- End .product-zoom-wrapper -->
 
@@ -63,13 +63,13 @@
                                     <div class="swiper-container product-gallery">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <a href="#" data-image="assets/images/products/single/product1.jpg" data-zoom-image="assets/images/products/single/big/product1.jpg" class="product-gallery-item">
-                                                    <img src="assets/images/products/single/thumbs/product1.jpg" alt="product-small-2">
+                                                <a href="#" data-image="${article.c_img1 }" data-zoom-image="assets/images/products/single/big/product1.jpg" class="product-gallery-item">
+                                                    <img src="${article.c_img1 }" alt="product-small-2">
                                                 </a>
                                             </div><!-- End .swiper-slide -->
                                             <div class="swiper-slide">
-                                                <a href="#" data-image="assets/images/products/single/product2.jpg" data-zoom-image="assets/images/products/single/big/product2.jpg" class="product-gallery-item">
-                                                    <img src="assets/images/products/single/thumbs/product2.jpg" alt="product-small-2">
+                                                <a href="#" data-image="${article.c_img1 }" data-zoom-image="assets/images/products/single/big/product2.jpg" class="product-gallery-item">
+                                                    <img src="${article.c_img1 }" alt="product-small-2">
                                                 </a>
                                             </div><!-- End .swiper-slide -->
                                             <div class="swiper-slide">

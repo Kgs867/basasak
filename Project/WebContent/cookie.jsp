@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,45 +104,47 @@
 
 						<div class="products-container max-col-3">
 							<div class="row">
-							<c:forEach var="article"  items="${articleList}">
-								<div class="product">
-									<div class="product-top">
-										<figure>
-											<a href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}" title="Product Name"> <img
-												src="assets/images/products/product10.jpg"
-												alt="Product image" class="product-image">
-											</a>
-										</figure>
-										<div class="product-action-container">
-											<a href="#" class="btn product-add-btn" data-toggle="tooltip"
-												title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
-											<a href="#" class="btn product-wishlist-btn"
-												data-toggle="tooltip" title="Add to Wishlist"><i
-												class="fa fa-heart"></i></a> <a href="#"
-												class="btn product-compare-btn" data-toggle="tooltip"
-												title="Compare"><i class="fa fa-retweet"></i></a>
+								<c:forEach var="article" items="${articleList}">
+									<div class="product">
+										<div class="product-top">
+											<figure>
+												<a
+													href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}"
+													title="Product Name"> <img src="${article.c_img1 }"
+													alt="Product image" class="product-image">
+												</a>
+											</figure>
+											<div class="product-action-container">
+												<a href="#" class="btn product-add-btn"
+													data-toggle="tooltip" title="Add to Cart"><i
+													class="fa fa-shopping-cart"></i></a> <a href="#"
+													class="btn product-wishlist-btn" data-toggle="tooltip"
+													title="Add to Wishlist"><i class="fa fa-heart"></i></a> <a
+													href="#" class="btn product-compare-btn"
+													data-toggle="tooltip" title="Compare"><i
+													class="fa fa-retweet"></i></a>
+											</div>
+											<!-- End .product-action-container -->
 										</div>
-										<!-- End .product-action-container -->
+										<!-- End .product-top -->
+										<h3 class="product-title">
+											<a href="product.html">${article.c_intro}</a>
+										</h3>
+										<div class="ratings-container">
+											<a href="#" class="product-ratings" title="7 Ratings"> <span
+												class="ratings" style="width: 60%"> <span
+													class="ratings-text sr-only">7 Ratings</span>
+											</span> <!-- End .ratings -->
+											</a>
+											<!-- End .product-ratings -->
+										</div>
+										<!-- End .ratings-container -->
+										<div class="product-price-container">
+											<span class="product-price"><fmt:formatNumber
+													value="${article.c_price}" pattern="#,###" /> 원</span>
+										</div>
+										<!-- End .product-price-container -->
 									</div>
-									<!-- End .product-top -->
-									<h3 class="product-title">
-										<a href="product.html">${article.c_intro}</a>
-									</h3>
-									<div class="ratings-container">
-										<a href="#" class="product-ratings" title="7 Ratings"> <span
-											class="ratings" style="width: 60%"> <span
-												class="ratings-text sr-only">7 Ratings</span>
-										</span> <!-- End .ratings -->
-										</a>
-										<!-- End .product-ratings -->
-									</div>
-									<!-- End .ratings-container -->
-									<div class="product-price-container">
-										<span class="old-price">$99.00</span> <span
-											class="product-price">${article.c_price}</span>
-									</div>
-									<!-- End .product-price-container -->
-								</div>
 								</c:forEach>
 								<!-- End .product -->
 							</div>
@@ -159,22 +162,29 @@
 									</c:if>
 									<c:forEach var="i" begin="${pgList.startPage}"
 										end="${pgList.endPage}">
-										<a
-											href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><c:if
-												test="${pgList.currentPage==i}">
-												<font color="red"><b>[${i}]</b></font>
-											</c:if> <c:if test="${pgList.currentPage!=i}">[${i}]</c:if></a>
+										<c:if test="${pgList.currentPage==i}">
+											<li class="active"><a
+												href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><font
+													color="white"><b>${i}</b></font></a></li>
+										</c:if>
+										<c:if test="${pgList.currentPage!=i}">
+											<li><a
+												href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><font
+													color="white"><b>${i}</b></font></a></li>
+										</c:if>
 									</c:forEach>
-									<li class="active"><a href="#">1</a></li>
+									<!-- <li class="active"><a href="#">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
+									<li><a href="#">4</a></li> -->
 									<li><a href="#" aria-label="Next"> <span
 											aria-hidden="true"><i class="fa fa-angle-right"></i></span>
 									</a></li>
 									<c:if test="${pgList.endPage<pgList.pageCount}">
-										<a
-											href="/Project/cookielist.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
+										<li><a
+											href="/Project/cookielist.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}"
+											aria-label="Next"> <span aria-hidden="true"><i
+													class="fa fa-angle-right"></i></span></a></li>
 									</c:if>
 								</ul>
 							</nav>
