@@ -249,3 +249,55 @@ li.info-hover-li3 a:hover .info-hover-img3 {
 	left:-107px;
 	width	:120px;
 }
+
+/* cookieView  큰이미지 */
+
+
+@media (min-width: 992px){
+.product-gallery-container {
+    margin-bottom: 10rem !important;
+}
+}
+.product-zoom-wrapper{
+    padding: 2rem;
+    border-style: solid;
+    border-color:#fde72f;
+    background-color:#fff !important;
+}
+
+/* cookieview 상품title */
+
+.product-details .review-container {
+    background-color: #fff !important; 
+    /* border-radius: 4px; */
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
+    left: -340px;
+}
+
+.product-details .product-desc-box {
+    background-color: #fff9bc !important;
+}
+
+.product-details .product-action .product-quantity {
+  
+    border: solid 0.05rem !important;
+    color: #e2e2e2 !important;
+    border-radius: 0.4rem;
+}
+
+img.pull-left {
+    margin-top: 10rem !important;
+    margin-bottom: 15rem !important;
+}
+
+.nav-pills>li.active a, .nav-pills>li.active a:hover, .nav-pills>li.active a:focus {
+    color: #5a4624 !important;
+    background-color: #fdd82f !important;
+    font-weight: 700 !important;
+}
+
+.swiper-buttons-container {
+
+    margin-bottom: 3rem !important;
+}

@@ -203,7 +203,7 @@
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
 							aria-expanded="false">Home</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false">제품소개</a>
+							data-toggle="dropdown" role="button" aria-expanded="false">상품소개</a>
 							<ul class="dropdown-menu col-lg-12" role="menu">
 								<li class="dropdown"><a href="cookielist.do"
 									class="dropdown-toggle text-center" data-toggle="dropdown"

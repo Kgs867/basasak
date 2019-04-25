@@ -56,7 +56,7 @@
 					<h1>Biscuit</h1>
 					<ol class="breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#">제품소개</a></li>
+						<li><a href="#">상품소개</a></li>
 						<li class="active">비스켓</li>
 					</ol>
 				</div>
@@ -126,7 +126,7 @@
 									</div>
 									<!-- End .product-top -->
 									<h3 class="product-title">
-										<a href="product.html">${article.c_intro}</a>
+										<a href="product.html">${article.c_product}</a>
 									</h3>
 									<div class="ratings-container">
 										<a href="#" class="product-ratings" title="7 Ratings"> <span
