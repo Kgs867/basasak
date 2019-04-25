@@ -133,7 +133,7 @@
 										<div class="ratings-container">
 											<a href="#" class="product-ratings" title="7 Ratings"> <span
 												class="ratings" style="width: 60%"> <span
-													class="ratings-text sr-only">7 Ratings</span>
+													class="ratings-text sr-only"></span>
 											</span> <!-- End .ratings -->
 											</a>
 											<!-- End .product-ratings -->
