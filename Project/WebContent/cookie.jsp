@@ -69,7 +69,7 @@
 					<div class="col-md-9 col-md-push-3">
 						<div class="category-filter-row">
 							<div class="right">
-								<span class="cat-product-count">Total Products: 1071</span>
+								<span class="cat-product-count"></span>
 								<div class="filter-product-view">
 									<a href="category.html" class="btn btn-custom"
 										title="Category Grid"><i class="fa fa-th"></i></a> <a
@@ -131,15 +131,16 @@
 									<div class="ratings-container">
 										<a href="#" class="product-ratings" title="7 Ratings"> <span
 											class="ratings" style="width: 60%"> <span
-												class="ratings-text sr-only">7 Ratings</span>
+												class="ratings-text sr-only"></span>
 										</span> <!-- End .ratings -->
 										</a>
 										<!-- End .product-ratings -->
 									</div>
 									<!-- End .ratings-container -->
 									<div class="product-price-container">
-										<span class="old-price">$99.00</span> <span
-											class="product-price">${article.c_price}</span>
+										<span
+											class="product-price"><fmt:formatNumber
+													value="${article.c_price}" pattern="#,###" /> 원</span>
 									</div>
 									<!-- End .product-price-container -->
 								</div>
@@ -152,7 +153,7 @@
 
 						<div class="pagination-wrapper">
 							<nav class="pagination-container">
-								<label>Showing: 1-4 of 16</label>
+								<label></label>
 								<ul class="pagination">
 									<c:if test="${pgList.startPage > pgList.blockSize}">
 										<a
@@ -160,22 +161,29 @@
 									</c:if>
 									<c:forEach var="i" begin="${pgList.startPage}"
 										end="${pgList.endPage}">
-										<a
-											href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><c:if
-												test="${pgList.currentPage==i}">
-												<font color="red"><b>[${i}]</b></font>
-											</c:if> <c:if test="${pgList.currentPage!=i}">[${i}]</c:if></a>
+										<c:if test="${pgList.currentPage==i}">
+											<li class="active"><a
+												href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><font
+													color="white"><b>${i}</b></font></a></li>
+										</c:if>
+										<c:if test="${pgList.currentPage!=i}">
+											<li><a
+												href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><font
+													color="white"><b>${i}</b></font></a></li>
+										</c:if>
 									</c:forEach>
-									<li class="active"><a href="#">1</a></li>
+									<!-- <li class="active"><a href="#">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
+									<li><a href="#">4</a></li> -->
 									<li><a href="#" aria-label="Next"> <span
 											aria-hidden="true"><i class="fa fa-angle-right"></i></span>
 									</a></li>
 									<c:if test="${pgList.endPage<pgList.pageCount}">
-										<a
-											href="/Project/cookielist.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
+										<li><a
+											href="/Project/cookielist.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}"
+											aria-label="Next"> <span aria-hidden="true"><i
+													class="fa fa-angle-right"></i></span></a></li>
 									</c:if>
 								</ul>
 							</nav>
