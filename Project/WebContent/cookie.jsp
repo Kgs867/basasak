@@ -49,15 +49,15 @@
 
 		<div class="main">
 			<div class="page-header largest parallax custom text-center"
-				style="background-image: url(assets/images/page-header-bg.jpg)"
+				style="background-image: url(assets/images/bisciut.png)"
 				data-0="background-position:50% 50%;"
 				data-top-bottom="background-position:50% 100%">
 				<div class="container-fluid">
-					<h1>Category</h1>
+					<h1>Biscuit</h1>
 					<ol class="breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#">Pages</a></li>
-						<li class="active">Category</li>
+						<li><a href="#">제품소개</a></li>
+						<li class="active">비스켓</li>
 					</ol>
 				</div>
 				<!-- End .container-fluid -->
@@ -109,7 +109,7 @@
 									<div class="product-top">
 										<figure>
 											<a href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}" title="Product Name"> <img
-												src="assets/images/products/product10.jpg"
+												src="${article.c_img1 }"
 												alt="Product image" class="product-image">
 											</a>
 										</figure>
@@ -189,93 +189,74 @@
 							<div class="filter-group-widget">
 								<div class="panel-group" role="tablist"
 									aria-multiselectable="true">
-									<div class="panel">
-										<form name="test" action="/testting12/cookielist.do">
-											<select name="search">
-												<option value="subject">제목</option>
-												<option value="subject_content">제목+내용</option>
-												<option value="writer">작성자</option>
-											</select> <input type="text" size="15" name="searchtext">
-											&nbsp; <input type="submit" value="검색">
-										</form>
-									</div>
-									<!-- End .panel -->
-									<div class="panel">
-										<div class="panel-heading" role="tab" id="brandFilter-header">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" href="#brandFilter"
-													aria-expanded="true" aria-controls="brandFilter"> Brand
-													Filter <span class="panel-icon"></span>
-												</a>
-											</h4>
-										</div>
-										<!-- End .panel-heading -->
-										<div id="brandFilter" class="panel-collapse collapse in"
-											role="tabpanel" aria-labelledby="brandFilter-header">
-											<div class="panel-body">
-												<ul class="filter-brand-list">
-													<li><a href="#"><i class="fa fa-angle-right"></i>Yikes
-															&amp; Sports <span>(11)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Smittzy
-															&amp; Jane <span>(7)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Susan's
-															Secrets <span>(10)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Puma
-															&amp; Cougar <span>(14)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Jane
-															Shirts <span>(9)</span></a></li>
-												</ul>
-											</div>
-											<!-- End .panel-body -->
-										</div>
-										<!-- End .panel-collapse -->
-									</div>
-									<!-- End .panel -->
-									<div class="panel">
-										<div class="panel-heading" role="tab" id="priceFilter-header">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" href="#priceFilter"
-													aria-expanded="true" aria-controls="priceFilter"> Price
-													Filter <span class="panel-icon"></span>
-												</a>
-											</h4>
-										</div>
-										<!-- End .panel-heading -->
-										<div id="priceFilter" class="panel-collapse collapse in"
-											role="tabpanel" aria-labelledby="priceFilter-header">
-											<div class="panel-body">
-												<div class="filter-price">
-													<div id="price-slider"></div>
-													<!-- End #price-slider -->
-													<div id="filter-range-details" class="row">
-														<div class="col-xs-6">
-															<div class="filter-price-label">from</div>
-															<input type="text" id="price-range-low"
-																class="form-control input-sm" placeholder="Min">
-														</div>
-														<div class="col-xs-6">
-															<div class="filter-price-label">to</div>
-															<input type="text" id="price-range-high"
-																class="form-control input-sm" placeholder="Max">
-														</div>
-													</div>
-													<!-- End #filter-range-details -->
-													<div class="filter-price-action">
-														<a href="#" class="btn btn-custom btn-sm">Filter</a> <a
-															href="#" class="btn btn-black btn-sm">Reset</a>
-													</div>
-													<!-- End #filter-price-action -->
-												</div>
-												<!-- End .filter-price -->
-											</div>
-											<!-- End .panel-body -->
-										</div>
-										<!-- End .panel-collapse -->
-									</div>
-									<!-- End .panel -->
-								</div>
-								<!-- End .panel-group -->
-							</div>
+									<div class="snb f1" >
+      <!-- 제품 -->
+      <h2>
+        <img src="assets/images/blog/제품소개.png" alt="제품소개">
+         <span>
+        <img alt="인포" src="assets/images/blog/인포.png">
+         </span>
+      </h2>
+        <div class="snb-wrap hover-relative">
+          <ul style="list-style-type:none;">
+             <li class="info-hover-li">
+               <a href="/Project/cookie.jsp">비스켓
+               	<img class="info-hover-img" src="assets/images/blog/비스켓.png" alt="비스켓"/>
+               </a>
+               
+             </li>
+             <li class="info-hover-li2">
+               <a href="/Project/cookie.jsp"> 스낵
+                <img class="info-hover-img2" src="assets/images/blog/스낵.png" alt="스낵"/>
+               </a>
+             </li >
+             <li class="info-hover-li3">
+             <a href="/Project/cookie.jsp">초코
+               <img class="info-hover-img3" src="assets/images/blog/초코.png" alt="초코"/>
+             </a>
+             </li>
+             <li>
+             <a href="/Project/cookie.jsp">기타</a>
+             </li>            
+          </ul>
+        </div>
+        
+       <div class="banner-wrap">
+           <ul style="list-style-type:none;">
+             <li class="first">
+               <a href="http://www.ht.co.kr/product/list" style="text-decoration:none;">
+                   <img src="assets/images/blog/해태로고.png" alt="해태제과" style="outline:none;">
+               </a>
+              </li>
+              <li class="first">
+               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
+                   <img src="assets/images/blog/빙그레로고.png" alt="빙그레" style="outline:none;">
+               </a>
+              </li>
+              <li class="first">
+               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
+                   <img src="assets/images/blog/오리온로고.png" alt="오리온" style="outline:none;">
+               </a>
+              </li>
+              <li class="first">
+               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
+                   <img src="assets/images/blog/롯데로고.png" alt="롯데" style="outline:none;">
+               </a>
+              </li>
+              <li class="first">
+               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
+                   <img src="assets/images/blog/농심로고.png" alt="농심" style="outline:none;">
+               </a>
+              </li>
+              <li class="first">
+               <a href="http://www.ht.co.kr/product/list" style="outline:none;" target="_blank">
+                   <img src="assets/images/blog/노브랜드로고.png" alt="노브랜드" style="outline:none;">
+               </a>
+              </li>
+           </ul>
+        </div>
+   </div> 
+																</div>
 							<!-- End .filter-widget -->
 						</div>
 						<!-- End .widget -->
