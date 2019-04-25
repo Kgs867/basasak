@@ -69,7 +69,7 @@
 					<div class="col-md-9 col-md-push-3">
 						<div class="category-filter-row">
 							<div class="right">
-								<span class="cat-product-count">Total Products: 1071</span>
+								<span class="cat-product-count"></span>
 								<div class="filter-product-view">
 									<a href="category.html" class="btn btn-custom"
 										title="Category Grid"><i class="fa fa-th"></i></a> <a
@@ -152,9 +152,9 @@
 						</div>
 						<!-- End .products-container -->
 
-						<div class="pagination-wrapper">
+						<div class="pagination-wrapper" >
 							<nav class="pagination-container">
-								<label>Showing: 1-4 of 16</label>
+								<label></label>
 								<ul class="pagination">
 									<c:if test="${pgList.startPage > pgList.blockSize}">
 										<a
