@@ -68,7 +68,7 @@ public class DBConnectionMgr {
 
     public DBConnectionMgr() throws IOException{
     	Properties props=new Properties();
-    	FileInputStream in=new FileInputStream("C:/Users/kitcoop/git/basasak/Project/WebContent/WEB-INF/dbtest/mysql.properties");
+    	FileInputStream in=new FileInputStream("C:/Users/user/git/basasak/Project/WebContent/WEB-INF/dbtest/mysql.properties");
     	props.load(in);
     	in.close();
     	_driver=props.getProperty("jdbc.drivers");
