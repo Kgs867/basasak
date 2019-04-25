@@ -81,7 +81,7 @@ public class CookieDAO {
 		//1.페이징 처리 결과를 저장할 hashtable객체를 선언
 		Hashtable<String, Integer> pgList =new Hashtable<String, Integer>();
 		
-		int pageSize=9;//numPerPage 페이지당 보여주는 게시물수
+		int pageSize=6;//numPerPage 페이지당 보여주는 게시물수
     	int blockSize=5;//pagePerBlock -> 블럭당 보여주는 페이지수
 
     	//페이징처리에 해당하는 환경설정을 마무리
