@@ -1,9 +1,9 @@
 package action;
 
 import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kgs.board.*;
 
@@ -20,12 +20,13 @@ public class LoginAction implements CommandAction {
 		article.setM_id(request.getParameter("input_id"));
 		article.setM_pw(request.getParameter("input_Password"));
 		MemberDAO dbpro=new MemberDAO(); 
+		CookieDAO copro=new CookieDAO();
 		
 		login=dbpro.MemberLogin(article);
 		if (login) {
-			request.setAttribute("login", login);
-			request.setAttribute("id", request.getParameter("input_id"));
-			
+			request.getSession().setAttribute("login", login);
+			request.getSession().setAttribute("id", request.getParameter("input_id"));
+			request.getSession().setAttribute("sb_count", copro.cartCount(request.getParameter("input_id")));
 		}else if(login){
 			login=false;
 			return "/login.jsp";

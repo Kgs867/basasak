@@ -81,7 +81,7 @@ public class CookieDAO {
 		//1.페이징 처리 결과를 저장할 hashtable객체를 선언
 		Hashtable<String, Integer> pgList =new Hashtable<String, Integer>();
 		
-		int pageSize=9;//numPerPage 페이지당 보여주는 게시물수
+		int pageSize=6;//numPerPage 페이지당 보여주는 게시물수
     	int blockSize=5;//pagePerBlock -> 블럭당 보여주는 페이지수
 
     	//페이징처리에 해당하는 환경설정을 마무리
@@ -234,5 +234,171 @@ public class CookieDAO {
 		}
 
 		return articleList;
+	}
+	
+	public CookieDTO getArticle(String c_serial) {
+		CookieDTO article = null;
+		String type = null,name = null;
+		try {
+			con = pool.getConnection();
+			sql= "select c_type from cookie where c_serial=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, c_serial);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				type=rs.getString(1);
+				System.out.println(type);
+			}
+			
+			
+			sql="select c_name from cookiecategory where c_type=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, type);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				name=rs.getString(1);
+				System.out.println(name);
+			}
+			
+			
+			sql = "select * from cookie where c_serial=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, c_serial);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				article=new CookieDTO();
+				article.setC_serial(rs.getString("c_serial"));
+				article.setC_price(rs.getInt("c_price"));
+				article.setC_intro(rs.getString("c_intro"));
+				article.setC_size(rs.getInt("c_size"));
+				article.setC_storage(rs.getString("c_storage"));
+				article.setC_img1(rs.getString("c_img1"));
+				article.setC_img2(rs.getString("c_img2"));
+				article.setC_product(rs.getString("c_product"));
+				article.setC_name(name);
+				System.out.println(article.getC_serial());
+			}
+			
+
+		} catch (Exception e) {
+			System.out.println("getArticle()메서드 에러유발" + e);
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return article;
+	}
+	public void addCart(CartDTO article) {
+		String countsb = null;
+		
+		try {
+			con = pool.getConnection();
+			sql="select max(substr(sb_serial,-3)) from shopb";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				System.out.println(rs.getString(1));
+				countsb=rs.getString(1);
+				if (countsb!=null) {
+					countsb=article.getM_id()+String.format("%03d", rs.getInt(1)+1);
+				}else {
+					countsb=article.getM_id()+String.format("%03d", 1);
+				}
+			}
+			
+			sql="insert into shopb(sb_serial,sb_count,sb_price,sb_point,m_id,c_serial)values(?,?,?,?,?,?)";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, countsb);
+			pstmt.setInt(2, article.getSb_count());
+			pstmt.setInt(3, (article.getSb_price()*article.getSb_count()));
+			if (article.getSb_point()==0) {
+				System.out.println("point 0");
+				pstmt.setInt(4, 0);
+			}else {	pstmt.setInt(4, article.getSb_point());}
+			pstmt.setString(5, article.getM_id());
+			pstmt.setString(6, article.getC_serial());
+			int add=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("addCart() 에러" + e);
+		} finally {
+
+		}
+	}
+	
+	public int cartCount(String id) {
+		int count=0;
+		try {
+			con = pool.getConnection();
+			sql="select count(*) from shopb where m_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				count=rs.getInt(1);
+			}
+		} catch (Exception e) {
+			System.out.println("cartCount 에러"+e);
+		}
+		return count;
+	}
+	
+	public List cartView(String id) {
+			List articleList=null;
+			CartDTO article;
+		try {
+			con = pool.getConnection();
+			sql="select sb_serial,sb_count,sb_price,c_price,c_product from shopb,cookie where shopb.c_serial=cookie.c_serial and m_id=? order by sb_serial asc";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if (rs.next()) {
+				articleList=new ArrayList();
+				do {
+					article=new CartDTO();
+					article.setSb_serial(rs.getString("sb_serial"));
+					article.setSb_count(rs.getInt("sb_count"));
+					article.setSb_price(rs.getInt("sb_price"));
+					article.setC_price(rs.getInt("c_price"));
+					article.setC_product(rs.getString("c_product"));
+					articleList.add(article);
+				} while (rs.next());
+			}
+		} catch (Exception e) {
+			System.out.println("CartView 에러"+e);
+		}finally {
+			return articleList;
+		}	
+	}
+	
+	public void cartUpdate(CartDTO article) {
+		try {
+			con = pool.getConnection();
+			sql="update shopb set sb_count=?,sb_price=? where sb_serial=?";
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setInt(1, article.sb_count);
+			pstmt.setInt(2, article.c_price*article.sb_count);
+			pstmt.setString(3, article.sb_serial);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("cartUpdate 에러"+e);
+		}finally {
+		}
+	}
+	
+	public void cartDelete(CartDTO article) {
+		try {
+			con = pool.getConnection();
+			sql="delete from shopb where sb_serial=?";
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setString(1, article.getSb_serial());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("cartDelete 에러"+e);
+		}
+		
 	}
 }

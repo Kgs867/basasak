@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,9 @@
 	rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/plugins.min.css">
-<link rel="stylesheet" href="assets/css/style.css">.
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- basasak css 추가 -->
+<link rel="stylesheet" href="assets/css/basasak.css">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -42,321 +45,19 @@
 	<!-- End #page-loader -->
 
 	<div id="wrapper">
-		<header class="header header3 white sticky-header">
-			<div class="header-top">
-				<div class="container-fluid">
-
-
-
-					<ul class="top-menu visible-lg pull-left">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">News</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-
-					<div class="top-links pull-right">
-						<a href="login.html">로그인</a> <a href="register.html">회원가입</a>
-						<div class="dropdown header-dropdown cart-dropdown pull-right"
-							style="height: 50px;">
-							<a href="#" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false" style="height: 30px; background: white">
-								<span> <!-- <i class="fa fa-shopping-basket"></i> --> <span
-									class="dcart-total-count">2</span>
-							</span>
-							</a>
-							<div class="dropdown-menu">
-								<p>
-									2 item(s) in your cart - <span>$279.00</span>
-								</p>
-								<div class="dcart-products">
-									<div class="product">
-										<figure>
-											<a href="#"> <img
-												src="assets/images/products/thumbs/product1.jpg"
-												alt="Product">
-											</a>
-										</figure>
-										<div class="product-meta">
-											<h5 class="product-title">
-												<a href="#">Oluptate cumque quo archi deleni.</a>
-											</h5>
-											<div class="product-price-container">
-												<span class="product-price">$180.00</span>
-											</div>
-											<!-- End .product-price-container -->
-											<span class="product-quantity">x 1</span>
-										</div>
-										<!-- End .product-meta -->
-										<a href="#" class="delete-btn" title="Delete Product"><i
-											class="fa fa-times"></i></a>
-									</div>
-									<!-- End .product -->
-									<div class="product">
-										<figure>
-											<a href="#"> <img
-												src="assets/images/products/thumbs/product2.jpg"
-												alt="Product">
-											</a>
-										</figure>
-										<div class="product-meta">
-											<h5 class="product-title">
-												<a href="#">Lorem ipsum dolor sit amet consect.</a>
-											</h5>
-											<div class="product-price-container">
-												<span class="old-price">$140.00</span> <span
-													class="product-price">$99.00</span>
-											</div>
-											<!-- End .product-price-container -->
-											<span class="product-quantity">x 2</span>
-										</div>
-										<!-- End .product-meta -->
-										<a href="#" class="delete-btn" title="Delete Product"><i
-											class="fa fa-times"></i></a>
-									</div>
-									<!-- End .product -->
-								</div>
-								<!-- End .dcart-products -->
-
-								<div class="dcart-action-container">
-									<div class="dcart-action-info">
-										<p>
-											Shipping: <span>$12.00</span>
-										</p>
-										<p>
-											Tax: <span>Free</span>
-										</p>
-										<p>
-											Total: <span>$390.00</span>
-										</p>
-									</div>
-									<!-- End .dcart-action-info -->
-
-									<div class="dcart-action">
-										<a href="#" class="btn btn-custom2 btn-sm">View Cart</a> <a
-											href="#" class="btn btn-custom btn-sm">Checkout</a>
-									</div>
-									<!-- End .dcart-action -->
-								</div>
-								<!-- End .dcart-action-container -->
-							</div>
-							<!-- End .dropdown-menu -->
-						</div>
-						<!-- End .cartdropdown -->
-					</div>
-					<!-- End .top-links -->
-				</div>
-				<!-- End .container-fluid -->
-			</div>
-			<!-- End .header-top -->
-
-			<div class="header-inner">
-				<div class="container-fluid">
-					<div class="header-left">
-						<div class="social-icons hidden-xs pull-left">
-							<a href="#" class="social-icon" title="Facebook"><i
-								class="fa fa-facebook"></i></a> <a href="#" class="social-icon"
-								title="Twitter"><i class="fa fa-twitter"></i></a> <a href="#"
-								class="social-icon" title="Github"><i class="fa fa-github"></i></a>
-							<a href="#" class="social-icon" title="Linkedin"><i
-								class="fa fa-linkedin"></i></a> <a href="#" class="social-icon"
-								title="Instagram"><i class="fa fa-instagram"></i></a> <a
-								href="#" class="social-icon" title="Youtube"><i
-								class="fa fa-youtube"></i></a>
-						</div>
-						<!-- End .social-icons -->
-					</div>
-					<!-- End .header-left -->
-
-					<div class="header-center">
-						<a href="index.html" class="site-logo"
-							title="Bold - Multipurpose Template"> <img
-							src="assets/images/logo2.png" data-rjs="3" alt="Bold Logo">
-							<span class="sr-only">Bold</span>
-						</a>
-					</div>
-					<!-- End .header-center -->
-
-					<div class="header-right">
-						<div class="dropdown header-dropdown cart-dropdown pull-right">
-							<a href="#" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <span> <i
-									class="fa fa-shopping-basket"></i> <span
-									class="dcart-total-count">2</span>
-							</span>
-							</a>
-
-							<div class="dropdown-menu">
-								<p>
-									2 item(s) in your cart - <span>$279.00</span>
-								</p>
-								<div class="dcart-products">
-									<div class="product">
-										<figure>
-											<a href="#"> <img
-												src="assets/images/products/thumbs/product1.jpg"
-												alt="Product">
-											</a>
-										</figure>
-										<div class="product-meta">
-											<h5 class="product-title">
-												<a href="#">Oluptate cumque quo archi deleni.</a>
-											</h5>
-											<div class="product-price-container">
-												<span class="product-price">$180.00</span>
-											</div>
-											<!-- End .product-price-container -->
-											<span class="product-quantity">x 1</span>
-										</div>
-										<!-- End .product-meta -->
-										<a href="#" class="delete-btn" title="Delete Product"><i
-											class="fa fa-times"></i></a>
-									</div>
-									<!-- End .product -->
-									<div class="product">
-										<figure>
-											<a href="#"> <img
-												src="assets/images/products/thumbs/product2.jpg"
-												alt="Product">
-											</a>
-										</figure>
-										<div class="product-meta">
-											<h5 class="product-title">
-												<a href="#">Lorem ipsum dolor sit amet consect.</a>
-											</h5>
-											<div class="product-price-container">
-												<span class="old-price">$140.00</span> <span
-													class="product-price">$99.00</span>
-											</div>
-											<!-- End .product-price-container -->
-											<span class="product-quantity">x 2</span>
-										</div>
-										<!-- End .product-meta -->
-										<a href="#" class="delete-btn" title="Delete Product"><i
-											class="fa fa-times"></i></a>
-									</div>
-									<!-- End .product -->
-								</div>
-								<!-- End .dcart-products -->
-
-								<div class="dcart-action-container">
-									<div class="dcart-action-info">
-										<p>
-											Shipping: <span>$12.00</span>
-										</p>
-										<p>
-											Tax: <span>Free</span>
-										</p>
-										<p>
-											Total: <span>$390.00</span>
-										</p>
-									</div>
-									<!-- End .dcart-action-info -->
-
-									<div class="dcart-action">
-										<a href="#" class="btn btn-custom2 btn-sm">View Cart</a> <a
-											href="#" class="btn btn-custom btn-sm">Checkout</a>
-									</div>
-									<!-- End .dcart-action -->
-								</div>
-								<!-- End .dcart-action-container -->
-							</div>
-							<!-- End .dropdown-menu -->
-						</div>
-						<!-- End .cartdropdown -->
-					</div>
-					<!-- End .header-right -->
-				</div>
-				<!-- End .container-fluid -->
-			</div>
-			<!-- End .header-inner -->
-
-			<div class="header-bottom custom">
-				<div class="container-fluid">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#main-nav-container"
-						aria-expanded="false">
-						<span class="toggle-text">Menu</span> <span class="toggle-wrapper">
-							<span class="sr-only">Toggle Menu</span> <span class="icon-bar"></span>
-							<span class="icon-bar"></span> <span class="icon-bar"></span>
-						</span>
-					</button>
-					<div class="collapse navbar-collapse" id="main-nav-container">
-						<ul class="nav navbar-nav navbar-nav-table">
-							<li class="dropdown active"><a href="#"
-								class="dropdown-toggle" data-toggle="dropdown" role="button"
-								aria-expanded="false">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false">제품소개</a>
-								<ul class="dropdown-menu col-lg-12" role="menu">
-									<li class="dropdown"><a href="#"
-										class="dropdown-toggle text-center" data-toggle="dropdown"
-										role="button" aria-expanded="false">비스켓</a></li>
-									<li class="dropdown"><a href="#"
-										class="dropdown-toggle text-center" data-toggle="dropdown"
-										role="button" aria-expanded="false">스낵</a></li>
-									<li class="dropdown"><a href="#"
-										class="dropdown-toggle text-center" data-toggle="dropdown"
-										role="button" aria-expanded="false">초코</a></li>
-									<li class="dropdown"><a href="#"
-										class="dropdown-toggle text-center" data-toggle="dropdown"
-										role="button" aria-expanded="false">기타</a></li>
-								</ul></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false">달콤한소리</a>
-								<ul class="dropdown-menu col-lg-12" role="menu">
-									<li class="dropdown">
-									<li><a href="product.html" class="text-center">리뷰게시판</a></li>
-									<li><a href="product2.html" class="text-center">공지사항</a></li>
-								</ul></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false">고객센터</a>
-								<ul class="dropdown-menu col-lg-12" role="menu">
-									<li class="dropdown">
-									<li><a href="product.html" class="text-center">Q&A</a></li>
-									<li><a href="product.html" class="text-center">FAQ</a></li>
-								</ul></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false">회사소개</a>
-								<ul class="dropdown-menu col-lg-12" role="menu">
-									<li><a href="product.html" class="text-center">오시는길</a></li>
-									<li><a href="product.html" class="text-center">인사말</a></li>
-								</ul></li>
-							<li><a href="#" class="header-search-toggle" role="button"
-								title="Open Search"><span class="visible-inline-xs">Search</span><i
-									class="fa fa-search"></i></a></li>
-						</ul>
-					</div>
-					<!-- /.navbar-collapse -->
-				</div>
-				<!-- End .container-fluid -->
-			</div>
-			<!-- End .header-bottom -->
-		</header>
-		<!-- End .header -->
-
-		<div class="header-search-form">
-			<a href="#" class="header-search-toggle" title="Close"><i
-				class="fa fa-times"></i></a>
-			<form action="#">
-				<input type="search" class="form-control" placeholder="Type in here"
-					required>
-			</form>
-		</div>
-		<!-- End .header-search-form -->
+		<jsp:include page="header.jsp"></jsp:include>
 
 		<div class="main">
 			<div class="page-header largest parallax custom text-center"
-				style="background-image: url(assets/images/page-header-bg.jpg)"
+				style="background-image: url(assets/images/bisciut.png)"
 				data-0="background-position:50% 50%;"
 				data-top-bottom="background-position:50% 100%">
 				<div class="container-fluid">
-					<h1>Category</h1>
+					<h1>Biscuit</h1>
 					<ol class="breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#">Pages</a></li>
-						<li class="active">Category</li>
+						<li><a href="#">상품소개</a></li>
+						<li class="active">비스켓</li>
 					</ol>
 				</div>
 				<!-- End .container-fluid -->
@@ -365,10 +66,88 @@
 
 			<div class="container-fluid">
 				<div class="row flex-shop">
-					<div class="col-md-9 col-md-push-3">
+					<aside class="col-md-3 sidebar shop-sidebar">
+						<div class="widget">
+							<div class="filter-group-widget">
+								<div class="panel-group" role="tablist"
+									aria-multiselectable="true">
+									<div class="snb f1">
+										<!-- 제품 -->
+										<h2>
+											<img src="assets/images/blog/제품소개.png" alt="제품소개"> <span>
+												<img alt="인포" src="assets/images/blog/인포.png">
+											</span>
+										</h2>
+										<div class="snb-wrap hover-relative">
+											<ul style="list-style-type: none;">
+												<li class="info-hover-li"><a href="/Project/cookie.jsp">비스켓
+														<img class="info-hover-img"
+														src="assets/images/blog/비스켓.png" alt="비스켓" />
+												</a></li>
+												<li class="info-hover-li2"><a
+													href="/Project/cookie.jsp"> 스낵 <img
+														class="info-hover-img2" src="assets/images/blog/스낵.png"
+														alt="스낵" />
+												</a></li>
+												<li class="info-hover-li3"><a
+													href="/Project/cookie.jsp">초코 <img
+														class="info-hover-img3" src="assets/images/blog/초코.png"
+														alt="초코" />
+												</a></li>
+												<li><a href="/Project/cookie.jsp">기타</a></li>
+											</ul>
+										</div>
+
+										<div class="banner-wrap">
+											<ul style="list-style-type: none;">
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="text-decoration: none;"> <img
+														src="assets/images/blog/해태로고.png" alt="해태제과"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/빙그레로고.png" alt="빙그레"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/오리온로고.png" alt="오리온"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/롯데로고.png" alt="롯데"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/농심로고.png" alt="농심"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;" target="_blank"> <img
+														src="assets/images/blog/노브랜드로고.png" alt="노브랜드"
+														style="outline: none;">
+												</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- End .filter-widget -->
+							</div>
+							<!-- End .widget -->
+					</aside>
+					<div class="col-md-9 ">
 						<div class="category-filter-row">
 							<div class="right">
-								<span class="cat-product-count">Total Products: 1071</span>
+								<span class="cat-product-count"></span>
 								<div class="filter-product-view">
 									<a href="category.html" class="btn btn-custom"
 										title="Category Grid"><i class="fa fa-th"></i></a> <a
@@ -403,45 +182,47 @@
 
 						<div class="products-container max-col-3">
 							<div class="row">
-							<c:forEach var="article"  items="${articleList}">
-								<div class="product">
-									<div class="product-top">
-										<figure>
-											<a href="product.html" title="Product Name"> <img
-												src="assets/images/products/product10.jpg"
-												alt="Product image" class="product-image">
-											</a>
-										</figure>
-										<div class="product-action-container">
-											<a href="#" class="btn product-add-btn" data-toggle="tooltip"
-												title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
-											<a href="#" class="btn product-wishlist-btn"
-												data-toggle="tooltip" title="Add to Wishlist"><i
-												class="fa fa-heart"></i></a> <a href="#"
-												class="btn product-compare-btn" data-toggle="tooltip"
-												title="Compare"><i class="fa fa-retweet"></i></a>
+								<c:forEach var="article" items="${articleList}">
+									<div class="product">
+										<div class="product-top">
+											<figure>
+												<a
+													href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}"
+													title="Product Name"> <img src="${article.c_img1 }"
+													alt="Product image" class="product-image">
+												</a>
+											</figure>
+											<div class="product-action-container">
+												<a href="#" class="btn product-add-btn"
+													data-toggle="tooltip" title="Add to Cart"><i
+													class="fa fa-shopping-cart"></i></a> <a href="#"
+													class="btn product-wishlist-btn" data-toggle="tooltip"
+													title="Add to Wishlist"><i class="fa fa-heart"></i></a> <a
+													href="#" class="btn product-compare-btn"
+													data-toggle="tooltip" title="Compare"><i
+													class="fa fa-retweet"></i></a>
+											</div>
+											<!-- End .product-action-container -->
 										</div>
-										<!-- End .product-action-container -->
+										<!-- End .product-top -->
+										<h3 class="product-title">
+											<a href="product.html">${article.c_product}</a>
+										</h3>
+										<div class="ratings-container">
+											<a href="#" class="product-ratings" title="7 Ratings"> <span
+												class="ratings" style="width: 60%"> <span
+													class="ratings-text sr-only"></span>
+											</span> <!-- End .ratings -->
+											</a>
+											<!-- End .product-ratings -->
+										</div>
+										<!-- End .ratings-container -->
+										<div class="product-price-container">
+											<span class="product-price"><fmt:formatNumber
+													value="${article.c_price}" pattern="#,###" /> 원</span>
+										</div>
+										<!-- End .product-price-container -->
 									</div>
-									<!-- End .product-top -->
-									<h3 class="product-title">
-										<a href="product.html">${article.c_intro}</a>
-									</h3>
-									<div class="ratings-container">
-										<a href="#" class="product-ratings" title="7 Ratings"> <span
-											class="ratings" style="width: 60%"> <span
-												class="ratings-text sr-only">7 Ratings</span>
-										</span> <!-- End .ratings -->
-										</a>
-										<!-- End .product-ratings -->
-									</div>
-									<!-- End .ratings-container -->
-									<div class="product-price-container">
-										<span class="old-price">$99.00</span> <span
-											class="product-price">${article.c_price}</span>
-									</div>
-									<!-- End .product-price-container -->
-								</div>
 								</c:forEach>
 								<!-- End .product -->
 							</div>
@@ -451,30 +232,37 @@
 
 						<div class="pagination-wrapper">
 							<nav class="pagination-container">
-								<label>Showing: 1-4 of 16</label>
+								<label></label>
 								<ul class="pagination">
 									<c:if test="${pgList.startPage > pgList.blockSize}">
 										<a
-											href="/JspBoard2/list.do?pageNum=${pgList.startPage-pgList.blockSize}&search=${search}&searchtext=${searchtext}">[이전]</a>
+											href="/Project/cookielist.do?pageNum=${pgList.startPage-pgList.blockSize}&search=${search}&searchtext=${searchtext}">[이전]</a>
 									</c:if>
 									<c:forEach var="i" begin="${pgList.startPage}"
 										end="${pgList.endPage}">
-										<a
-											href="/JspBoard2/list.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><c:if
-												test="${pgList.currentPage==i}">
-												<font color="red"><b>[${i}]</b></font>
-											</c:if> <c:if test="${pgList.currentPage!=i}">[${i}]</c:if></a>
+										<c:if test="${pgList.currentPage==i}">
+											<li class="active"><a
+												href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><font
+													color="white"><b>${i}</b></font></a></li>
+										</c:if>
+										<c:if test="${pgList.currentPage!=i}">
+											<li><a
+												href="/Project/cookielist.do?pageNum=${i}&search=${search}&searchtext=${searchtext}"><font
+													color="white"><b>${i}</b></font></a></li>
+										</c:if>
 									</c:forEach>
-									<li class="active"><a href="#">1</a></li>
+									<!-- <li class="active"><a href="#">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
+									<li><a href="#">4</a></li> -->
 									<li><a href="#" aria-label="Next"> <span
 											aria-hidden="true"><i class="fa fa-angle-right"></i></span>
 									</a></li>
 									<c:if test="${pgList.endPage<pgList.pageCount}">
-										<a
-											href="/JspBoard2/list.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
+										<li><a
+											href="/Project/cookielist.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}"
+											aria-label="Next"> <span aria-hidden="true"><i
+													class="fa fa-angle-right"></i></span></a></li>
 									</c:if>
 								</ul>
 							</nav>
@@ -483,102 +271,7 @@
 					</div>
 					<!-- End .col-md-9 -->
 
-					<aside class="col-md-3 col-md-pull-9 sidebar shop-sidebar">
-						<div class="widget">
-							<div class="filter-group-widget">
-								<div class="panel-group" role="tablist"
-									aria-multiselectable="true">
-									<div class="panel">
-										<form name="test" action="/testting12/cookielist.do">
-											<select name="search">
-												<option value="subject">제목</option>
-												<option value="subject_content">제목+내용</option>
-												<option value="writer">작성자</option>
-											</select> <input type="text" size="15" name="searchtext">
-											&nbsp; <input type="submit" value="검색">
-										</form>
-									</div>
-									<!-- End .panel -->
-									<div class="panel">
-										<div class="panel-heading" role="tab" id="brandFilter-header">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" href="#brandFilter"
-													aria-expanded="true" aria-controls="brandFilter"> Brand
-													Filter <span class="panel-icon"></span>
-												</a>
-											</h4>
-										</div>
-										<!-- End .panel-heading -->
-										<div id="brandFilter" class="panel-collapse collapse in"
-											role="tabpanel" aria-labelledby="brandFilter-header">
-											<div class="panel-body">
-												<ul class="filter-brand-list">
-													<li><a href="#"><i class="fa fa-angle-right"></i>Yikes
-															&amp; Sports <span>(11)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Smittzy
-															&amp; Jane <span>(7)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Susan's
-															Secrets <span>(10)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Puma
-															&amp; Cougar <span>(14)</span></a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i>Jane
-															Shirts <span>(9)</span></a></li>
-												</ul>
-											</div>
-											<!-- End .panel-body -->
-										</div>
-										<!-- End .panel-collapse -->
-									</div>
-									<!-- End .panel -->
-									<div class="panel">
-										<div class="panel-heading" role="tab" id="priceFilter-header">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" href="#priceFilter"
-													aria-expanded="true" aria-controls="priceFilter"> Price
-													Filter <span class="panel-icon"></span>
-												</a>
-											</h4>
-										</div>
-										<!-- End .panel-heading -->
-										<div id="priceFilter" class="panel-collapse collapse in"
-											role="tabpanel" aria-labelledby="priceFilter-header">
-											<div class="panel-body">
-												<div class="filter-price">
-													<div id="price-slider"></div>
-													<!-- End #price-slider -->
-													<div id="filter-range-details" class="row">
-														<div class="col-xs-6">
-															<div class="filter-price-label">from</div>
-															<input type="text" id="price-range-low"
-																class="form-control input-sm" placeholder="Min">
-														</div>
-														<div class="col-xs-6">
-															<div class="filter-price-label">to</div>
-															<input type="text" id="price-range-high"
-																class="form-control input-sm" placeholder="Max">
-														</div>
-													</div>
-													<!-- End #filter-range-details -->
-													<div class="filter-price-action">
-														<a href="#" class="btn btn-custom btn-sm">Filter</a> <a
-															href="#" class="btn btn-black btn-sm">Reset</a>
-													</div>
-													<!-- End #filter-price-action -->
-												</div>
-												<!-- End .filter-price -->
-											</div>
-											<!-- End .panel-body -->
-										</div>
-										<!-- End .panel-collapse -->
-									</div>
-									<!-- End .panel -->
-								</div>
-								<!-- End .panel-group -->
-							</div>
-							<!-- End .filter-widget -->
-						</div>
-						<!-- End .widget -->
-					</aside>
+
 				</div>
 				<!-- End .row -->
 			</div>
