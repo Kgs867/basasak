@@ -5,7 +5,7 @@ import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kgs.board.CookieDAO;
+import kgs.board.BoardDAO;
 
 
 public class ListAction implements CommandAction {
@@ -21,7 +21,7 @@ public class ListAction implements CommandAction {
 	    	int count=0;//총레코드수
 	    	List articleList=null;//화면에 출력할 레코드를 저장할 변수
 	    	
-	    	CookieDAO dbPro=new CookieDAO();
+	    	BoardDAO dbPro=new BoardDAO();
 	    	count=dbPro.getArticleSearchCount(search, searchtext);//select count(*) from board
 	    	System.out.println("현재 검색된 레코드수(count) =>"+count);
 	    	
@@ -43,7 +43,7 @@ public class ListAction implements CommandAction {
 	    	request.setAttribute("pgList", pgList);
 	    	request.setAttribute("articleList", articleList);
 		//3.공유해서 이동할 수 있도록 설정
-		return "/list.jsp";//request.getAttibute("currentPage")=${currentPage}
+		return "/review.jsp";//request.getAttibute("currentPage")=${currentPage}
 	}
 
 }

@@ -12,14 +12,15 @@ public class UpdateProAction implements CommandAction {
 		  //한글처리
 	     request.setCharacterEncoding("utf-8");
 	     String pageNum=request.getParameter("pageNum");
+	     System.out.println("UpdateProAction =>"+request.getParameter("m_id"));
 	    
 	     BoardDTO article=new BoardDTO();
-	     article.setNum(Integer.parseInt(request.getParameter("num")));
-	     article.setWriter(request.getParameter("writer"));
-	     article.setEmail(request.getParameter("email"));
-	     article.setSubject(request.getParameter("subject"));
-	     article.setContent(request.getParameter("content"));
-	     article.setPasswd(request.getParameter("passwd"));
+	     article.setR_num(Integer.parseInt(request.getParameter("r_num")));
+	     article.setM_id(request.getParameter("m_id"));
+	     
+	     article.setR_title(request.getParameter("r_title"));
+	     article.setR_content(request.getParameter("r_content"));
+	     article.setR_pw(request.getParameter("r_pw"));
 	    
 	  BoardDAO dbPro=new BoardDAO();
 	  int check=dbPro.updateArticle(article);

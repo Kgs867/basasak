@@ -13,11 +13,14 @@ public class DeleteProAction implements CommandAction {
 		//한글처리
 		request.setCharacterEncoding("utf-8");
 		String pageNum=request.getParameter("pageNum");
+		System.out.println("@@@@@@@@@"+pageNum);
 		//BoardDTO->Setter Method(5)
 		//BoardDAO 객체필요
 		BoardDTO article=new BoardDTO();
-		article.setNum(Integer.parseInt(request.getParameter("num")));
-		article.setPasswd(request.getParameter("passwd"));
+		System.out.println(request.getParameter("r_num")+"########");
+		article.setR_num(Integer.parseInt(request.getParameter("r_num")));
+		System.out.println("aaaaaa"+request.getParameter("r_pw"));
+		article.setR_pw(request.getParameter("r_pw"));
 
 		//readcount->default로 설정한 관계로 자동으로 0이 들어간다
 		//BoardDAO객체 -> insertArticle(article)=>9개-->10개-->12개(readcount(0),num)		

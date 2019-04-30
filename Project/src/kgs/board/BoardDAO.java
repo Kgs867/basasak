@@ -31,7 +31,7 @@ public class BoardDAO {
 		try {
 			con = pool.getConnection();
 			System.out.println("con=>" + con);
-			sql = "select count(*) from board";
+			sql = "select count(*) from review";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {// 보여주는 결과가있다면
@@ -54,12 +54,12 @@ public class BoardDAO {
 			con = pool.getConnection();
 			//검색어를 입력하지않은경우 (검색분야 선택X)
 			if (search==null || search =="") {
-				sql = "select count(*) from board";
+				sql = "select count(*) from review";
 			}else {
 				if (search.equals("subject_content")) {
-					sql = "select count(*) from board where subject like '%"+searchtext+"%' or content like '%"+searchtext+"%'";
+					sql = "select count(*) from review where r_title like '%"+searchtext+"%' or r_content like '%"+searchtext+"%'";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
-					sql="select count(*) from board where "+search+" like '%"+searchtext+"%'";
+					sql="select count(*) from review where "+search+" like '%"+searchtext+"%'";
 				}
 			}
 			System.out.println("getArticleSearchCount의 검색어 sql=>"+sql);
@@ -88,7 +88,7 @@ public class BoardDAO {
 			con = pool.getConnection();
 			// 그룹번호가 가장 최신의 글을 중심으로 정렬하되, 만약에 level이 같은 경우에는
 			// step값으로 오름차순을 통해서 몇번째레코드 번호를 기준해서 정렬하라,
-			sql = "select * from board order by ref desc,re_step asc limit ?,?";
+			sql = "select * from review order by r_num asc limit ?,?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, start - 1);
 			pstmt.setInt(2, end);
@@ -134,12 +134,12 @@ public class BoardDAO {
 			// 그룹번호가 가장 최신의 글을 중심으로 정렬하되, 만약에 level이 같은 경우에는
 			// step값으로 오름차순을 통해서 몇번째레코드 번호를 기준해서 정렬하라,
 			if (search ==null || search=="") {
-				sql = "select * from board order by ref desc,re_step asc limit ?,?";
+				sql = "select * from review order by r_num desc limit ?,?";
 			}else {
 				if (search.equals("subject_content")) {
-					sql = "select * from board where subject like '%"+searchtext+"%' or content like '%"+searchtext+"%' order by ref desc,re_step asc limit ?,?";
+					sql = "select * from review where r_title like '%"+searchtext+"%' or r_content like '%"+searchtext+"%' order by r_num desc limit ?,?";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
-					sql="select * from board where "+search+" like '%"+searchtext+"%' order by ref desc,re_step asc limit ?,?";
+					sql="select * from review where "+search+" like '%"+searchtext+"%' order by r_num desc limit ?,?";
 				}
 			}
 			System.out.println("getBoardArticles의 검색어 sql=>"+sql);
@@ -237,18 +237,19 @@ public class BoardDAO {
 	public void insertArticle(BoardDTO article) {
 
 		// 1.article ->신규굴안자 답변글인지 구분
-		int num = article.getNum();// 0(신규글인지)0이 아닌경우(답변글)
-		int ref = article.getRef();
-		int re_step = article.getRe_step();
-		int re_level = article.getRe_level();
+		int r_num = article.getR_num();// 0(신규글인지)0이 아닌경우(답변글)
+//		int ref = article.getRef();
+//		int re_step = article.getRe_step();
+//		int re_level = article.getRe_level();
 		// 테이블에 입력할 게시물 번호를 저장할 변수
 		int number = 0;
-		System.out.println("insertArticle 메서드 내부의 num=>" + num);
-		System.out.println("ref=" + ref + ",re_step" + re_step + ",re_level=>" + re_level);
+//		int number = article.getR_num() +1;
+		System.out.println("insertArticle 메서드 내부의 r_num=>" + r_num);
+//		System.out.println("ref=" + ref + ",re_step" + re_step + ",re_level=>" + re_level);
 
 		try {
 			con = pool.getConnection();
-			sql = "select max(num) from board";
+			sql = "select max(r_num) from review";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {// 현재 테이블에서 데이터가 한개라도 존재한다면
@@ -256,9 +257,9 @@ public class BoardDAO {
 			} else {
 				number = 1;
 			}
-			// 만약에 답변글인경우
-			if (num != 0) {
-				sql = "update board set re_step=re_step+1 where ref=? and re_step > ?";
+/*			// 만약에 답변글인경우
+			if (r_num != 0) {
+				sql = "update review set re_step=re_step+1 where ref=? and re_step > ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, ref);
 				pstmt.setInt(2, re_step);
@@ -272,20 +273,23 @@ public class BoardDAO {
 				re_step = 0;
 				re_level = 0;
 			}
-			sql = "insert into board(writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip)values(?,?,?,?,?,?,?,?,?,?)";
+*/
+//		r_view, r_recommend, m_id
+			int r_view = 0;
+			int r_recommend = 0;
+			String m_id="test";
+			sql = "insert into review(r_num,r_title,r_content,r_date,r_view,r_recommend,r_pw,m_id) values(?,?,?,?,?,?,?,?)";
+			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, article.getWriter());
-			pstmt.setString(2, article.getEmail());
-			pstmt.setString(3, article.getSubject());
-			pstmt.setString(4, article.getPasswd());
-			pstmt.setTimestamp(5, article.getReg_date());
-			// ----------ref,re_step,re_level-------------------------
-			pstmt.setInt(6, ref);// pstmt.setInt(6,article,getRef());
-			pstmt.setInt(7, re_step);// 0
-			pstmt.setInt(8, re_level);// 0
-
-			pstmt.setString(9, article.getContent());
-			pstmt.setString(10, article.getIp());
+			pstmt.setInt(1, number);
+			pstmt.setString(2, article.getR_title());
+			pstmt.setString(3, article.getR_content());
+			pstmt.setTimestamp(4, article.getR_date());
+			pstmt.setInt(5, r_view);
+			pstmt.setInt(6, r_recommend);
+			pstmt.setString(7, article.getR_pw());
+			pstmt.setString(8, article.getM_id());
+			
 			int insert = pstmt.executeUpdate();
 			System.out.println("게시판의 글쓰기 성공유무(insert)=>" + insert);
 
@@ -299,25 +303,25 @@ public class BoardDAO {
 	// 글상세보기 -> list.jsp
 	// <a href="content.jsp?num=3&pageNum=1">게시판이란?</a>
 	// 형식)select * from board where num=3;
-	public BoardDTO getArticle(int num) {
+	public BoardDTO getArticle(int r_num) {
 		BoardDTO article = null;
 
 		try {
 			con = pool.getConnection();
-			sql = "update board set readcount=readcount+1 where num=?";
+			sql = "update review set r_view=r_view+1 where r_num=?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, r_num);
 			int update = pstmt.executeUpdate();
 			System.out.println("조회수 증가유무(update)=>" + update);
 
-			sql = "select * from board where num=?";
+			sql = "select * from review where r_num=?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, r_num);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 				article = makeArticleFromResult();// new BoardDTO();
-				System.out.println(article.getNum());
+				System.out.println(article.getR_num());
 //				article.setNum(rs.getInt("num"));
 //				article.setWriter(rs.getString("writer"));
 //				article.setEmail(rs.getString("email"));
@@ -346,34 +350,34 @@ public class BoardDAO {
 	// --중복된 레코드 한개를 담을 수 있는 메서드를 따로 만들어서 처리------
 	private BoardDTO makeArticleFromResult() throws Exception {
 		BoardDTO article = new BoardDTO();
-		article.setNum(rs.getInt("num"));
-		article.setWriter(rs.getString("writer"));
-		article.setEmail(rs.getString("email"));
-		article.setSubject(rs.getString("subject"));
-		article.setPasswd(rs.getString("passwd"));
-		article.setReg_date(rs.getTimestamp("reg_date"));
-		article.setReadcount(rs.getInt("readcount"));// default ->0
-		article.setRef(rs.getInt("ref"));// 그룹번호 ->신규글과 답변글 묶어주는 번호
-		article.setRe_step(rs.getInt("re_step"));
-		article.setRe_level(rs.getInt("re_level"));
-		article.setContent(rs.getString("content"));
+		
+		article.setR_num(rs.getInt("r_num"));
+		System.out.println("#############"+rs.getInt("r_num"));
+		article.setR_title(rs.getString("r_title"));
+		article.setR_content(rs.getString("r_content"));
+		article.setR_date(rs.getTimestamp("r_date"));
+		article.setR_view(rs.getInt("r_view"));// default ->0
+		article.setR_recommend(rs.getInt("r_recommend"));
+		article.setR_pw(rs.getString("r_pw"));
+		article.setM_id(rs.getString("m_id"));
+
 		return article;
 	}
 
-	public BoardDTO updateGetArticle(int num) {
+	public BoardDTO updateGetArticle(int r_num) {
 		BoardDTO article = null;
 
 		try {
 			con = pool.getConnection();
-			sql = "update board set readcount=readcount+1 where num=?";
+			sql = "update review set r_view=r_view+1 where r_num=?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, r_num);
 			int update = pstmt.executeUpdate();
 			System.out.println("조회수 증가유무(update)=>" + update);
 
-			sql = "select * from board where num=?";
+			sql = "select * from review where r_num=?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, r_num);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -394,26 +398,26 @@ public class BoardDAO {
 
 		try {
 			con=pool.getConnection();
-			sql="select passwd from board where num=?";
+			sql="select r_pw from review where r_num=?";
 			pstmt=con.prepareStatement(sql);
-			System.out.println(article.getNum());
+			System.out.println(article.getR_num());
 			System.out.println(article);
-			pstmt.setInt(1,article.getNum());
+			pstmt.setInt(1,article.getR_num());
 			rs=pstmt.executeQuery();
 
 			if (rs.next()) {
-				dbpasswd=rs.getString("passwd");
+				dbpasswd=rs.getString("r_pw");
 				System.out.println("dbpasswd =>"+dbpasswd);//확인된 뒤에는 삭제할것.
 				//db상의 암호=웹상에 입력한 암호가 맞다면
-				if (dbpasswd.equals(article.getPasswd())) {
-					sql="update board set writer=?,email=?,subject=?,passwd=?,content=? where num=?";
+				if (dbpasswd.equals(article.getR_pw())) {
+					sql="update review set r_title=?,r_content=?,r_pw=?,m_id=? where r_num=?";
 					pstmt=con.prepareStatement(sql);
-					pstmt.setString(1, article.getWriter());
-					pstmt.setString(2, article.getEmail());
-					pstmt.setString(3, article.getSubject());
-					pstmt.setString(4, article.getPasswd());
-					pstmt.setString(5, article.getContent());
-					pstmt.setInt(6, article.getNum());
+					pstmt.setString(1, article.getR_title());
+					pstmt.setString(2, article.getR_content());
+					pstmt.setString(3, article.getR_pw());
+					System.out.println("M_id =>"+article.getM_id());
+					pstmt.setString(4, article.getM_id());
+					pstmt.setInt(5, article.getR_num());
 					int update=pstmt.executeUpdate();
 					
 					System.out.println("게시판의 글수정 성공유무(update)="+update);
@@ -437,21 +441,21 @@ public class BoardDAO {
 
 		try {
 			con=pool.getConnection();
-			sql="select passwd from board where num=?";
+			sql="select r_pw from review where r_num=?";
 			pstmt=con.prepareStatement(sql);
-			System.out.println(article.getNum());
+			System.out.println(article.getR_num());
 			System.out.println(article);
-			pstmt.setInt(1,article.getNum());
+			pstmt.setInt(1,article.getR_num());
 			rs=pstmt.executeQuery();
 
 			if (rs.next()) {
-				dbpasswd=rs.getString("passwd");
+				dbpasswd=rs.getString("r_pw");
 				System.out.println("dbpasswd =>"+dbpasswd);//확인된 뒤에는 삭제할것.
 				//db상의 암호=웹상에 입력한 암호가 맞다면
-				if (dbpasswd.equals(article.getPasswd())) {
-					sql="delete from board where num=?";
+				if (dbpasswd.equals(article.getR_pw())) {
+					sql="delete from review where r_num=?";
 					pstmt=con.prepareStatement(sql);
-					pstmt.setInt(1,article.getNum());
+					pstmt.setInt(1,article.getR_num());
 					int delete=pstmt.executeUpdate();
 					x=1;
 					System.out.println("게시판의 글삭제 성공유무(delete)="+delete);

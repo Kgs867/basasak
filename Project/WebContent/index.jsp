@@ -182,15 +182,15 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">달콤한소리</a>
                                     <ul class="dropdown-menu col-lg-12" role="menu">
                                         <li class="dropdown">
-                                        <li><a href="review.jsp" class="text-center">리뷰게시판</a></li>
-                                        <li><a href="notice.jsp" class="text-center">공지사항</a></li>
+                                        <li><a href="review.do" class="text-center">리뷰게시판</a></li>
+                                        <li><a href="notice.do" class="text-center">공지사항</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">고객센터</a>
                                     <ul class="dropdown-menu col-lg-12" role="menu">
                                         <li class="dropdown">
-                                        <li><a href="qna.jsp" class="text-center">Q&A</a></li>
+                                        <li><a href="qna.do" class="text-center">Q&A</a></li>
                                         <li><a href="faq.jsp" class="text-center">FAQ</a></li>
                                     </ul>
                                 </li>
