@@ -301,3 +301,20 @@ img.pull-left {
 
     margin-bottom: 3rem !important;
 }
+
+
+/* 야매*/
+@media (min-width: 768px){
+@media (min-width: 768px){
+@media (min-width: 992px){
+.flex-shop .col-md-push-3+.col-md-pull-9 {
+    right: 80%;
+}
+}
+}
+}
+@media (min-width: 992px){
+.flex-shop .col-md-push-3 {
+    left: 20%;
+}
+}

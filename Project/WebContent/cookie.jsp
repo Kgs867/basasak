@@ -66,7 +66,85 @@
 
 			<div class="container-fluid">
 				<div class="row flex-shop">
-					<div class="col-md-9 col-md-push-3">
+					<aside class="col-md-3 sidebar shop-sidebar">
+						<div class="widget">
+							<div class="filter-group-widget">
+								<div class="panel-group" role="tablist"
+									aria-multiselectable="true">
+									<div class="snb f1">
+										<!-- 제품 -->
+										<h2>
+											<img src="assets/images/blog/제품소개.png" alt="제품소개"> <span>
+												<img alt="인포" src="assets/images/blog/인포.png">
+											</span>
+										</h2>
+										<div class="snb-wrap hover-relative">
+											<ul style="list-style-type: none;">
+												<li class="info-hover-li"><a href="/Project/cookie.jsp">비스켓
+														<img class="info-hover-img"
+														src="assets/images/blog/비스켓.png" alt="비스켓" />
+												</a></li>
+												<li class="info-hover-li2"><a
+													href="/Project/cookie.jsp"> 스낵 <img
+														class="info-hover-img2" src="assets/images/blog/스낵.png"
+														alt="스낵" />
+												</a></li>
+												<li class="info-hover-li3"><a
+													href="/Project/cookie.jsp">초코 <img
+														class="info-hover-img3" src="assets/images/blog/초코.png"
+														alt="초코" />
+												</a></li>
+												<li><a href="/Project/cookie.jsp">기타</a></li>
+											</ul>
+										</div>
+
+										<div class="banner-wrap">
+											<ul style="list-style-type: none;">
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="text-decoration: none;"> <img
+														src="assets/images/blog/해태로고.png" alt="해태제과"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/빙그레로고.png" alt="빙그레"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/오리온로고.png" alt="오리온"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/롯데로고.png" alt="롯데"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;"> <img
+														src="assets/images/blog/농심로고.png" alt="농심"
+														style="outline: none;">
+												</a></li>
+												<li class="first"><a
+													href="http://www.ht.co.kr/product/list"
+													style="outline: none;" target="_blank"> <img
+														src="assets/images/blog/노브랜드로고.png" alt="노브랜드"
+														style="outline: none;">
+												</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- End .filter-widget -->
+							</div>
+							<!-- End .widget -->
+					</aside>
+					<div class="col-md-9 ">
 						<div class="category-filter-row">
 							<div class="right">
 								<span class="cat-product-count"></span>
@@ -104,46 +182,47 @@
 
 						<div class="products-container max-col-3">
 							<div class="row">
-							<c:forEach var="article"  items="${articleList}">
-								<div class="product">
-									<div class="product-top">
-										<figure>
-											<a href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}" title="Product Name"> <img
-												src="${article.c_img1 }"
-												alt="Product image" class="product-image">
-											</a>
-										</figure>
-										<div class="product-action-container">
-											<a href="#" class="btn product-add-btn" data-toggle="tooltip"
-												title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
-											<a href="#" class="btn product-wishlist-btn"
-												data-toggle="tooltip" title="Add to Wishlist"><i
-												class="fa fa-heart"></i></a> <a href="#"
-												class="btn product-compare-btn" data-toggle="tooltip"
-												title="Compare"><i class="fa fa-retweet"></i></a>
+								<c:forEach var="article" items="${articleList}">
+									<div class="product">
+										<div class="product-top">
+											<figure>
+												<a
+													href="/Project/cookieView.do?c_serial=${article.c_serial}&pageNum=${currentPage}"
+													title="Product Name"> <img src="${article.c_img1 }"
+													alt="Product image" class="product-image">
+												</a>
+											</figure>
+											<div class="product-action-container">
+												<a href="#" class="btn product-add-btn"
+													data-toggle="tooltip" title="Add to Cart"><i
+													class="fa fa-shopping-cart"></i></a> <a href="#"
+													class="btn product-wishlist-btn" data-toggle="tooltip"
+													title="Add to Wishlist"><i class="fa fa-heart"></i></a> <a
+													href="#" class="btn product-compare-btn"
+													data-toggle="tooltip" title="Compare"><i
+													class="fa fa-retweet"></i></a>
+											</div>
+											<!-- End .product-action-container -->
 										</div>
-										<!-- End .product-action-container -->
-									</div>
-									<!-- End .product-top -->
-									<h3 class="product-title">
-										<a href="product.html">${article.c_product}</a>
-									</h3>
-									<div class="ratings-container">
-										<a href="#" class="product-ratings" title="7 Ratings"> <span
-											class="ratings" style="width: 60%"> <span
-												class="ratings-text sr-only"></span>
-										</span> <!-- End .ratings -->
-										</a>
-										<!-- End .product-ratings -->
-									</div>
-									<!-- End .ratings-container -->
-									<div class="product-price-container">
-										<span
-											class="product-price"><fmt:formatNumber
+										<!-- End .product-top -->
+										<h3 class="product-title">
+											<a href="product.html">${article.c_product}</a>
+										</h3>
+										<div class="ratings-container">
+											<a href="#" class="product-ratings" title="7 Ratings"> <span
+												class="ratings" style="width: 60%"> <span
+													class="ratings-text sr-only"></span>
+											</span> <!-- End .ratings -->
+											</a>
+											<!-- End .product-ratings -->
+										</div>
+										<!-- End .ratings-container -->
+										<div class="product-price-container">
+											<span class="product-price"><fmt:formatNumber
 													value="${article.c_price}" pattern="#,###" /> 원</span>
+										</div>
+										<!-- End .product-price-container -->
 									</div>
-									<!-- End .product-price-container -->
-								</div>
 								</c:forEach>
 								<!-- End .product -->
 							</div>
@@ -192,83 +271,7 @@
 					</div>
 					<!-- End .col-md-9 -->
 
-					<aside class="col-md-3 col-md-pull-9 sidebar shop-sidebar">
-						<div class="widget">
-							<div class="filter-group-widget">
-								<div class="panel-group" role="tablist"
-									aria-multiselectable="true">
-									<div class="snb f1" >
-      <!-- 제품 -->
-      <h2>
-        <img src="assets/images/blog/제품소개.png" alt="제품소개">
-         <span>
-        <img alt="인포" src="assets/images/blog/인포.png">
-         </span>
-      </h2>
-        <div class="snb-wrap hover-relative">
-          <ul style="list-style-type:none;">
-             <li class="info-hover-li">
-               <a href="/Project/cookie.jsp">비스켓
-               	<img class="info-hover-img" src="assets/images/blog/비스켓.png" alt="비스켓"/>
-               </a>
-               
-             </li>
-             <li class="info-hover-li2">
-               <a href="/Project/cookie.jsp"> 스낵
-                <img class="info-hover-img2" src="assets/images/blog/스낵.png" alt="스낵"/>
-               </a>
-             </li >
-             <li class="info-hover-li3">
-             <a href="/Project/cookie.jsp">초코
-               <img class="info-hover-img3" src="assets/images/blog/초코.png" alt="초코"/>
-             </a>
-             </li>
-             <li>
-             <a href="/Project/cookie.jsp">기타</a>
-             </li>            
-          </ul>
-        </div>
-        
-       <div class="banner-wrap">
-           <ul style="list-style-type:none;">
-             <li class="first">
-               <a href="http://www.ht.co.kr/product/list" style="text-decoration:none;">
-                   <img src="assets/images/blog/해태로고.png" alt="해태제과" style="outline:none;">
-               </a>
-              </li>
-              <li class="first">
-               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
-                   <img src="assets/images/blog/빙그레로고.png" alt="빙그레" style="outline:none;">
-               </a>
-              </li>
-              <li class="first">
-               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
-                   <img src="assets/images/blog/오리온로고.png" alt="오리온" style="outline:none;">
-               </a>
-              </li>
-              <li class="first">
-               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
-                   <img src="assets/images/blog/롯데로고.png" alt="롯데" style="outline:none;">
-               </a>
-              </li>
-              <li class="first">
-               <a href="http://www.ht.co.kr/product/list" style="outline:none;">
-                   <img src="assets/images/blog/농심로고.png" alt="농심" style="outline:none;">
-               </a>
-              </li>
-              <li class="first">
-               <a href="http://www.ht.co.kr/product/list" style="outline:none;" target="_blank">
-                   <img src="assets/images/blog/노브랜드로고.png" alt="노브랜드" style="outline:none;">
-               </a>
-              </li>
-           </ul>
-        </div>
-   </div> 
-																</div>
-							<!-- End .filter-widget -->
-						</div>
-						<!-- End .widget -->
-					</aside>
+
 				</div>
 				<!-- End .row -->
 			</div>
