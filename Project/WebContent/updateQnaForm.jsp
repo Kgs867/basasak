@@ -32,6 +32,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -64,62 +66,60 @@
                         </ol>
                     </div><!-- End .container -->
                 </div><!-- End .page-header -->
-                <div class="container-fluid">
 
 
 
 
 
-<center><b>글수정</b>
-<br>
-<form method="post" name="writeQnaform" action="/Project/updateQnaPro.do?pageNum=${pageNum}" onsubmit="return writeSave()">
-<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#e0ffff" align="center">
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center">이름</td>
-    <td align="left" width="330">
-       <input type="text" size="10" maxlength="10" name="m_id" value="${article.m_id}">
-	   <input type="hidden" name="q_num" value="${article.q_num}">
-	   <%-- <input type="hidden" name="pageNum" value="<%=pageNum%>"> --%>
-	   </td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >제목</td>
-    <td align="left" width="330">
-       <input type="text" size="40" maxlength="50" name="q_title" value="${article.q_title}"></td>
-  </tr>
-<%--   
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center">Email</td>
-    <td align="left" width="330">
-       <input type="text" size="40" maxlength="30" name="email" value="${article.email}"></td>
-  </tr>
---%>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >내용</td>
-    <td align="left" width="330">
-     <textarea name="q_content" rows="13" cols="40">${article.q_content}</textarea></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >비밀번호</td>
-    <td align="left" width="330" >
-     	<input type="password" size="8" maxlength="12" name="q_pw">
-	 </td>
-  </tr>
-  <tr>      
-   <td colspan=2 bgcolor="#b0e0e6" align="center"> 
-     <input type="submit" value="글수정" >  
-     <input type="reset" value="다시작성">
-     <input type="button" value="목록보기" onclick="document.location.href='/Project/qna.do?pageNum=${pageNum}'">
-   </td>
- </tr>
- </table>
-</form>     
+				<div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6">
+                            <h2 class="title custom">글수정</h2>
+                            <form method="post" name="updateQnaform" action="/Project/updateQnaPro.do?pageNum=${pageNum}" onsubmit="return writeSave()"><!-- <form action="#" method="post" id="contact-form"> -->
+                            <input type="hidden" name="q_num" value="${article.q_num}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>이 름</label>
+                                        <input type="text" class="form-control" id="contactname" name="m_id" value="${article.m_id}" required>
+                                    </div><!-- End .col-md-6 -->
+                                    <div class="col-md-6">
+                                        <label>비밀번호</label>
+                                        <input type="password" class="form-control" id="contactemail" name="q_pw" required>
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
+                                <div class="row">
+                                    <!-- <div class="col-md-6">
+                                        <label>Website</label>
+                                        <input type="url" class="form-control" id="contactwebsite" name="contactwebsite" placeholder="Website" required>
+                                    </div> --><!-- End .col-md-6 -->
+                                    <div class="col-md-12">
+                                        <label>제목</label>
+                                        <input type="text" class="form-control" id="contactsubject" name="q_title" value="${article.q_title}">
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>내용</label>
+                                        <textarea class="form-control" rows="6" id="contactmessage" name="q_content" placeholder="내용을 입력해주세요." required>${article.q_content}</textarea>
+                                    </div><!-- End .col-md-12 -->
+                                </div><!-- End .row -->
 
+                                <div class="mb10"></div><!-- margin -->
 
+                                <input type="submit" class="btn btn-custom min-width" data-loading-text="Sending Message..." value="글수정">
+                                <input type="reset" class="btn btn-custom min-width" value="다시작성">
+                                <input type="button" class="btn btn-custom min-width" value="목록보기" onclick="document.location.href='/Project/qna.do?pageNum=${pageNum}'">
+                            </form>
+                        </div><!-- End .col-md-8 -->
 
-</div><!-- End .container -->
-                <div class="mb80"></div><!-- margin -->
+                        <div class="clearfix mb50 visible-sm visible-xs"></div><!-- margin -->
+                    </div><!-- End .row -->
+                </div><!-- End .container-fluid -->
+
+                <div class="mb50"></div><!-- margin -->
+
+              <!--   <div id="map"></div> --><!-- End #map -->
             </div><!-- End .main -->
 
 

@@ -56,7 +56,7 @@ public class BoardQnaDAO {
 			if (search==null || search =="") {
 				sql = "select count(*) from qna";
 			}else {
-				if (search.equals("subject_content")) {
+				if (search.equals("q_title_q_content")) {
 					sql = "select count(*) from qna where q_title like '%"+searchtext+"%' or q_content like '%"+searchtext+"%'";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
 					sql="select count(*) from qna where "+search+" like '%"+searchtext+"%'";
@@ -136,7 +136,7 @@ public class BoardQnaDAO {
 			if (search ==null || search=="") {
 				sql = "select * from qna order by q_num desc limit ?,?";
 			}else {
-				if (search.equals("subject_content")) {
+				if (search.equals("q_title_q_content")) {
 					sql = "select * from qna where q_title like '%"+searchtext+"%' or q_content like '%"+searchtext+"%' order by q_num desc limit ?,?";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
 					sql="select * from qna where "+search+" like '%"+searchtext+"%' order by q_num desc limit ?,?";

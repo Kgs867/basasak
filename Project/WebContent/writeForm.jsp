@@ -1,22 +1,3 @@
-<%-- 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>게시판</title>
-<link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="script.js"></script>
-</head>
-<%
-	//int num = (Integer)request.getAttribute("num"); // Object -> Integer -> int ==> ${num}으로 대신하면 편리함
-%>
-<body bgcolor="#e0ffff">  
- --%>
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -35,6 +16,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -67,83 +50,107 @@
                         </ol>
                     </div><!-- End .container -->
                 </div><!-- End .page-header -->
+                
+                
+                
+                
+                
+                
+                
                 <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6">
+                            <h2 class="title custom">글쓰기</h2>
+                            <form method="post" name="writeform" action="/Project/writePro.do" onsubmit="return writeSave()"><!-- <form action="#" method="post" id="contact-form"> -->
+                            <input type="hidden" name="r_num" value="${r_num}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>이 름</label>
+                                        <input type="text" class="form-control" id="contactname" name="m_id" required>
+                                    </div><!-- End .col-md-6 -->
+                                    <div class="col-md-6">
+                                        <label>비밀번호</label>
+                                        <input type="password" class="form-control" id="contactemail" name="r_pw" required>
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
+                                <div class="row">
+                                    <!-- <div class="col-md-6">
+                                        <label>Website</label>
+                                        <input type="url" class="form-control" id="contactwebsite" name="contactwebsite" placeholder="Website" required>
+                                    </div> --><!-- End .col-md-6 -->
+                                    <div class="col-md-12">
+                                        <label>제목</label>
+                                        <input type="text" class="form-control" id="contactsubject" name="r_title">
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>내용</label>
+                                        <textarea class="form-control" rows="6" id="contactmessage" name="r_content" placeholder="내용을 입력해주세요." required></textarea>
+                                    </div><!-- End .col-md-12 -->
+                                </div><!-- End .row -->
 
+                                <div class="mb10"></div><!-- margin -->
 
+                                <input type="submit" class="btn btn-custom min-width" data-loading-text="Sending Message..." value="글쓰기">
+                                <input type="reset" class="btn btn-custom min-width" value="다시작성">
+                                <input type="button" class="btn btn-custom min-width" value="목록보기" OnClick="window.location='/Project/review.do'">
+                            </form>
+                        </div><!-- End .col-md-8 -->
 
+                        <div class="clearfix mb50 visible-sm visible-xs"></div><!-- margin -->
+<!-- 
+                        <aside class="col-md-4 col-sm-6">
+                            <div class="location-info">
+                                <div class="location-icon custom">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>End .location-icon
 
+                                <h3>Berlin Office</h3>
+                                <address>
+                                    Manson Street Hollywood Blvd,A-2 <br> Stuttgart, Germany, Europe
+                                </address>
+                                <p><strong>Phone</strong> +01 010 554 11 22</p>
+                                <p><strong>Email</strong> <a href="#">madeup@gmail.com</a></p>
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="social-icon" title="Github"><i class="fa fa-github"></i></a>
+                                    <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#" class="social-icon" title="Flickr"><i class="fa fa-flickr"></i></a>
+                                </div>End .social-icons
+                            </div>End .location-info
 
-<center><b>글쓰기</b>
-<br> <!-- onsubmit="return 호출할함수명()" -->
-<form method="post" name="writeform" action="/Project/writePro.do" onsubmit="return writeSave()">
-	<input type="hidden" name="r_num" value="${r_num}">
-<%-- 	
-	<input type="hidden" name="ref" value="${ref}">
-	<input type="hidden" name="re_step" value="${re_step}">
-	<input type="hidden" name="re_level" value="${re_level}">
- --%>	
-<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#e0ffff" align="center">
-   <tr>
-    <td align="right" colspan="2" bgcolor="#b0e0e6">
-	    <a href="/Project/review.do">글목록</a>
-   </td>
-   </tr>
-   <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center">이 름</td>
-    <td  width="330">
-       <input type="text" size="10" maxlength="10" name="m_id"></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >제 목</td>
-    <td  width="330">
-    	<input type="text" size="40" maxlength="50" name="r_title"></td>
-<%--     
-    	<c:if test="${num==0}">
-       		<input type="text" size="40" maxlength="50" name="subject"></td>
-      	</c:if>
-      	<c:if test="${num!=0}">
-       		<input type="text" size="40" maxlength="50" name="subject" value="[re]"></td>
-      	</c:if>
-  --%>     	
-  </tr>
-<%--  
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center">Email</td>
-    <td  width="330">
-       <input type="text" size="40" maxlength="30" name="email" ></td>
-  </tr>
---%>   
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >내 용</td>
-    <td  width="330" >
-     <textarea name="r_content" rows="13" cols="40"></textarea> </td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >비밀번호</td>
-    <td  width="330" >
-     <input type="password" size="8" maxlength="12" name="r_pw"> 
-	 </td>
-  </tr>
-<tr>      
- <td colspan=2 bgcolor="#b0e0e6" align="center">
-  <input type="submit" value="글쓰기" >  
-  <input type="reset" value="다시작성">
-  <input type="button" value="목록보기" OnClick="window.location='/Project/review.do'">
-</td></tr></table>    
-</form>      
+                            <div class="location-info">
+                                <div class="location-icon custom">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>End .location-icon
 
+                                <h3>Jersey Office</h3>
+                                <address>
+                                    Manson Street Hollywood Blvd,A-2 <br> Stuttgart, Germany, Europe
+                                </address>
+                                <p><strong>Phone</strong> +01 010 554 11 22</p>
+                                <p><strong>Email</strong> <a href="#">madeup@gmail.com</a></p>
 
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="social-icon" title="Github"><i class="fa fa-github"></i></a>
+                                    <a href="#" class="social-icon" title="Google +"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="social-icon" title="Flickr"><i class="fa fa-flickr"></i></a>
+                                </div>End .social-icons
+                            </div>End .location-info
+                        </aside> --><!-- End .col-md-4 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container-fluid -->
 
-</div><!-- End .container -->
-                <div class="mb80"></div><!-- margin -->
+                <div class="mb50"></div><!-- margin -->
+
+              <!--   <div id="map"></div> --><!-- End #map -->
             </div><!-- End .main -->
 
-
-
-
-
-<!--  -->
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -281,23 +288,63 @@
                     </div><!-- End .container-fluid -->
                 </div><!-- End .footer-bottom -->
             </footer><!-- End .footer -->
+
         </div><!-- End #wrapper -->
-        
         <a id="scroll-top" href="#top" title="Scroll top"><i class="fa fa-angle-up"></i></a>
 
         <!-- End -->
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCWXs-nyT1_ocrKeZtVBsjAdu2O2qzQcxM"></script>
+
         <script src="assets/js/plugins.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/contact.js"></script>
         <script src="assets/js/main.js"></script>
 
+        <script>
+            (function() {
+                'use strict';
+
+                // Google Map api v3 - Map for contact pages
+                if ( document.getElementById("map") && typeof google === "object" ) {
+                    // Map pin coordinates and content of pin box
+                    var locations = [
+                        [
+                            '<address><strong>Address:</strong> Hollywood Blvd, Los Angeles, CA, USA <br> <strong>Phone:</strong> +01 010 554 11 22 </address>',
+                            34.101780,
+                            -118.333655
+                        ]
+                    ];
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 14,
+                        center: new google.maps.LatLng(34.101780, -118.333655), // Map Center coordinates
+                        scrollwheel: false,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+                    });
+
+                    var infowindow = new google.maps.InfoWindow();
+
+
+                    var marker, i;
+
+                    for ( i = 0; i < locations.length; i++ ) {  
+                      marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        map: map,
+                        animation: google.maps.Animation.DROP,
+                        icon: 'assets/images/pin.png'
+                      });
+
+                      google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                        return function() {
+                          infowindow.setContent(locations[i][0]);
+                          infowindow.open(map, marker);
+                        }
+                      })(marker, i));
+                    }
+                }
+            })();
+        </script>
     </body>
 </html>
-
-
-
-
-
-
-<!-- 
-</body>
-</html>
- -->

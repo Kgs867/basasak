@@ -43,6 +43,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -90,7 +92,6 @@
                         </ol>
                     </div><!-- End .container -->
                 </div><!-- End .page-header -->
-                <div class="container-fluid">
 
 
 
@@ -98,36 +99,38 @@
 
 
 
-<center><b>글삭제</b>
-<br>
-<form method="POST" name="delForm"  action="/Project/deleteQnaPro.do" 
-   onsubmit="return deleteSave()"> 
- <table border="1" align="center" cellspacing="0" cellpadding="0" width="360">
-  <tr height="30">
-     <td align=center  bgcolor="#b0e0e6">
-       <b>비밀번호를 입력해주세요.</b></td>
-  </tr>
-  <tr height="30">
-     <td align=center >비밀번호 :   
-       <input type="password" name="q_pw" size="8" maxlength="12">
-	   <input type="hidden" name="q_num" value="${article.q_num}">
-	   <input type="hidden" name="pageNum" value="${pageNum}">
-	 </td>
- </tr>
- <tr height="30">
-    <td align=center bgcolor="#b0e0e6">
-      <input type="submit" value="글삭제" >
-      <input type="button" value="글목록" 
-       onclick="document.location.href='/Project/qna.do?pageNum=${pageNum}'">     
-   </td>
- </tr>  
-</table> 
-</form>
+				<center>
+					<b>글삭제</b> <br>
+					<form method="POST" name="delQnaForm" action="/Project/deleteQnaPro.do"
+						onsubmit="return deleteSave()">
+						<table border="1" align="center" cellspacing="0" cellpadding="0"
+							width="360">
+							<tr height="30">
+								<td align=center bgcolor="yellow"><b>비밀번호를 입력해주세요.</b></td>
+							</tr>
+							<tr height="30">
+								<td align=center>비밀번호 :
+								<input type="password" name="q_pw" size="8" maxlength="12">
+								<input type="hidden" name="q_num" value="${article.q_num }">
+								<input type="hidden" name="pageNum" value="${pageNum}">
+								</td>
+							</tr>
+							<tr height="30">
+								<td align=center bgcolor="yellow"><input type="submit"
+									value="글삭제"> <input type="button" value="글목록"
+									onclick="document.location.href='/Project/qna.do?pageNum=${pageNum}'">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</center>
 
 
 
 
-</div><!-- End .container -->
+
+
+			</div><!-- End .container -->
                 <div class="mb80"></div><!-- margin -->
             </div><!-- End .main -->
 

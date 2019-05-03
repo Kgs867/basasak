@@ -1,19 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>내용 확인</title>
-<link href="style.css" rel="stylesheet" type="text/css">
-</head>
-
-<body bgcolor="#e0ffff">  
- --%>
-
-
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -31,6 +16,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -63,73 +50,302 @@
                         </ol>
                     </div><!-- End .container -->
                 </div><!-- End .page-header -->
-                <div class="container-fluid">
 
 
 
 
-<center><b>글 내용 보기</b>
-<br>
-<form>
-<table width="500" border="1" cellspacing="0" cellpadding="0"  bgcolor="#e0ffff" align="center">  
-  <tr height="30">
-    <td align="center" width="125" bgcolor="#b0e0e6">글번호</td>
-    <td align="center" width="125" align="center">
-	     ${article.r_num}</td>
-    <td align="center" width="125" bgcolor="#b0e0e6">조회수</td>
-    <td align="center" width="125" align="center">
-	     ${article.r_view}</td>
-  </tr>
-  <tr height="30">
-    <td align="center" width="125" bgcolor="#b0e0e6">작성자</td>
-    <td align="center" width="125" align="center">
-	     ${article.m_id}</td>
-    <td align="center" width="125" bgcolor="#b0e0e6" >작성일</td>
-    <td align="center" width="125" align="center">
-	     ${article.r_date}</td>
-  </tr>
-  <tr height="30">
-    <td align="center" width="125" bgcolor="#b0e0e6">글제목</td>
-    <td align="center" width="375" align="center" colspan="3">
-	     ${article.r_title}</td>
-  </tr>
-  <tr>
-    <td align="center" width="125" bgcolor="#b0e0e6">글내용</td>
-    <td align="left" width="375" colspan="3">
-    <pre>${article.r_content}</pre></td>
-  </tr>
-  <tr height="30">
-    <td colspan="4" bgcolor="#b0e0e6" align="right" >
-	  <input type="button" value="글수정" 
+
+
+
+
+
+
+
+			<div class="mb80"></div><!-- margin -->
+                <div class="container-fluid">          	
+                    <article class="entry">
+                         <!-- <div class="entry-media">
+                            <figure>
+                                <img src="assets/images/blog/post1.jpg" alt="entry image">
+                            </figure>
+                        </div>End .enty-media
+
+                        <div class="entry-icon">
+                            <i class="fa fa-file-image-o"></i>
+                        </div>End .entry-icon -->
+
+
+                        <div class="entry-content-container">
+                            <div class="entry-meta">
+                                <div><i class="fa fa-calendar"></i>${article.r_date}</div>
+                                <div><a href="#"><i class="fa fa-comments"></i>${article.r_num}</a></div>
+                                <div><a href="#"><i class="fa fa-eye"></i>${article.r_view}</a></div>
+                                <div><a href="#"><i class="fa fa-user"></i> ${article.m_id}</a></div>
+                            </div><!-- End .entry-meta -->
+                            
+                            <div class="entry-content-wrapper">
+                                <h2 class="entry-title">${article.r_title}</h2>
+                                <div class="entry-content">
+                                    <p>${article.r_content}</p>
+                                </div><!-- End .entry-content -->
+                            </div><!-- End .entry-content-wrapper -->
+                            <input type="button" value="글수정" 
        onclick="document.location.href='/Project/updateForm.do?r_num=${article.r_num}&pageNum=${pageNum}'">
 	   &nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type="button" value="글삭제" 
        onclick="document.location.href='/Project/deleteForm.do?r_num=${article.r_num}&pageNum=${pageNum}'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-<%-- 	   
-      <input type="button" value="답글쓰기" 
-       onclick="document.location.href='/Project/writeForm.do?r_num=${article.r_num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
- --%>	   
+	   &nbsp;&nbsp;&nbsp;&nbsp; 
        <input type="button" value="글목록" 
        onclick="document.location.href='/Project/review.do?pageNum=${pageNum}'">
-    </td>
-  </tr>
-</table>    
-</form>      
+                        </div><!-- End .entry-content-container -->
 
 
 
 
-</div><!-- End .container -->
-                <div class="mb80"></div><!-- margin -->
+                       <%--  <div class="entry-author">
+                            <figure>
+                                <img src="assets/images/blog/users/author.jpg" alt="Author" class="img-responsive img-circle">
+                            </figure>
+                            <div class="author-content">
+                                <h4><a href="#">Justin Gadget</a></h4>
+                                <p>Perspiciatis accusantium laudantium deserunt ad vel sit ipsam consequuntur tenetur similique, recusandae esse a enim, quibusdam ullam.</p>
+                                <div class="social-icons">
+                                	<input type="button" value="글수정" 
+       onclick="document.location.href='/Project/updateForm.do?r_num=${article.r_num}&pageNum=${pageNum}'">
+	   &nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="button" value="글삭제" 
+       onclick="document.location.href='/Project/deleteForm.do?r_num=${article.r_num}&pageNum=${pageNum}'">
+	   &nbsp;&nbsp;&nbsp;&nbsp; 
+       <input type="button" value="글목록" 
+       onclick="document.location.href='/Project/review.do?pageNum=${pageNum}'">
+                                    <!-- <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="social-icon" title="Github"><i class="fa fa-github"></i></a>
+                                    <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#" class="social-icon" title="Tumblr"><i class="fa fa-tumblr"></i></a>
+                                    <a href="#" class="social-icon" title="Flickr"><i class="fa fa-flickr"></i></a> -->
+                                </div><!-- End .social-icons -->
+                            </div><!-- end .author-content -->
+                        </div><!-- End .entry-author --> --%>
+                     </article>
+
+                    <%--<div class="single-related-posts">
+                        <h3 class="title custom mb25">Related Posts</h3>
+
+                        <div class="swiper-container related-posts-carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="entry entry-grid">
+                                        <div class="entry-media">
+                                            <figure>
+                                                <a href="single.html"><img src="assets/images/blog/post1.jpg" alt="Post image"></a>
+                                            </figure>
+                                        </div><!-- End .entry-media -->
+
+                                        <div class="entry-icon">
+                                            <i class="fa fa-file-image-o"></i>
+                                        </div><!-- End .entry-icon -->
+
+                                        <div class="entry-content-container">
+                                            <div class="entry-meta">
+                                                <div><i class="fa fa-calendar"></i>17 Aug 2016</div>
+                                                <div><a href="#"><i class="fa fa-comments"></i>8 Comment(s)</a></div>
+                                                <div><a href="#"><i class="fa fa-user"></i> Admin</a></div>
+                                            </div><!-- End .entry-meta -->
+                                            
+                                            <div class="entry-content-wrapper">
+                                                <h2 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consectetur adipising elit numquam nesciun.</a></h2>
+                                                <div class="entry-content">
+                                                    <p>Molestiae neque doloremque, voluptatum nostrum praesentium esse fugiat. Deserunt praesentium architecto expedita soluta deleniti est error.</p>
+                                                    <a href="#" class="readmore">Read more<i class="fa fa-angle-right"></i></a>
+                                                </div><!-- End .entry-content -->
+                                            </div><!-- End .entry-content-wrapper -->
+                                        </div><!-- End .entry-content-container -->
+                                    </article>
+                                </div><!-- End .swiper-slide -->
+
+                                <div class="swiper-slide">
+                                    <article class="entry entry-grid">
+                                        <div class="entry-media">
+                                            <figure>
+                                                <a href="single.html"><img src="assets/images/blog/post2.jpg" alt="Post image"></a>
+                                            </figure>
+                                        </div><!-- End .entry-media -->
+
+                                        <div class="entry-icon">
+                                            <i class="fa fa-file-image-o"></i>
+                                        </div><!-- End .entry-icon -->
+
+                                        <div class="entry-content-container">
+                                            <div class="entry-meta">
+                                                <div><i class="fa fa-calendar"></i>17 Aug 2016</div>
+                                                <div><a href="#"><i class="fa fa-comments"></i>8 Comment(s)</a></div>
+                                                <div><a href="#"><i class="fa fa-user"></i> Admin</a></div>
+                                            </div><!-- End .entry-meta -->
+                                            
+                                            <div class="entry-content-wrapper">
+                                                <h2 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consectetur adipising elit numquam nesciun.</a></h2>
+                                                <div class="entry-content">
+                                                    <p>Molestiae neque doloremque, voluptatum nostrum praesentium esse fugiat. Deserunt praesentium architecto expedita soluta deleniti est error.</p>
+                                                    <a href="#" class="readmore">Read more<i class="fa fa-angle-right"></i></a>
+                                                </div><!-- End .entry-content -->
+                                            </div><!-- End .entry-content-wrapper -->
+                                        </div><!-- End .entry-content-container -->
+                                    </article>
+                                </div><!-- End .swiper-slide -->
+
+                                <div class="swiper-slide">
+                                    <article class="entry entry-grid">
+                                        <div class="entry-media">
+                                            <figure>
+                                                <a href="single.html"><img src="assets/images/blog/post3.jpg" alt="Post image"></a>
+                                            </figure>
+                                        </div><!-- End .entry-media -->
+
+                                        <div class="entry-icon">
+                                            <i class="fa fa-file-image-o"></i>
+                                        </div><!-- End .entry-icon -->
+
+                                        <div class="entry-content-container">
+                                            <div class="entry-meta">
+                                                <div><i class="fa fa-calendar"></i>17 Aug 2016</div>
+                                                <div><a href="#"><i class="fa fa-comments"></i>8 Comment(s)</a></div>
+                                                <div><a href="#"><i class="fa fa-user"></i> Admin</a></div>
+                                            </div><!-- End .entry-meta -->
+                                            
+                                            <div class="entry-content-wrapper">
+                                                <h2 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consectetur adipising elit numquam nesciun.</a></h2>
+                                                <div class="entry-content">
+                                                    <p>Molestiae neque doloremque, voluptatum nostrum praesentium esse fugiat. Deserunt praesentium architecto expedita soluta deleniti est error.</p>
+                                                    <a href="#" class="readmore">Read more<i class="fa fa-angle-right"></i></a>
+                                                </div><!-- End .entry-content -->
+                                            </div><!-- End .entry-content-wrapper -->
+                                        </div><!-- End .entry-content-container -->
+                                    </article>
+                                </div><!-- End .swiper-slide -->
+
+                                <div class="swiper-slide">
+                                    <article class="entry entry-grid">
+                                        <div class="entry-media">
+                                            <figure>
+                                                <a href="single.html"><img src="assets/images/blog/post4.jpg" alt="Post image"></a>
+                                            </figure>
+                                        </div><!-- End .entry-media -->
+
+                                        <div class="entry-icon">
+                                            <i class="fa fa-file-image-o"></i>
+                                        </div><!-- End .entry-icon -->
+
+                                        <div class="entry-content-container">
+                                            <div class="entry-meta">
+                                                <div><i class="fa fa-calendar"></i>17 Aug 2016</div>
+                                                <div><a href="#"><i class="fa fa-comments"></i>8 Comment(s)</a></div>
+                                                <div><a href="#"><i class="fa fa-user"></i> Admin</a></div>
+                                            </div><!-- End .entry-meta -->
+                                            
+                                            <div class="entry-content-wrapper">
+                                                <h2 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consectetur adipising elit numquam nesciun.</a></h2>
+                                                <div class="entry-content">
+                                                    <p>Molestiae neque doloremque, voluptatum nostrum praesentium esse fugiat. Deserunt praesentium architecto expedita soluta deleniti est error.</p>
+                                                    <a href="#" class="readmore">Read more<i class="fa fa-angle-right"></i></a>
+                                                </div><!-- End .entry-content -->
+                                            </div><!-- End .entry-content-wrapper -->
+                                        </div><!-- End .entry-content-container -->
+                                    </article>
+                                </div><!-- End .swiper-slide -->
+                            </div><!-- End .swiper-wrapper -->
+
+                            <div class="swiper-pagination"></div><!-- End .swiper-pagination -->
+                        </div><!-- End .related-posts-carousel -->
+                    </div><!-- End .single-related-posts -->
+
+                    <div class="comments">
+                        <h3 class="title custom mb25">Commnets (20)</h3>
+                        <ul class="comments-list media-list">
+                            <li class="media">
+                                <div class="comment">
+                                    <div class="media-left">
+                                        <img class="media-object img-circle" src="assets/images/blog/users/user1.jpg" alt="User name">
+                                    </div><!-- End .media-left -->
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Steve Nash<span class="comment-date">49 min ago</span></h4>
+
+                                        <p>Enim ad sapiente itaque illo laudantium tempore rem iure accusantium atque. Qui facilis quibusdam laborum. Nobis animi provident ipsum quidem eveniet voluptate expedita veniam porro quod a. Temporibus, voluptates provident.Ex deserunt error, culpa voluptatibus.</p>
+                                    </div><!-- End .media-body -->
+                                </div><!-- End .comment -->
+                                <ul>
+                                    <li class="media">
+                                        <div class="comment">
+                                            <div class="media-left">
+                                                <img class="media-object img-circle" src="assets/images/blog/users/user2.jpg" alt="User name">
+                                            </div><!-- End .media-left -->
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Desmond Mason<span class="comment-date">32 min ago</span></h4>
+
+                                                <p>Ex deserunt error, culpa voluptatibus, explicabo commodi id fugiat ipsa. Doloremque ipsum sapiente laudantium similique repellat, tempora voluptatem. Sunt tempore eligendi inventore molestiae delectus harum quasi consequuntur nisi repellendus saepe?</p>
+                                            </div><!-- End .media-body -->
+                                        </div><!-- End .comment -->
+                                        <ul>
+                                            <li class="media">
+                                                <div class="comment">
+                                                    <div class="media-left">
+                                                        <img class="media-object img-circle" src="assets/images/blog/users/user3.jpg" alt="User name">
+                                                    </div><!-- End .media-left -->
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">Ben Wallece<span class="comment-date">21 min ago</span></h4>
+
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, iure. Minima alias nam magni distinctio voluptatum dolorum nostrum, iusto magnam ullam iure pariatur, qui dolore maiores iste, unde vitae. Dolores.</p>
+                                                    </div><!-- End .media-body -->
+                                                </div><!-- End .comment -->
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="media">
+                                <div class="comment">
+                                    <div class="media-left">
+                                        <img class="media-object img-circle" src="assets/images/blog/users/user4.jpg" alt="User name">
+                                    </div><!-- End .media-left -->
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Steve Kerr<span class="comment-date">2 hours ago</span></h4>
+
+                                        <p>Minima quae unde quam totam enim. Corporis debitis, tenetur illo deleniti totam perferendis doloribus. Laboriosam aperiam provident debitis earum fuga quibusdam odit unde vel hic commodi dolor, minus, nobis aliquid.</p>
+                                    </div><!-- End .media-body -->
+                                </div><!-- End .comment -->
+                            </li>
+                        </ul>
+                    </div><!-- End .comments -->
+
+                    <div id="respond" class="comment-respond">
+                        <h3 class="title custom mb25">Send a Reply</h3>
+                        <form action="#" method="post">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div><!-- End .col-sm-6 -->
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+                            <input type="url" class="form-control" placeholder="Website" required>
+                            <textarea class="form-control" rows="6" placeholder="Add Your Comment" required></textarea>
+                            <input type="submit" class="btn btn-custom min-width" value="Send Reply">
+                        </form>
+                    </div><!-- End #respond -->--%>
+                    
+
+                    
+                </div><!-- End .container-fluid -->
             </div><!-- End .main -->
+            
+            
+            
+            
+            
+            
+            
 
-
-
-
-
-<!--  -->
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -267,18 +483,13 @@
                     </div><!-- End .container-fluid -->
                 </div><!-- End .footer-bottom -->
             </footer><!-- End .footer -->
+
         </div><!-- End #wrapper -->
-        
         <a id="scroll-top" href="#top" title="Scroll top"><i class="fa fa-angle-up"></i></a>
 
         <!-- End -->
         <script src="assets/js/plugins.min.js"></script>
+        <script src="assets/js/twitter/jquery.tweet.min.js"></script>
         <script src="assets/js/main.js"></script>
-
     </body>
 </html>
-
-
-<!-- 
-</body>
-</html> -->

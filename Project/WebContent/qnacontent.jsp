@@ -31,6 +31,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -63,66 +65,55 @@
                         </ol>
                     </div><!-- End .container -->
                 </div><!-- End .page-header -->
+                
+                
+                
+                
+                
+                <div class="mb80"></div><!-- margin -->
                 <div class="container-fluid">
+					<article class="entry">
+                         <%--<div class="entry-media">
+                            <figure>
+                                <img src="assets/images/blog/post1.jpg" alt="entry image">
+                            </figure>
+                        </div><!-- End .enty-media -->
+
+                        <div class="entry-icon">
+                            <i class="fa fa-file-image-o"></i>
+                        </div><!-- End .entry-icon --> --%>
 
 
-
-
-<center><b>글 내용 보기</b>
-<br>
-<form>
-<table width="500" border="1" cellspacing="0" cellpadding="0"  bgcolor="#e0ffff" align="center">  
-  <tr height="30">
-    <td align="center" width="125" bgcolor="#b0e0e6">글번호</td>
-    <td align="center" width="125" align="center">
-	     ${article.q_num}</td>
-    <td align="center" width="125" bgcolor="#b0e0e6">조회수</td>
-    <td align="center" width="125" align="center">
-	     ${article.q_view}</td>
-  </tr>
-  <tr height="30">
-    <td align="center" width="125" bgcolor="#b0e0e6">작성자</td>
-    <td align="center" width="125" align="center">
-	     ${article.m_id}</td>
-    <td align="center" width="125" bgcolor="#b0e0e6" >작성일</td>
-    <td align="center" width="125" align="center">
-	     ${article.q_date}</td>
-  </tr>
-  <tr height="30">
-    <td align="center" width="125" bgcolor="#b0e0e6">글제목</td>
-    <td align="center" width="375" align="center" colspan="3">
-	     ${article.q_title}</td>
-  </tr>
-  <tr>
-    <td align="center" width="125" bgcolor="#b0e0e6">글내용</td>
-    <td align="left" width="375" colspan="3">
-    <pre>${article.q_content}</pre></td>
-  </tr>
-  <tr height="30">
-    <td colspan="4" bgcolor="#b0e0e6" align="right" >
-	  <input type="button" value="글수정" 
+                        <div class="entry-content-container" height="500">
+                            <div class="entry-meta">
+                                <div><i class="fa fa-calendar"></i>${article.q_date}</div>
+                                <div><a href="#"><i class="fa fa-comments"></i>${article.q_num}</a></div>
+                                <div><a href="#"><i class="fa fa-eye"></i>${article.q_view}</a></div>
+                                <div><a href="#"><i class="fa fa-user"></i> ${article.m_id}</a></div>
+                            </div><!-- End .entry-meta -->
+                            
+                            <div class="entry-content-wrapper">
+                                <h2 class="entry-title">${article.q_title}</h2>
+                                <div class="entry-content">
+                                    <p>${article.q_content}</p>
+                                </div><!-- End .entry-content -->
+                            </div><!-- End .entry-content-wrapper -->
+                            <input type="button" value="글수정" 
        onclick="document.location.href='/Project/updateQnaForm.do?q_num=${article.q_num}&pageNum=${pageNum}'">
 	   &nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type="button" value="글삭제" 
        onclick="document.location.href='/Project/deleteQnaForm.do?q_num=${article.q_num}&pageNum=${pageNum}'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-<%-- 	   
-      <input type="button" value="답글쓰기" 
-       onclick="document.location.href='/Project/writeForm.do?r_num=${article.r_num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
- --%>	   
+	   &nbsp;&nbsp;&nbsp;&nbsp; 
        <input type="button" value="글목록" 
        onclick="document.location.href='/Project/qna.do?pageNum=${pageNum}'">
-    </td>
-  </tr>
-</table>    
-</form>      
+                        </div>
+                        </article>
+                    
 
 
 
 
 </div><!-- End .container -->
-                <div class="mb80"></div><!-- margin -->
             </div><!-- End .main -->
 
 

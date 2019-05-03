@@ -56,7 +56,7 @@ public class BoardNoticeDAO {
 			if (search==null || search =="") {
 				sql = "select count(*) from notice";
 			}else {
-				if (search.equals("subject_content")) {
+				if (search.equals("n_title_n_content")) {
 					sql = "select count(*) from notice where n_title like '%"+searchtext+"%' or n_content like '%"+searchtext+"%'";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
 					sql="select count(*) from notice where "+search+" like '%"+searchtext+"%'";
@@ -136,7 +136,7 @@ public class BoardNoticeDAO {
 			if (search ==null || search=="") {
 				sql = "select * from notice order by n_num desc limit ?,?";
 			}else {
-				if (search.equals("subject_content")) {
+				if (search.equals("n_title_n_content")) {
 					sql = "select * from notice where n_title like '%"+searchtext+"%' or n_content like '%"+searchtext+"%' order by n_num desc limit ?,?";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
 					sql="select * from notice where "+search+" like '%"+searchtext+"%' order by n_num desc limit ?,?";

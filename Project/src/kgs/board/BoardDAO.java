@@ -56,7 +56,7 @@ public class BoardDAO {
 			if (search==null || search =="") {
 				sql = "select count(*) from review";
 			}else {
-				if (search.equals("subject_content")) {
+				if (search.equals("r_title_r_content")) {
 					sql = "select count(*) from review where r_title like '%"+searchtext+"%' or r_content like '%"+searchtext+"%'";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
 					sql="select count(*) from review where "+search+" like '%"+searchtext+"%'";
@@ -136,7 +136,7 @@ public class BoardDAO {
 			if (search ==null || search=="") {
 				sql = "select * from review order by r_num desc limit ?,?";
 			}else {
-				if (search.equals("subject_content")) {
+				if (search.equals("r_title_r_content")) {
 					sql = "select * from review where r_title like '%"+searchtext+"%' or r_content like '%"+searchtext+"%' order by r_num desc limit ?,?";
 				}else {//제목 , 작성자->매개변수를 이용해서 하나의 sql통합
 					sql="select * from review where "+search+" like '%"+searchtext+"%' order by r_num desc limit ?,?";

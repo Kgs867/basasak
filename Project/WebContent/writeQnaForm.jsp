@@ -35,6 +35,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -67,76 +69,61 @@
                         </ol>
                     </div><!-- End .container -->
                 </div><!-- End .page-header -->
+
+
+
+
+
+
                 <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6">
+                            <h2 class="title custom">글쓰기</h2>
+                            <form method="post" name="writeQnaform" action="/Project/writeQnaPro.do" onsubmit="return writeSave()"><!-- <form action="#" method="post" id="contact-form"> -->
+                            <input type="hidden" name="q_num" value="${q_num}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>이 름</label>
+                                        <input type="text" class="form-control" id="contactname" name="m_id" required>
+                                    </div><!-- End .col-md-6 -->
+                                    <div class="col-md-6">
+                                        <label>비밀번호</label>
+                                        <input type="password" class="form-control" id="contactemail" name="q_pw" required>
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
+                                <div class="row">
+                                    <!-- <div class="col-md-6">
+                                        <label>Website</label>
+                                        <input type="url" class="form-control" id="contactwebsite" name="contactwebsite" placeholder="Website" required>
+                                    </div> --><!-- End .col-md-6 -->
+                                    <div class="col-md-12">
+                                        <label>제목</label>
+                                        <input type="text" class="form-control" id="contactsubject" name="q_title">
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>내용</label>
+                                        <textarea class="form-control" rows="6" id="contactmessage" name="q_content" placeholder="내용을 입력해주세요." required></textarea>
+                                    </div><!-- End .col-md-12 -->
+                                </div><!-- End .row -->
 
+                                <div class="mb10"></div><!-- margin -->
 
+                                <input type="submit" class="btn btn-custom min-width" data-loading-text="Sending Message..." value="글쓰기">
+                                <input type="reset" class="btn btn-custom min-width" value="다시작성">
+                                <input type="button" class="btn btn-custom min-width" value="목록보기" OnClick="window.location='/Project/qna.do'">
+                            </form>
+                        </div><!-- End .col-md-8 -->
 
+                        <div class="clearfix mb50 visible-sm visible-xs"></div><!-- margin -->
+                    </div><!-- End .row -->
+                </div><!-- End .container-fluid -->
 
+                <div class="mb50"></div><!-- margin -->
 
-<center><b>글쓰기</b>
-<br> <!-- onsubmit="return 호출할함수명()" -->
-<form method="post" name="writeQnaform" action="/Project/writeQnaPro.do" onsubmit="return writeSave()">
-	<input type="hidden" name="q_num" value="${q_num}">
-<%-- 	
-	<input type="hidden" name="ref" value="${ref}">
-	<input type="hidden" name="re_step" value="${re_step}">
-	<input type="hidden" name="re_level" value="${re_level}">
- --%>	
-<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#e0ffff" align="center">
-   <tr>
-    <td align="right" colspan="2" bgcolor="#b0e0e6">
-	    <a href="/Project/qna.do">글목록</a>
-   </td>
-   </tr>
-   <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center">이 름</td>
-    <td  width="330">
-       <input type="text" size="10" maxlength="10" name="m_id"></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >제 목</td>
-    <td  width="330">
-    	<input type="text" size="40" maxlength="50" name="q_title"></td>
-<%--     
-    	<c:if test="${num==0}">
-       		<input type="text" size="40" maxlength="50" name="subject"></td>
-      	</c:if>
-      	<c:if test="${num!=0}">
-       		<input type="text" size="40" maxlength="50" name="subject" value="[re]"></td>
-      	</c:if>
-  --%>     	
-  </tr>
-<%--  
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center">Email</td>
-    <td  width="330">
-       <input type="text" size="40" maxlength="30" name="email" ></td>
-  </tr>
---%>   
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >내 용</td>
-    <td  width="330" >
-     <textarea name="q_content" rows="13" cols="40"></textarea> </td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="#b0e0e6" align="center" >비밀번호</td>
-    <td  width="330" >
-     <input type="password" size="8" maxlength="12" name="q_pw"> 
-	 </td>
-  </tr>
-<tr>      
- <td colspan=2 bgcolor="#b0e0e6" align="center">
-  <input type="submit" value="글쓰기" >  
-  <input type="reset" value="다시작성">
-  <input type="button" value="목록보기" OnClick="window.location='/Project/qna.do'">
-</td></tr></table>    
-</form>      
-
-
-
-</div><!-- End .container -->
-                <div class="mb80"></div><!-- margin -->
+              <!--   <div id="map"></div> --><!-- End #map -->
             </div><!-- End .main -->
 
 

@@ -16,6 +16,8 @@
 
         <link rel="stylesheet" href="assets/css/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- basasak css 추가 -->
+		<link rel="stylesheet" href="assets/css/basasak.css">
         
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
@@ -58,12 +60,6 @@
                             <h2>글목록<small>(전체글:${pgList.count})</small></h2>
 						<div class="table-responsive">
 						
-							<table width="1000">
-								<tr>
-									<td align="right" bgcolor="#b0e0e6"><a
-										href="/Project/writeNoticeForm.do">글쓰기</a></td>
-								</tr>
-							</table>
 							<!-- 데이터의 유무 -->
 							<c:if test="${pgList.count==0}">
 								<table class="table table-bordered table-hover table-condensed">
@@ -78,19 +74,18 @@
 							<table class="table table-bordered table-hover table-condensed">
 								<thead>
 									<tr>
-										<td align="center" width="50">번호</td>
-										<td align="center" width="250">제목</td>
-										<td align="center" width="100">작성자</td>
-										<td align="center" width="150">작성일</td>
-										<td align="center" width="50">조회수</td>
+										<th align="center" width="50">번호</th>
+										<th align="center" width="250">제목</th>
+										<th align="center" width="100">작성자</th>
+										<th align="center" width="150">작성일</th>
+										<th align="center" width="50">조회수</th>
 										<!-- <td align="center" width="100">IP</td> -->
 									</tr>
 								</thead>
 								<tbody>
 									<c:set var="number" value="${pgList.number}" />
 					<c:forEach var="article" items="${articleList}">
-						<tr height="30" onmouseover="this.style.backgroundColor='white'"
-							onmouseout="this.style.backgroundColor='#e0ffff'">
+						<tr height="30">
 							<!-- 게시물번호는 하나씩 감소하면서 출력, 이벤트를 발생시킨 객체를 구분하는 키워드는 this -->
 							<td align="center" width="50"><c:out value="${article.n_num}" /> </td>
 							<td width="250">
@@ -126,6 +121,15 @@
 						</c:if>
 						
 						
+						<table class="table table-bordered table-hover table-condensed">
+							<tr>
+								<td align="right" bgcolor="#fff">
+									<input type="button" class="btn btn-custom min-width" value="글쓰기" OnClick="window.location='/Project/writeNoticeForm.do'">
+								</td>
+							</tr>
+						</table>
+						
+						<form align="center">
 						<c:if test="${pgList.startPage > pgList.blockSize}">
 				<a
 					href="/Project/notice.do?pageNum=${pgList.startPage-pgList.blockSize}&search=${search}&searchtext=${searchtext}">[이전]</a>
@@ -144,18 +148,17 @@
 			<c:if test="${pgList.endPage < pgList.pageCount}">
 				<a href="/Project/notice.do?pageNum=${pgList.startPage+pgList.blockSize}&search=${search}&searchtext=${searchtext}">[다음]</a>
 			</c:if>
-
+</form>
 			<p>
 				<!-- 검색어 추가(자주 검색이 되는 항목을 잘 선택) : 제목, 작성자, 제목+본문 -->
-			<form name="test" action="/Project/notice.do">
+			<form name="test" align="center" action="/Project/notice.do">
 				<select name="search">
-					<option value="subject">제목</option>
-					<option value="subject_content">제목+본문</option>
-					<option value="writer">작성자</option>
+					<option value="n_title">제목</option>
+					<option value="n_title_n_content">제목+본문</option>
+					<option value="a_id">작성자</option>
 				</select> <input type="text" size="15" name="searchtext">&nbsp;<input
 					type="submit" value="검색">
 			</form>
-		</center>
 						
 						
 						
