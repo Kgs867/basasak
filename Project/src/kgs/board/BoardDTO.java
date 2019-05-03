@@ -4,7 +4,67 @@ import java.sql.Timestamp;
 
 //웹상에서 테이블의 필드별로 저장, 꺼내와서 출력할 목적
 public class BoardDTO {
+	private int r_num;
+	private String r_title;
+	private String r_content;
+	private Timestamp r_date;
+	private int r_view;
+	private int r_recommend;
+	private String r_pw;
+	private String m_id;
 	
+	public int getR_num() {
+		return r_num;
+	}
+	public void setR_num(int r_num) {
+		this.r_num = r_num;
+	}
+	public String getR_title() {
+		return r_title;
+	}
+	public void setR_title(String r_title) {
+		this.r_title = r_title;
+	}
+	public String getR_content() {
+		return r_content;
+	}
+	public void setR_content(String r_content) {
+		this.r_content = r_content;
+	}
+	public Timestamp getR_date() {
+		return r_date;
+	}
+	public void setR_date(Timestamp r_date) {
+		this.r_date = r_date;
+	}
+	public int getR_view() {
+		return r_view;
+	}
+	public void setR_view(int r_view) {
+		this.r_view = r_view;
+	}
+	public int getR_recommend() {
+		return r_recommend;
+	}
+	public void setR_recommend(int r_recommend) {
+		this.r_recommend = r_recommend;
+	}
+	public String getR_pw() {
+		return r_pw;
+	}
+	public void setR_pw(String r_pw) {
+		this.r_pw = r_pw;
+	}
+	public String getM_id() {
+		return m_id;
+	}
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
+	
+	
+	
+/*	
 	private int num; //게시물 번호
 	//눈에 보이는 상태(입력)
 	private String writer; //작성자
@@ -93,5 +153,5 @@ public class BoardDTO {
 	public void setRe_level(int re_level) {
 		this.re_level = re_level;
 	}
-	
+*/	
 }

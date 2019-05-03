@@ -7,21 +7,21 @@ public class WriteFormAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int num=0,ref=1,re_step=0,re_level=0;
+		int r_num=0; //,ref=1,re_step=0,re_level=0;
 		   
-		   if(request.getParameter("num")!=null){
-			   num=Integer.parseInt(request.getParameter("num"));//"3"->3
-			   ref=Integer.parseInt(request.getParameter("ref"));
-			   re_step=Integer.parseInt(request.getParameter("re_step"));
-			   re_level=Integer.parseInt(request.getParameter("re_level"));
+		   if(request.getParameter("r_num")!=null){
+			   r_num=Integer.parseInt(request.getParameter("r_num"));//"3"->3
+//			   ref=Integer.parseInt(request.getParameter("ref"));
+//			   re_step=Integer.parseInt(request.getParameter("re_step"));
+//			   re_level=Integer.parseInt(request.getParameter("re_level"));
 			   System.out.println("content.jsp에서 넘어온 매개변수 확인");
-			   System.out.println("num=>"+num+",ref=>"+ref+",re_step=>"+re_step+"re_level=>"+re_level);
+			   System.out.println("r_num=>"+r_num); //+",ref=>"+ref+",re_step=>"+re_step+"re_level=>"+re_level);
 		   }
 		  //2.실행결과(변수선언,매개변수,메서드의 실행결과물)->request.getAttribute("num")->${num}
-		   request.setAttribute("num", num);
-		   request.setAttribute("ref", ref);
-		   request.setAttribute("re_step", re_step);
-		   request.setAttribute("re_level", re_level);
+		   request.setAttribute("r_num", r_num);
+//		   request.setAttribute("ref", ref);
+//		   request.setAttribute("re_step", re_step);
+//		   request.setAttribute("re_level", re_level);
 		return "/writeForm.jsp";
 	}
 
